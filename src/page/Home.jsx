@@ -1,4 +1,5 @@
 
+import Five from "./Five";
 import Four from "./Four";
 import Nabver from "./Nabver";
 import One from "./One";
@@ -12,6 +13,7 @@ const Home = () => {
             <One />
             <Two />
             <Four />
+            <Five />
         </div>
     );
 };

@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 /* navber section */
-.navberColor{
+.navberColor {
     background-color: var(--tp-grey-17);
 }
 
 /* one section */
-.mySwiper{
+.mySwiper {
     padding: 10px;
 }
 
@@ -17,11 +17,33 @@
 
 
 /* four section */
-.fourPtag{
-    border:1px solid rgb(208, 182, 182);
+.fourPtag {
+    border: 1px solid rgb(208, 182, 182);
     border-radius: 50%;
     padding: 20px;
     margin-right: 11px;
     font-size: 1.9rem;
 }
-  
+
+
+/* five secetion */
+.double input:focus {
+    outline: none;
+
+}
+
+.double {
+    border-radius: 30px 0 0 0;
+}
+
+/* footer section */
+.foter p {
+    padding: 2px;
+    color: gray;
+}
+
+/* global left border */
+.global {
+ border-left: 2px solid red;
+
+}
