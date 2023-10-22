@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+    overflow-x: hidden;
+}
+
+/* header section */
+#check:checked ~ ul{
+    left:0;
+}
+
+
 /* navber section */
 .navberColor {
     background-color: var(--tp-grey-17);
@@ -44,6 +54,25 @@
 
 /* global left border */
 .global {
- border-left: 2px solid red;
+    border-left: 2px solid red;
 
 }
+
+/* media query section */
+/* Apply styles for screens with a maximum width of 500px */
+@media (max-width: 500px) {
+    .head {
+      grid-template-columns: 1fr; /* Change to a single column layout */
+      gap: 20px; /* Adjust the gap between elements */
+      text-align: center; /* Center-align text content */
+    }
+    .iphone{
+        font-size: 10px;
+    }
+  
+    .image {
+      display: none; /* Hide the image on small screens */
+  
+    }
+  }
+  

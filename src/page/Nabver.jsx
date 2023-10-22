@@ -2,8 +2,8 @@ import { GoArrowRight } from 'react-icons/go';
 
 const Nabver = () => {
     return (
-        <div className="md:flex px-16 justify-around  bg-slate-100">
-            <div className="side mt-36 ">
+        <div className="md:flex px-16 justify-around pt-40 bg-slate-100">
+            <div className="side ">
                 <div className='global'>
                     <p className="text-xl ml-2"> <span className=''>Best Ear</span> <br /> Headphones</p>
                 </div>
