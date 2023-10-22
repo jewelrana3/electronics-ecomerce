@@ -2,13 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
+body {
     overflow-x: hidden;
 }
 
 /* header section */
-#check:checked ~ ul{
-    left:0;
+#check:checked~ul {
+    left: 0;
 }
 
 
@@ -62,17 +62,99 @@ body{
 /* Apply styles for screens with a maximum width of 500px */
 @media (max-width: 500px) {
     .head {
-      grid-template-columns: 1fr; /* Change to a single column layout */
-      gap: 20px; /* Adjust the gap between elements */
-      text-align: center; /* Center-align text content */
+        grid-template-columns: 1fr;
+        /* Change to a single column layout */
+        gap: 20px;
+        /* Adjust the gap between elements */
+        text-align: center;
+        /* Center-align text content */
     }
-    .iphone{
+
+    .iphone {
         font-size: 10px;
     }
-  
+
     .image {
-      display: none; /* Hide the image on small screens */
-  
+        display: none;
+        /* Hide the image on small screens */
+
     }
+}
+
+/* test section */
+/* .image1 img{
+    transition-property: width;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+    width: 260px;
+}
+
+.image1 img:hover {
+
+    width:400px;
+  
+} */
+/* .image1 img {
+    transition: width 2s linear 0s;
+    width: 260px;
+  }
+  
+  .image1 img:hover {
+    width: 400px;
+  } */
+  /* .image1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    position: relative;
+    width: 260px;
+    height: 260px;
+    transition: width 2s linear 0s;
+  }
+  .image1:hover{
+    width: 280px;
+  }
+  
+  
+  .image1 img {
+    max-width: 180px;
+    transition: max-width 0.7s; /* Adjust the duration for a slower transition */
+    
+
+/* 
+.image1 img:hover {
+    max-width: 190px;
+    transition: width 2s linear 0s;
+}
+
+  
+  .image1 p {
+    position: absolute;
+    display: none;
+    left: 0;
+    background-color: transparent;
+    transition: background-color 0.3s linear 0s;
+  }
+  
+  .image1:hover p {
+    display: block;
+    background-color: red;
+  } */
+  /* Define your animation */
+.image-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hovered-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out/* Add a transition for a smooth effect */
+  }
+  
+  .image-container:hover .hovered-image{
+    transform: scale(1.1);
   }
   

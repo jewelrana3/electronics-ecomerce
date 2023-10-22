@@ -6,6 +6,7 @@ import One from "./One";
 import Two from "./Two";
 
 
+
 const Home = () => {
     return (
         <div>
@@ -14,6 +15,7 @@ const Home = () => {
             <Two />
             <Four />
             <Five />
+            
         </div>
     );
 };

@@ -1,17 +1,26 @@
-import { useLocation } from "react-router-dom";
 
 
 const Two = () => {
-    const location = useLocation();
-    const path = location.pathname.includes('/')
     return (
         <div className="md:px-20 mt-28">
+
             <div className="global">
                 <h2 className="ml-2 text-4xl font-bold mb-10 ">Popular Products</h2>
             </div>
+
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                <div>
-                    <img src="https://i.ibb.co/3hc3kvZ/product-2.webp" alt="" />
+                <div className="">
+                    <div className="image1">
+                        <div className="image-container">
+                            <img
+                                src="https://i.ibb.co/ZMjL5rs/product-3.webp"
+                                alt=""
+                                className="hovered-image"
+                            />
+                            <p className="absolute -mt-10 text-center">Add to Cart</p>
+                        </div>
+                    </div>
+
                     <p>Apple Watch Series 8</p>
                     <p>$188.00</p>
                 </div>
@@ -21,22 +30,22 @@ const Two = () => {
                     <p> $899.00 $791.12</p>
                 </div>
                 <div>
-                    {path && <img src="image1" alt="products image" />}
+                    <img src="image1" alt="products image" />
                     <p>ViewSonic Professional Monitor</p>
                     <p>$299.00 $281.06</p>
                 </div>
                 <div>
-                    {path && <img src="image1" alt="products image" />}
+                    <img src="image1" alt="products image" />
                     <p>Buy Guild Planer - 900w</p>
                     <p className="bordered-text">$239.00</p>
                 </div>
                 <div>
-                    {path && <img src="image1" alt="products image" />}
+                    <img src="image1" alt="products image" />
                     <p>Xiaomi Poco M4 pro 5G</p>
                     <p className="bordered-text">$67.00</p>
                 </div>
                 <div>
-                    {path && <img src="image1" alt="products image" />}
+                    <img src="image1" alt="products image" />
                     <p>Tempo Sphera Spinning Reel</p>
                     <p className="bordered-text">$799.00 $679.15</p>
                 </div>
@@ -46,7 +55,7 @@ const Two = () => {
                     <p> $899.00 $791.12</p>
                 </div>
                 <div>
-                    {path && <img src="image1" alt="products image" />}
+                    <img src="image1" alt="products image" />
                     <p>VR Virtual Reality Headset</p>
                     <p className="bordered-text">$137.00 $123.30</p>
                 </div>
