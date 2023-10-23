@@ -94,23 +94,28 @@ body {
   overflow: hidden;
 }
 
-.overlay {
+/* .overlay {
   position: absolute;
   bottom: 0;
   left: 50%;
-  transform: translateX(-50%);
   width: 100%;
- 
-  opacity: 0;
-  background-color: rgba(0, 0, 0, 0.7);
   transition: opacity 0.5s ease;
   animation: scrollFromBottom 0.6s ease-in-out forwards; 
   display: none;
+} */
+.overlay{
+  position: absolute;
+  bottom: -45px; /* Initial position below the container */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: transform 0.3s ease, bottom 0.3s ease;
+  width: 100%;
 }
 
-.overlay.active {
- opacity: 1;
-}
+
+
+
+
 
 .add_to_cart {
   background-color: brown;
@@ -119,23 +124,11 @@ body {
   border: none;
   cursor: pointer;
 }
-/* .add_to_cart {
-  position: absolute;
-  bottom: 0; 
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 10px;
-  opacity: 0; 
-  animation: scrollFromBottom 0.6s ease-in-out forwards; 
-  display: none;
-}  */
 
 .hovered-image {
   width: 100%;
   height: auto;
   transition: transform 0.3s;
-  /* Add a smooth transition effect */
 }
 .product:hover .hovered-image{
   transform: scale(1.1);
@@ -144,17 +137,9 @@ body {
 .product:hover .overlay{
   display: block;
 }
-/* add to cart animation */
-@keyframes scrollFromBottom {
-  0% {
-    transform: translate(-50%, 100%);
-    opacity: 0;
-  }
+.product:hover .overlay{
+  transform: translateX(-50%) translateY(-40px); /* Move the button up */
 
-  100% {
-    transform: translate(-50%, 0%);
-    opacity: 1;
-  }
 }
 
 
@@ -163,23 +148,6 @@ body {
 
 
 
-/* .absolute {
-  position: absolute;
-  bottom: 0; 
-  left: 50%;
-  transform: translateX(-50%);
-  background: white;
-  padding: 10px;
-  opacity: 0; 
-  animation: scrollFromBottom 0.6s ease-in-out forwards; 
-  display: none;
-} */
-/* 
-.image-container:hover .absolute {
-  opacity: 1; 
-  background-color: rgb(4, 4, 4);
-  color: white;
-  transition-delay: 0.6s; 
-  display: block;
-}  */
+
+
 
