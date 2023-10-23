@@ -1,6 +1,11 @@
+import { useState } from "react";
+
 
 
 const Two = () => {
+
+    const [isHovered, setIsHovered] = useState(true);
+
     return (
         <div className="md:px-20 mt-28">
 
@@ -9,21 +14,54 @@ const Two = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                <div className="">
-                    <div className="image1">
-                        <div className="image-container">
-                            <img
-                                src="https://i.ibb.co/ZMjL5rs/product-3.webp"
-                                alt=""
-                                className="hovered-image"
-                            />
-                            <p className="absolute -mt-10 text-center">Add to Cart</p>
-                        </div>
+                {/* <div onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                    className="product">
+
+                    <div className="image-content">
+                        <img src="https://i.ibb.co/ZMjL5rs/product-3.webp" alt="" className="hovered-image" />
+                       {isHovered &&  <div>
+                            <button className="bg-black text-white w-full">Add to Cart</button>
+                        </div>}
+
                     </div>
 
-                    <p>Apple Watch Series 8</p>
-                    <p>$188.00</p>
+                    <div
+                        className="product_title relative mt-10">
+                        <h3> Apple Watch Series 8</h3>
+                        <div>
+                            <span>$188.00</span>
+                        </div>
+                    </div>
+                </div> */}
+                <div
+                    className="product"
+                    onMouseEnter={() => setIsHovered(true)}
+                    onMouseLeave={() => setIsHovered(false)}
+                >
+                    <div className="image-content">
+                        <img
+                            src="https://i.ibb.co/ZMjL5rs/product-3.webp"
+                            alt=""
+                            className="hovered-image active"
+                        />
+                        <div className={`overlay ${isHovered ? 'active' : ''}`}>
+                            <button type="button" className="add_to_cart w-full bg-black text-white">
+                                Add Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div className="product_title relative ">
+                        <h3>Apple Watch Series 8</h3>
+                        <div>
+                            <span>$188.00</span>
+                        </div>
+                    </div>
                 </div>
+
+
+
+
                 <div>
                     <img src="https://i.ibb.co/ZMjL5rs/product-3.webp" alt="" />
                     <p>TECLAST Tablet Protective Cover Case</p>

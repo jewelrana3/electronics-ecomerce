@@ -3,23 +3,23 @@
 @tailwind utilities;
 
 body {
-    overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 /* header section */
 #check:checked~ul {
-    left: 0;
+  left: 0;
 }
 
 
 /* navber section */
 .navberColor {
-    background-color: var(--tp-grey-17);
+  background-color: var(--tp-grey-17);
 }
 
 /* one section */
 .mySwiper {
-    padding: 10px;
+  padding: 10px;
 }
 
 /* Two section */
@@ -28,133 +28,158 @@ body {
 
 /* four section */
 .fourPtag {
-    border: 1px solid rgb(208, 182, 182);
-    border-radius: 50%;
-    padding: 20px;
-    margin-right: 11px;
-    font-size: 1.9rem;
+  border: 1px solid rgb(208, 182, 182);
+  border-radius: 50%;
+  padding: 20px;
+  margin-right: 11px;
+  font-size: 1.9rem;
 }
 
 
 /* five secetion */
 .double input:focus {
-    outline: none;
+  outline: none;
 
 }
 
 .double {
-    border-radius: 30px 0 0 0;
+  border-radius: 30px 0 0 0;
 }
 
 /* footer section */
 .foter p {
-    padding: 2px;
-    color: gray;
+  padding: 2px;
+  color: gray;
 }
 
 /* global left border */
 .global {
-    border-left: 2px solid red;
+  border-left: 2px solid red;
 
 }
 
 /* media query section */
 /* Apply styles for screens with a maximum width of 500px */
 @media (max-width: 500px) {
-    .head {
-        grid-template-columns: 1fr;
-        /* Change to a single column layout */
-        gap: 20px;
-        /* Adjust the gap between elements */
-        text-align: center;
-        /* Center-align text content */
-    }
-
-    .iphone {
-        font-size: 10px;
-    }
-
-    .image {
-        display: none;
-        /* Hide the image on small screens */
-
-    }
-}
-
-/* test section */
-/* .image1 img{
-    transition-property: width;
-    transition-duration: 2s;
-    transition-timing-function: linear;
-    transition-delay: 0s;
-    width: 260px;
-}
-
-.image1 img:hover {
-
-    width:400px;
-  
-} */
-/* .image1 img {
-    transition: width 2s linear 0s;
-    width: 260px;
+  .head {
+    grid-template-columns: 1fr;
+    /* Change to a single column layout */
+    gap: 20px;
+    /* Adjust the gap between elements */
+    text-align: center;
+    /* Center-align text content */
   }
-  
-  .image1 img:hover {
-    width: 400px;
-  } */
-  /* .image1{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aqua;
-    position: relative;
-    width: 260px;
-    height: 260px;
-    transition: width 2s linear 0s;
-  }
-  .image1:hover{
-    width: 280px;
-  }
-  
-  
-  .image1 img {
-    max-width: 180px;
-    transition: max-width 0.7s; /* Adjust the duration for a slower transition */
-    
 
-/* 
-.image1 img:hover {
-    max-width: 190px;
-    transition: width 2s linear 0s;
-}
+  .iphone {
+    font-size: 10px;
+  }
 
-  
-  .image1 p {
-    position: absolute;
+  .image {
     display: none;
-    left: 0;
-    background-color: transparent;
-    transition: background-color 0.3s linear 0s;
+    /* Hide the image on small screens */
+
   }
-  
-  .image1:hover p {
-    display: block;
-    background-color: red;
-  } */
-  /* Define your animation */
-.image-container {
-    position: relative;
-    overflow: hidden;
+}
+
+
+
+/* Two cart section */
+
+.product {
+  position: relative;
+}
+
+.image-content {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+ 
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  transition: opacity 0.5s ease;
+  animation: scrollFromBottom 0.6s ease-in-out forwards; 
+  display: none;
+}
+
+.overlay.active {
+ opacity: 1;
+}
+
+.add_to_cart {
+  background-color: brown;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+/* .add_to_cart {
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px;
+  opacity: 0; 
+  animation: scrollFromBottom 0.6s ease-in-out forwards; 
+  display: none;
+}  */
+
+.hovered-image {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+  /* Add a smooth transition effect */
+}
+.product:hover .hovered-image{
+  transform: scale(1.1);
+ 
+}
+.product:hover .overlay{
+  display: block;
+}
+/* add to cart animation */
+@keyframes scrollFromBottom {
+  0% {
+    transform: translate(-50%, 100%);
+    opacity: 0;
   }
-  
-  .hovered-image {
-    max-width: 100%;
-    height: auto;
-    transition: transform 0.3s ease-in-out/* Add a transition for a smooth effect */
+
+  100% {
+    transform: translate(-50%, 0%);
+    opacity: 1;
   }
-  
-  .image-container:hover .hovered-image{
-    transform: scale(1.1);
-  }
-  
+}
+
+
+
+
+
+
+
+/* .absolute {
+  position: absolute;
+  bottom: 0; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  padding: 10px;
+  opacity: 0; 
+  animation: scrollFromBottom 0.6s ease-in-out forwards; 
+  display: none;
+} */
+/* 
+.image-container:hover .absolute {
+  opacity: 1; 
+  background-color: rgb(4, 4, 4);
+  color: white;
+  transition-delay: 0.6s; 
+  display: block;
+}  */
+
