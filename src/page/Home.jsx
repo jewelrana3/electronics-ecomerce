@@ -3,7 +3,8 @@ import Five from "./Five";
 import Four from "./Four";
 import Nabver from "./Nabver";
 import One from "./One";
-import Two from "./Two";
+import Two from "./Two/Two";
+
 
 
 
