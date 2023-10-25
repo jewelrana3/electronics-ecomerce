@@ -11,6 +11,13 @@ body {
   left: 0;
 }
 
+/* sidenav */
+
+
+
+
+
+
 
 /* navber section */
 .navberColor {
@@ -82,7 +89,6 @@ body {
 }
 
 
-
 /* Two cart section */
 
 .product {
@@ -93,28 +99,14 @@ body {
   position: relative;
   overflow: hidden;
 }
-
-/* .overlay {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 100%;
-  transition: opacity 0.5s ease;
-  animation: scrollFromBottom 0.6s ease-in-out forwards; 
-  display: none;
-} */
 .overlay{
   position: absolute;
-  bottom: -45px; /* Initial position below the container */
+  bottom: -45px; 
   left: 50%;
   transform: translateX(-50%);
   transition: transform 0.3s ease, bottom 0.3s ease;
   width: 100%;
 }
-
-
-
-
 
 
 .add_to_cart {
@@ -138,7 +130,7 @@ body {
   display: block;
 }
 .product:hover .overlay{
-  transform: translateX(-50%) translateY(-40px); /* Move the button up */
+  transform: translateX(-50%) translateY(-40px); 
 
 }
 
