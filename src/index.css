@@ -11,7 +11,9 @@ body {
   left: 0;
 }
 
-/* sidenav */
+.header li a {
+  font-size: 20px;
+}
 
 /* navber section */
 .navberColor {
@@ -93,9 +95,10 @@ body {
   position: relative;
   overflow: hidden;
 }
-.overlay{
+
+.overlay {
   position: absolute;
-  bottom: -45px; 
+  bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
   transition: transform 0.3s ease, bottom 0.3s ease;
@@ -104,36 +107,118 @@ body {
 
 
 .add_to_cart {
-  background-color: brown;
+  background-color: rgb(9, 9, 9);
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
+  transition: background-color .5s;
+  font-weight: 600;
+}
+
+.add_to_cart:hover {
+  background-color: rgb(200, 67, 27);
+
 }
 
 .hovered-image {
   width: 100%;
   height: auto;
   transition: transform 0.3s;
+  position: relative;
 }
-.product:hover .hovered-image{
+
+.product:hover .hovered-image {
   transform: scale(1.1);
- 
+
 }
-.product:hover .overlay{
+
+.product:hover .leftDrawer{
+  margin-left: 290px;
+  transform: translatex(-50%);
+  color: rgb(205, 39, 103);
+}
+.leftDrawer p:hover{
+  background-color: rgb(205, 39, 103);
+  color: white;
+}
+
+.product:hover .overlay {
   display: block;
 }
-.product:hover .overlay{
-  transform: translateX(-50%) translateY(-40px); 
+
+.product:hover .overlay {
+  transform: translateX(-50%) translateY(-40px);
 
 }
 
+/* leftDrawer section */
+.leftDrawer {
+  position: absolute;
+  margin-top: -300px;
+  margin-left: 320px;
+  transition: transform 0.3s ease-in-out, right 0.4s ease;
 
+}
+.leftDrawer p{
+  background-color: white;
+  padding: 5px;
 
+}
 
+.icon-container {
+  display: inline-block;
+  /* margin-right: 20px;  */
+  position: relative;
+  cursor: pointer;
+}
 
+.icon {
+  font-size: 24px;
+  cursor: pointer;
+}
 
+.text {
+  position: absolute;
+  top: 18px; /* Adjust the position to control where the text appears */
+  /* left: -90%; */
+  /* width: 210px; */
+  transform: translateX(-90%);
+  padding: 4px;
+  opacity: 0;
+  transition: opacity 0.3s; /* Add color transition */
+ 
+}
 
+.icon-container:hover .text {
+ margin-left: 200px;
+  opacity: 1;
+  background-color: black;
+  color: white;
+ 
 
+}
 
+/* product details */
+.product p {
+  color: rgb(70, 65, 65);
+  margin-top: 15px;
+}
 
+.product span {
+  font-weight: 700;
+  color: rgb(28, 26, 26);
+}
+
+/* shopping-cart-length */
+.shopping-cart-length {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgb(205, 39, 103);
+  font-weight: 500;
+}
