@@ -135,11 +135,13 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import './Header.css';
 import useAddProduct from '../../hooks/useAddProduct';
+import useWishlist from '../../hooks/useWishlist';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [addProduct] = useAddProduct();
+  const [wish] = useWishlist();
 
   // Function to toggle the menu
   const toggleMenu = () => {
@@ -153,6 +155,8 @@ const Header = () => {
 
   // Calculate the length of items in the shopping cart
   const shoppingCartLength = addProduct.length;
+  const wishListLength = wish.length;
+
 
   return (
     <div>
@@ -200,8 +204,8 @@ const Header = () => {
             <BiSearch className='mx-4 my-5 md:my-0 text-3xl' />
             <TbMan className='mx-4 my-5 md:my-0 text-3xl' />
             <span>
-              <GiSelfLove style={{ fontSize: '30px'}} className='mx-4 my-5 md:my-0 relative ' />
-              <span className='shopping-cart-length absolute -mt-10 ml-8'>{shoppingCartLength?.length || 0}</span>
+            <Link to='/wishlist'><GiSelfLove  style={{ fontSize: '30px'}} className='mx-4 my-5 md:my-0 relative ' /></Link>
+              <span className='shopping-cart-length absolute -mt-10 ml-8'>{wishListLength}</span>
             </span>
             <span className='relative' style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNavToggle}>
               <AiOutlineShoppingCart />

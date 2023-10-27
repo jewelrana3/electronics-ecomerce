@@ -20,13 +20,20 @@ const ProductTwo = ({ product }) => {
             },
             body: JSON.stringify(navItem)
         })
-            .then(res => res.json())
-            .then(data => {
-                if (data.insertedId) {
-                    refetch();
+            
+    }
 
-                }
-            })
+    const wishlist = (item) =>{
+        console.log(item)
+        const wishItem = { classId: _id, image, title, price, suk, category, tags, Share }
+        fetch('http://localhost:5000/wishlist',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(wishItem)
+        })
+       
     }
 
 
@@ -55,7 +62,7 @@ const ProductTwo = ({ product }) => {
                 </div>
                 <div className="leftDrawer text-2xl cursor-pointer">
                     <div>
-                        <p className="icon"><GiSelfLove /></p>
+                        <p className="icon"><GiSelfLove onClick={()=> wishlist(toast(`${title}add to wishlist`))}/></p>
                         <span className="text">Add To Wishlist</span>
                     </div>
                     <div>

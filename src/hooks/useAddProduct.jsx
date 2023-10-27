@@ -7,7 +7,7 @@ const useAddProduct = () => {
         fetch('http://localhost:5000/addCartPost')
         .then(res => res.json())
         .then(data =>{
-            console.log(data)
+           
             setAddProduct(data)
         })
     },[])
