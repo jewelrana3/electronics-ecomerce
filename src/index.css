@@ -117,7 +117,10 @@ body {
 }
 
 .add_to_cart:hover {
-  background-color: rgb(200, 67, 27);
+  background-color: rgb(205, 39, 103);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
 
 }
 
@@ -141,6 +144,7 @@ body {
 .leftDrawer p:hover{
   background-color: rgb(205, 39, 103);
   color: white;
+  
 }
 
 .product:hover .overlay {
@@ -166,38 +170,41 @@ body {
 
 }
 
-.icon-container {
-  display: inline-block;
-  /* margin-right: 20px;  */
-  position: relative;
-  cursor: pointer;
-}
-
-.icon {
-  font-size: 24px;
-  cursor: pointer;
-}
-
 .text {
+  display: none;
+  font-size: 12px;
   position: absolute;
-  top: 18px; /* Adjust the position to control where the text appears */
-  /* left: -90%; */
-  /* width: 210px; */
-  transform: translateX(-90%);
-  padding: 4px;
-  opacity: 0;
-  transition: opacity 0.3s; /* Add color transition */
- 
-}
-
-.icon-container:hover .text {
- margin-left: 200px;
-  opacity: 1;
-  background-color: black;
+  background-color: rgb(205, 39, 103);
   color: white;
+  left: -150px;
+  margin-top: -32px;
+  text-align: center;
+  width: 130px;
+  z-index: 1;
  
+}
+
+.icon:hover + .text {
+  display: block;
+  color: white;
+}
+
+.text::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 120px;
+  border-width: 12px 20px 14px 20px;
+  border-style: solid;
+  border-color: transparent transparent transparent rgb(205, 39, 103);
 
 }
+
+
+
+
+
+
 
 /* product details */
 .product p {
