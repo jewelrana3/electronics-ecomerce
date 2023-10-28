@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
 const useWishlist = () => {
-   const [wish,setWish] = useState([])
+   const [wishs,setWishs] = useState([])
    useEffect(()=>{
     fetch('http://localhost:5000/wishlist')
     .then(res => res.json())
     .then(data =>{
-        setWish(data)
+        setWishs(data)
   
     })
    },[])
-   return [wish]
+   return [wishs]
 };
 
 export default useWishlist;

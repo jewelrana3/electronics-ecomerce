@@ -20,8 +20,9 @@ export const router = createBrowserRouter([
           
             },
             {
-                path:'wishlist',
-                element:<Wishlist />
+                path:'/wishlist',
+                element:<Wishlist />,
+                loader:({}) => fetch('http://localhost:5000/wishlist')
             }
         ]
     }

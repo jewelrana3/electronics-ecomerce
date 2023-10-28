@@ -33,6 +33,10 @@ const ProductTwo = ({ product }) => {
             },
             body:JSON.stringify(wishItem)
         })
+        .then(res => res.json())
+        .then(data =>{
+            ''
+        })
        
     }
 

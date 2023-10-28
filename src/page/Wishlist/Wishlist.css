@@ -5,6 +5,10 @@
 
 .shopping-cart {
     background-color: gainsboro;
-    width: 70em;
+    width: 78em;
     margin: auto;
+}
+.image img{
+    width: 120px;
+   
 }
