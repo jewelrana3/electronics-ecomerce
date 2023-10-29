@@ -3,6 +3,10 @@ import Main from "../Layout/Main";
 import Home from "../page/Home";
 import ProductDetails from "../page/Header/ProductDetails";
 import Wishlist from "../page/Wishlist/Wishlist";
+import Contact from "../page/Contact/Contact";
+
+import About from "../page/About/About";
+
 
 export const router = createBrowserRouter([
     {
@@ -14,6 +18,10 @@ export const router = createBrowserRouter([
                 element:<Home />
             },
             {
+                path:'/contact',
+                element:<Contact />
+            },
+            {
                 path:'/productDetails/:id',
                 element:<ProductDetails />,
                 loader:({params}) => fetch(`http://localhost:5000/addCartPost/${params.id}`)
@@ -23,7 +31,13 @@ export const router = createBrowserRouter([
                 path:'/wishlist',
                 element:<Wishlist />,
                 loader:({}) => fetch('http://localhost:5000/wishlist')
+            },
+            {
+               path:'about',
+               element:<About />
+
             }
+         
         ]
     }
 ]) 

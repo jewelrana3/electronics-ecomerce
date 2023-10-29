@@ -60,34 +60,34 @@ const Wishlist = () => {
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr className='text-xl font-bold text-black text-center'>
-                            <th className='border border-black'>Image</th>
-                            <th className='border border-black'>Product</th>
-                            <th className='border border-black'>Unit Price</th>
-                            <th className='border border-black'>Quantity</th>
-                            <th className='border border-black'>Total</th>
-                            <th className='border border-black'>Remove</th>
+                        <tr className='text-lg font-bold text-black text-center'>
+                            <th className='border border-gray'>Image</th>
+                            <th className='border border-gray'>Product</th>
+                            <th className='border border-gray'>Unit Price</th>
+                            <th className='border border-gray'>Quantity</th>
+                            <th className='border border-gray'>Total</th>
+                            <th className='border border-gray'>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
                          {
-                            users.map(product => <tr className='text-center' key={product._id}>
-                                <td className='border border-black w-48'>
+                            users.map(product => <tr className='text-center text-xl' key={product._id}>
+                                <td className='border border-gray w-48'>
                                     <div className="image flex items-center justify-center">
                                         <img className='' src={product.image} alt="Avatar Tailwind CSS Component" />
                                     </div>
                                 </td>
-                                <td className='border border-black'>{product.title}</td>
-                                <td className='border border-black'>${product.price}</td>
-                                <td className='border border-black text-2xl '>
+                                <td className='border border-gray'>{product.title}</td>
+                                <td className='border border-gray'>${product.price}</td>
+                                <td className='border border-gray text-2xl '>
                                     <div className='border border-gray-300 flex items-center justify-evenly'>
-                                        <button onClick={()=> handleQuantityChange(product._id,(product.quantity || 1) - 1)} className='ml-3 border-r-2'>-</button>
-                                        <button>{product.quantity || 1}</button>
-                                        <button onClick={()=> handleQuantityChange(product._id,(product.quantity || 0) + 1)} className='mr-2 border-l-2 '>+</button>
+                                        <button onClick={()=> handleQuantityChange(product._id,(product.quantity || 1) - 1)} className='ml- '><span className='mr-4 font-bold w-7' style={{ width: '30px' }}>-</span> <span className='ml- border-r-2' ></span></button>
+                                        <button>{product.quantity || 0}</button>
+                                        <button onClick={()=> handleQuantityChange(product._id,(product.quantity || 0) + 1)} className='mr-2 border-l-2'><span className='ml-4 text-2xl font-bold'>+</span></button>
                                     </div>
                                 </td>
-                                <td className='border border-black'>${product.total}</td>
-                                <td className='border border-black'> <AiOutlineClose onClick={() => handleDelete(product._id)} className='cursor-pointer' /></td>
+                                <td className='border border-gray'>${product.total}</td>
+                                <td className='border border-gray'> <AiOutlineClose onClick={() => handleDelete(product._id)} className='cursor-pointer text-center mx-auto' /></td>
                             </tr>)
                         } 
                   
