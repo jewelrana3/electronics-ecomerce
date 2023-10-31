@@ -1,0 +1,84 @@
+.card-container:hover {
+    border: none;
+    box-shadow: 5px 10px 20px rgb(248, 226, 226);
+}
+.card-container:hover .icons {
+    animation: bounce 0.6s;
+    box-shadow: 5px 10px 20px white;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+.card-details .cardP {
+    position: relative;
+}
+
+.card-details .cardP::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    height: 3px;
+    background-color: green;
+    transition: right 0.3s ease;
+   
+}
+
+.card-details .cardP:hover::before {
+    right: 0;
+}
+
+
+/* swiper style */
+
+  /* html,
+  body {
+    position: relative;
+    height: 100%;
+  }
+  
+  body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+  
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
+  } */
+  

@@ -11,6 +11,7 @@ import './Header.css';
 import useWishlist from '../../hooks/useWishlist';
 
 
+
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -82,53 +83,62 @@ const Header = () => {
           <li className='mx-4 my-6 md:my-0'><Link to=''>Home</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/about'>About</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/shop'>Shop</Link></li>
-          <li className='mx-4 my-6 md:my-0'><Link to=''>Page</Link></li>
-          <li className='mx-4 my-6 md:my-0 '><Link to='/contact'>Contact</Link></li>
-     
-        <span className='md:flex items-center '>
-          <div id="mySidenav" className={`sidenav ${isOpen ? 'open' : ''}`}>
-            <span className="closebtn" onClick={openNavToggle}>&times;</span>
-            <h3 className='shawdaw absolute uppercase py-2 px-5 font-semibold -mt-10 h-14'>Shopping Cart</h3>
-            <p className='border-t-2 mt-4'></p>
-            <div>
-              {addProduct.map((product) => (
-                <div className='border-b-2 py-4 mt-4 flex justify-between' key={product._id}>
-                  <div className=''>
-                    <Link to={`/productDetails/${product._id}`}>
-                      <figure><img className='w-20' src={product.image} alt="product" /></figure>
-                    </Link>
-                  </div>
-                  <div className=''>
-                    <h1 className='text-xl font-semibold'>{product.title}</h1>
-                    <p className='mt-4 text-red-500 font-semibold'>$:{product.price}</p>
-                  </div>
-                  <div>
-                    <p className='mr-2' onClick={() => handleDelete(product._id)}>X</p>
-                  </div>
-                </div>
-              ))}
+          <li class="dropdown text-black">
+            <button class="w3-button text-xl">Page</button>
+            <div class="dropdown-content">
+              <a href="#" class="w3-bar-item w3-button">Link 1</a>
+              <a href="#" class="w3-bar-item w3-button">Link 2</a>
+              <a href="#" class="w3-bar-item w3-button">Link 3</a>
             </div>
-          </div>
-          {/* <div className={`body-overlay ${isOpen ? 'visible' : ''}`}>
+          </li>
+          <li className='mx-4 my-6 md:my-0 '><Link to='/contact'>Contact</Link></li>
+
+
+
+          <span className='md:flex items-center '>
+            <div id="mySidenav" className={`sidenav ${isOpen ? 'open' : ''}`}>
+              <span className="closebtn" onClick={openNavToggle}>&times;</span>
+              <h3 className='shawdaw absolute uppercase py-2 px-5 font-semibold -mt-10 h-14'>Shopping Cart</h3>
+              <p className='border-t-2 mt-4'></p>
+              <div>
+                {addProduct.map((product) => (
+                  <div className='border-b-2 py-4 mt-4 flex justify-between' key={product._id}>
+                    <div className=''>
+                      <Link to={`/productDetails/${product._id}`}>
+                        <figure><img className='w-20' src={product.image} alt="product" /></figure>
+                      </Link>
+                    </div>
+                    <div className=''>
+                      <h1 className='text-xl font-semibold'>{product.title}</h1>
+                      <p className='mt-4 text-red-500 font-semibold'>$:{product.price}</p>
+                    </div>
+                    <div>
+                      <p className='mr-2' onClick={() => handleDelete(product._id)}>X</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            {/* <div className={`body-overlay ${isOpen ? 'visible' : ''}`}>
            
             </div> */}
-          <BiSearch className='mx-4 my-5 md:my-0 text-3xl' />
-          <TbMan className='mx-4 my-5 md:my-0 text-3xl' />
-          <span>
-            <Link to='/wishlist'><GiSelfLove style={{ fontSize: '30px' }} className='mx-4 my-5 md:my-0 relative ' /></Link>
-            <span className='shopping-cart-length absolute -mt-10 ml-8'>{wishListLength}</span>
+            <BiSearch className='mx-4 my-5 md:my-0 text-3xl' />
+            <TbMan className='mx-4 my-5 md:my-0 text-3xl' />
+            <span>
+              <Link to='/wishlist'><GiSelfLove style={{ fontSize: '30px' }} className='mx-4 my-5 md:my-0 relative ' /></Link>
+              <span className='shopping-cart-length absolute -mt-10 ml-8'>{wishListLength}</span>
+            </span>
+            <span className='relative' style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNavToggle}>
+              <AiOutlineShoppingCart />
+              {/* Display the shopping cart length */}
+              {shoppingCartLength > 0 && (
+                <span className="shopping-cart-length text-sm absolute -mt-10 ml-5 p-2">{shoppingCartLength}</span>
+              )}
+            </span>
           </span>
-          <span className='relative' style={{ fontSize: '30px', cursor: 'pointer' }} onClick={openNavToggle}>
-            <AiOutlineShoppingCart />
-            {/* Display the shopping cart length */}
-            {shoppingCartLength > 0 && (
-              <span className="shopping-cart-length text-sm absolute -mt-10 ml-5 p-2">{shoppingCartLength}</span>
-            )}
-          </span>
-        </span>
         </ul>
-      </nav>
-    </div>
+      </nav >
+    </div >
   );
 };
 

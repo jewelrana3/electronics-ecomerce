@@ -74,3 +74,19 @@
   opacity: .5;
   visibility: visible;
 }
+
+/* dropdown */
+/* Dropdown content */
+.dropdown-content {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease; /* Add a smooth transition effect */
+}
+
+/* When hovering over the dropdown, expand the content */
+.dropdown:hover .dropdown-content {
+  height: 300px;
+  transition: height 0.3s ease; /* Add a transition effect */
+  background-color: white;
+  padding: 40px 30px;
+}
