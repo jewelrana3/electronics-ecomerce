@@ -83,19 +83,24 @@ const Header = () => {
           <li className='mx-4 my-6 md:my-0'><Link to=''>Home</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/about'>About</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/shop'>Shop</Link></li>
-          <li class="dropdown text-black">
+          <li class="dropdown text-black z-10">
             <button class="w3-button text-xl">Page</button>
             <div class="dropdown-content">
-              <a href="#" class="w3-bar-item w3-button">Link 1</a>
-              <a href="#" class="w3-bar-item w3-button">Link 2</a>
-              <a href="#" class="w3-bar-item w3-button">Link 3</a>
+            <li><Link to='/privacy'>Privacy & Policy</Link></li>
+            <li><Link to='/signup'>SignUp</Link></li>
+            <li><Link to='/login'>Login</Link></li>
+            <li><Link to='/mycart'>My Cart</Link></li>
+            <li><Link to='/wishlist'>My Wishlist</Link></li>
+            <li><Link to='/'>CheckOut</Link></li>
+            <li><Link to='/error'>Error</Link></li>
+             
             </div>
           </li>
           <li className='mx-4 my-6 md:my-0 '><Link to='/contact'>Contact</Link></li>
 
 
 
-          <span className='md:flex items-center '>
+          <span className='md:flex items-center lg:ml-96'>
             <div id="mySidenav" className={`sidenav ${isOpen ? 'open' : ''}`}>
               <span className="closebtn" onClick={openNavToggle}>&times;</span>
               <h3 className='shawdaw absolute uppercase py-2 px-5 font-semibold -mt-10 h-14'>Shopping Cart</h3>

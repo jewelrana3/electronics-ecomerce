@@ -229,3 +229,15 @@ body {
   background-color: rgb(205, 39, 103);
   font-weight: 500;
 }
+
+/* sign up section */
+.signUp{
+  background-color: rgb(205, 39, 103);
+}
+.signUp:hover{
+  background-color: rgb(16, 15, 16);
+}
+.login{
+  background-color: white;
+  box-shadow: 5px 8px 30px rgb(231, 211, 211);
+}

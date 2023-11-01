@@ -6,12 +6,18 @@ import Wishlist from "../page/Wishlist/Wishlist";
 import Contact from "../page/Contact/Contact";
 
 import About from "../page/About/About";
+import Error from "../page/Error";
+import MyCart from "../page/MyCart/MyCart";
+import Privacy from "../page/Privacy/Privacy";
+import SignUp from "../password/SignUp";
+import Login from "../password/Login";
 
 
 export const router = createBrowserRouter([
     {
         path:'/',
         element:<Main />,
+        errorElement:<Error />,
         children:[
             {
                 path:'/',
@@ -33,10 +39,28 @@ export const router = createBrowserRouter([
                 loader:({}) => fetch('http://localhost:5000/wishlist')
             },
             {
-               path:'about',
+               path:'/about',
                element:<About />
 
+            },
+            {
+                path:'/mycart',
+                element:<MyCart />,
+                loader:({})=>fetch('http://localhost:5000/addCartPost')
+            },
+            {
+                path:'privacy',
+                element:<Privacy/>
+            },
+            {
+                path:'signup',
+                element:<SignUp/>
+            },
+            {
+                path:'login',
+                element:<Login />
             }
+          
          
         ]
     }
