@@ -57,7 +57,6 @@ const About = () => {
                             <div className='mt-10'>
                                 <p className='text-base'>10k</p>
                                 <p className='font-bold'>  <span className='cardP'>Listed Products</span></p>
-
                             </div>
                         </div>
                     </div>

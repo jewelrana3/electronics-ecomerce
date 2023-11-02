@@ -86,13 +86,13 @@ const Header = () => {
           <li class="dropdown text-black z-10">
             <button class="w3-button text-xl">Page</button>
             <div class="dropdown-content">
-            <li><Link to='/privacy'>Privacy & Policy</Link></li>
-            <li><Link to='/signup'>SignUp</Link></li>
-            <li><Link to='/login'>Login</Link></li>
-            <li><Link to='/mycart'>My Cart</Link></li>
-            <li><Link to='/wishlist'>My Wishlist</Link></li>
-            <li><Link to='/'>CheckOut</Link></li>
-            <li><Link to='/error'>Error</Link></li>
+            <li><Link to='/privacy'><span className='cardWith'><p>Pricavy & Policy</p></span></Link></li>
+            <li><Link to='/signup'><span className='cardWith'><p>SignUP</p></span></Link></li>
+            <li><Link to='/login'><span className='cardWith'><p>Login</p></span></Link></li>
+            <li><Link to='/mycart'><span className='cardWith'><p>My Cart</p></span></Link></li>
+            <li><Link to='/wishlist'><span className='cardWith'><p>My Wishlist</p></span></Link></li>
+            <li><Link to='/'><span className='cardWith'><p>CheckOut</p></span></Link></li>
+            <li><Link to='/error'><span className='cardWith'><p>Error</p></span></Link></li>
              
             </div>
           </li>

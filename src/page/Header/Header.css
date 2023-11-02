@@ -1,48 +1,50 @@
-
-
 /* Existing styles */
 .sidenav {
   position: relative;
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: white;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-  }
-  
-  /* Additional styles */
-  .sidenav.open {
-    width: 450px; /* Adjust the width as needed */
-   right: 0;
-    background-color: white;
-  }
-  
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #0e0d0d;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav .closebtn {
-    position: absolute;
-    top: 10px; /* Adjust the top position as needed */
-    right: 10px; /* Adjust the right position as needed */
-    font-size: 30px;
-    color: #0e0d0d; /* Change the color of the close button */
-    cursor: pointer;
-  }
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: white;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+/* Additional styles */
+.sidenav.open {
+  width: 450px;
+  /* Adjust the width as needed */
+  right: 0;
+  background-color: white;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #0e0d0d;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  /* Adjust the top position as needed */
+  right: 10px;
+  /* Adjust the right position as needed */
+  font-size: 30px;
+  color: #0e0d0d;
+  /* Change the color of the close button */
+  cursor: pointer;
+}
 
 /* 
 .body-overlay {
@@ -58,7 +60,8 @@
 }  */
 
 .body-overlay {
-  background-color: rgba(0, 0, 0, 0.7); /* Set the background color and opacity */
+  background-color: rgba(0, 0, 0, 0.7);
+  /* Set the background color and opacity */
   height: 100%;
   width: 100%;
   position: fixed;
@@ -80,13 +83,54 @@
 .dropdown-content {
   height: 0;
   overflow: hidden;
-  transition: height 0.3s ease; /* Add a smooth transition effect */
+  transition: height 0.3s ease;
+  /* Add a smooth transition effect */
 }
+
+.dropdown-content li {
+  margin-top: 8px;
+
+}
+
+.dropdown-content li a {
+  font-size: 15px;
+}
+
+.dropdown-content .cardWith {
+  position: relative;
+}
+
+.dropdown-content .cardWith::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 9px;
+  height: 3px;
+  background-color: rgb(182, 15, 107);
+  transition: right 0.6s ease, left 0.8s ease;
+}
+
+.dropdown-content .cardWith:hover::before {
+  right: 88%;
+
+}
+.dropdown-content .cardWith p {
+  transition: margin-left 0.6s ease;
+
+}
+.dropdown-content .cardWith:hover p {
+  margin-left: 20px;
+color: rgb(182, 15, 107);
+
+}
+
 
 /* When hovering over the dropdown, expand the content */
 .dropdown:hover .dropdown-content {
-  height: 300px;
-  transition: height 0.3s ease; /* Add a transition effect */
+  height: 340px;
+  width: 200px;
+  transition: height 0.3s ease;
   background-color: white;
   padding: 40px 30px;
 }
