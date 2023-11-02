@@ -11,6 +11,7 @@ import MyCart from "../page/MyCart/MyCart";
 import Privacy from "../page/Privacy/Privacy";
 import SignUp from "../password/SignUp";
 import Login from "../password/Login";
+import Shop from "../page/shop/Shop";
 
 
 export const router = createBrowserRouter([
@@ -49,16 +50,20 @@ export const router = createBrowserRouter([
                 loader:({})=>fetch('http://localhost:5000/addCartPost')
             },
             {
-                path:'privacy',
+                path:'/privacy',
                 element:<Privacy/>
             },
             {
-                path:'signup',
+                path:'/signup',
                 element:<SignUp/>
             },
             {
-                path:'login',
+                path:'/login',
                 element:<Login />
+            },
+            {
+                path:'/shop',
+                element:<Shop />
             }
           
          
