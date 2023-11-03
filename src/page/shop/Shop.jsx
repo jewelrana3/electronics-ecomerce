@@ -19,7 +19,17 @@ const Shop = () => {
     };
 
 
+    // Brands section
+    const [filter, setFilter] = useState('');
+    const [data, setData] = useState([
+        { name: 'Alfreds Futterkiste', country: 'Germany' },
+        { name: 'Berglunds snabbkop', country: 'Sweden' },
+        { name: 'Island Trading', country: 'UK' },
+    ])
 
+    const handleFilter = e => {
+        setFilter(e.target.value.toUpperCase())
+    }
 
 
     return (
@@ -47,22 +57,71 @@ const Shop = () => {
             </div>
 
             <div className='flex  gap-10'>
-                <div className={`dropdown mt-28 w-3/5 ${isDropdownOpen ? 'show' : ''}`}>
-                    <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
-                        <div className='flex items-center gap-2'>
-                            <div> Ipad Phone & Tablets</div>
-                            <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
-                        </div>
-                    </button>
-                    {isDropdownOpen && (
-                        <div className='myDropdown'>
+                <div className='w-4/5'>
+                    <div className="button-container mt-28">
+                        <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
+                            <div className="flex items-center gap-2">
+                                <div> Ipad Phone & Tablets</div>
+                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                        </button>
+                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
                             <ul>
                                 <li>Home</li>
                                 <li>About</li>
                                 <li>Contact</li>
                             </ul>
                         </div>
-                    )}
+                    </div>
+                    <div className="button-container mt-2">
+                        <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
+                            <div className="flex items-center gap-2">
+                                <div> Ipad Phone & Tablets</div>
+                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                        </button>
+                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="button-container mt-2">
+                        <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
+                            <div className="flex items-center gap-2">
+                                <div> Ipad Phone & Tablets</div>
+                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                        </button>
+                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                    </div>
+                    {/* Brands */}
+                    <div className='mt-16'>
+                        <h1 className='text-2xl text-gray-800'>Brands</h1>
+                        <p className='border-b-2'></p>
+                        <div className='mt-4'>
+                            <input className='border border-black pl-5 mb-7' type="text" placeholder='Search Names..' id='Input' onChange={handleFilter} />
+                          
+                            <tbody className=''>
+                                {data.map((item, index) =>
+                                    (filter === '' || item.name.toUpperCase().includes(filter)) && (
+                                        <tr key={index}>
+                                            <td>{item.name}</td>
+                                           
+                                        </tr>
+                                    )
+                                )}
+                            </tbody>
+                        </div>
+                    </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
                     {

@@ -1,56 +1,38 @@
-/* Dropdown.css */
-.dropdown {
-    position: relative;
-   
-  }
-  
-  .content {
-  
-    color: rgb(13, 12, 12);
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-  }
 
-  
-  .myDropdown {
-    display: none;
-    position: absolute;
-    min-width: 160px;
- 
-   
-  }
- 
- 
-  .myDropdown ul{
-    list-style-type: circle; /* or any other style you prefer (e.g., circle, square, etc.) */
-    padding: 0;
-    margin: 0;
-    padding-left: 20px;
-  }
-  
-  .myDropdown li {
-    padding: 8px 16px;
-    list-style-type: circle;
-    display: block;
-    color: #333;
-  }
-  
-  .myDropdown li:hover {
-    background-color: #ddd;
-  }
-  
-  .show {
-    display: block;
-    transform: translateY(0); 
-  }
-  .myDropdown{
-    display: block;
-  }
+.button-container {
+  position: relative;
+}
 
-  /* isClicked able */
-  .bg-red{
-    color: #9c1056;
+.myDropdown {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.5s ease;
+  /* Adjust the duration as needed */
 
-  }
-  
+  width: 200px;
+  /* Set your desired width */
+  opacity: 0;
+}
+
+.myDropdown ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.myDropdown ul li {
+  padding: 8px;
+}
+
+.myDropdown ul li:hover {
+  color: #c30664;
+  cursor: pointer;
+}
+.bg-red{
+  color: #c30664;
+}
+
+.myDropdown.open {
+  height: 140px;
+  opacity: 1;
+}
