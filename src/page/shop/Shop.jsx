@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useProducts from '../../hooks/useProducts';
 import ShopProduct from './ShopProduct';
 import { FaHome } from 'react-icons/fa';
-import { IoIosArrowForward } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io';
 import { FiMenu } from 'react-icons/fi';
 import { PiDiamondsFourBold } from 'react-icons/pi';
 import './Dropdown.css'
@@ -12,9 +12,14 @@ const Shop = () => {
     const [products] = useProducts();
     const [selectedSubject, setSelectedSubject] = useState("");
     const subjectArray = ["Front-end", "Back-end", "Node-end"];
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-    const [firstIpad,setFirstIpad] = useState('');
-   
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
+
+
+
 
 
     return (
@@ -40,16 +45,25 @@ const Shop = () => {
                     </form>
                 </div>
             </div>
-            <div className='flex'>
-                <form name="form1" id="form1">
-                    <select name="subject" value={selectedSubject} onChange={(e) => setSelectedSubject(e.target.value)}>
-                        {subjectArray.map((subject) => (
-                            <option key={subject} value={subject}>
-                                {subject}
-                            </option>
-                        ))}
-                    </select>
-                </form>
+
+            <div className='flex  gap-10'>
+                <div className={`dropdown mt-28 w-3/5 ${isDropdownOpen ? 'show' : ''}`}>
+                    <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
+                        <div className='flex items-center gap-2'>
+                            <div> Ipad Phone & Tablets</div>
+                            <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                        </div>
+                    </button>
+                    {isDropdownOpen && (
+                        <div className='myDropdown'>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
                     {
                         products.map(product => <ShopProduct
