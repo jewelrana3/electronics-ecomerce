@@ -61,17 +61,23 @@ const Shop = () => {
                     <div className="button-container mt-28">
                         <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
                             <div className="flex items-center gap-2">
-                                <div> Ipad Phone & Tablets</div>
+                                <div className='text-xl'> Ipad Phone & Tablets</div>
+                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className='text-xl'> Ipad Phone & Tablets</div>
+                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className='text-xl'> Ipad Phone & Tablets</div>
+                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <div className='text-xl'> Ipad Phone & Tablets</div>
                                 <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
                             </div>
                         </button>
-                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
-                            <ul>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Contact</li>
-                            </ul>
-                        </div>
+                 
                     </div>
                     <div className="button-container mt-2">
                         <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
@@ -109,18 +115,82 @@ const Shop = () => {
                         <p className='border-b-2'></p>
                         <div className='mt-4'>
                             <input className='border border-black pl-5 mb-7' type="text" placeholder='Search Names..' id='Input' onChange={handleFilter} />
-                          
+
                             <tbody className=''>
                                 {data.map((item, index) =>
                                     (filter === '' || item.name.toUpperCase().includes(filter)) && (
                                         <tr key={index}>
                                             <td>{item.name}</td>
-                                           
+
                                         </tr>
                                     )
                                 )}
                             </tbody>
                         </div>
+                    </div>
+                    {/* color */}
+                    <div className='color-header'>
+                        <h1 className='text-2xl text-gray-900 mt-5'>Color</h1>
+                        <p className='border-b-2'></p>
+                        <div>
+                            <div className='color  flex items-center gap-4 mt-4'>
+                                <p className='g bg-green-600'></p>
+                                <p>Green</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='color flex items-center gap-4 '>
+                                <p className='g bg-red-600'></p>
+                                <p>Red</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='color flex items-center gap-4 '>
+                                <p className='g bg-yellow-500'></p>
+                                <p>Yellow</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='color flex items-center gap-4 '>
+                                <p className='g bg-black'></p>
+                                <p>Black</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div className='color flex items-center gap-4 '>
+                                <p className='g bg-blue-500'></p>
+                                <p>Blue</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* price  */}
+                    <div>
+                        <h1 className='text-2xl text-gray-900 mt-5'>Price</h1>
+                        <p className='border-b-2'></p>
+                        <div className='mt-4'>
+                            <div className='flex gap-3'>
+                                <p> <input type="checkbox" name="" id="" /></p>
+                                <p>$10.00 - $49.00</p>
+                            </div>
+                            <div className='flex gap-3'>
+                                <p><input type="checkbox" name="" id="" /></p>
+                                <p>$50.00 - $99.00</p>
+                            </div>
+                            <div className='flex gap-3'>
+                                <p><input type="checkbox" name="" id="" /></p>
+                                <p>$100.00 - $199.00</p>
+                            </div>
+                            <div className='flex gap-3'>
+                                <p><input type="checkbox" name="" id="" /></p>
+                                <p>$200.00+</p>
+                            </div>
+                        </div>
+                    </div>
+                    {/* reset button */}
+                    <div className='reset mt-3 w-40 '>
+                        <button className='text-center py-3 font-bold' style={{ display: 'block', margin: '0 auto' }}>
+                            <span className='inline-block w-full text-center'>Reset Button</span>
+                        </button>
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
