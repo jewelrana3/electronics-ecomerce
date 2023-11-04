@@ -91,7 +91,7 @@ const Header = () => {
             <li><Link to='/login'><span className='cardWith'><p>Login</p></span></Link></li>
             <li><Link to='/mycart'><span className='cardWith'><p>My Cart</p></span></Link></li>
             <li><Link to='/wishlist'><span className='cardWith'><p>My Wishlist</p></span></Link></li>
-            <li><Link to='/'><span className='cardWith'><p>CheckOut</p></span></Link></li>
+            <li><Link to='/checkout'><span className='cardWith'><p>CheckOut</p></span></Link></li>
             <li><Link to='/error'><span className='cardWith'><p>Error</p></span></Link></li>
              
             </div>

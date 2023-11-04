@@ -64,51 +64,17 @@ const Shop = () => {
                                 <div className='text-xl'> Ipad Phone & Tablets</div>
                                 <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
                             </div>
-                            <div className="flex items-center gap-2">
-                                <div className='text-xl'> Ipad Phone & Tablets</div>
-                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className='text-xl'> Ipad Phone & Tablets</div>
-                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <div className='text-xl'> Ipad Phone & Tablets</div>
-                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
-                            </div>
                         </button>
+                           <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
+                            <ul>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
                  
                     </div>
-                    <div className="button-container mt-2">
-                        <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
-                            <div className="flex items-center gap-2">
-                                <div> Ipad Phone & Tablets</div>
-                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
-                            </div>
-                        </button>
-                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
-                            <ul>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Contact</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="button-container mt-2">
-                        <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
-                            <div className="flex items-center gap-2">
-                                <div> Ipad Phone & Tablets</div>
-                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
-                            </div>
-                        </button>
-                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
-                            <ul>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Contact</li>
-                            </ul>
-                        </div>
-                    </div>
+                 
                     {/* Brands */}
                     <div className='mt-16'>
                         <h1 className='text-2xl text-gray-800'>Brands</h1>

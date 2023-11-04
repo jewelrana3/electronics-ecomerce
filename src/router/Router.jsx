@@ -12,6 +12,7 @@ import Privacy from "../page/Privacy/Privacy";
 import SignUp from "../password/SignUp";
 import Login from "../password/Login";
 import Shop from "../page/shop/Shop";
+import Checkout from "../page/Checkout/Checkout";
 
 
 export const router = createBrowserRouter([
@@ -64,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path:'/shop',
                 element:<Shop />
+            },
+            {
+                path:'/checkout',
+                element:<Checkout></Checkout>
             }
           
          
