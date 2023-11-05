@@ -56,7 +56,7 @@ const Shop = () => {
                 </div>
             </div>
 
-            <div className='flex  gap-10'>
+            <div className='md:flex  gap-10'>
                 <div className='w-4/5'>
                     <div className="button-container mt-28">
                         <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>

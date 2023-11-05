@@ -24,3 +24,34 @@
 .send{
     background-color: rgb(205, 39, 103);
 }
+
+.Australia .view-btn:hover{
+    background-color: rgb(205, 39, 103);
+    color: white;
+}
+/* media sreen section */
+@media (max-width:1170px) {
+    .contact-image .secondP{
+        font-size: 16px;
+        
+    }
+}
+@media (max-width:1020px) {
+    .contact-image .secondP{
+        font-size: 26px;
+        
+    }
+}
+
+@media (max-width:700px) {
+    .contact-header h1{
+        font-size: 30px;
+    }
+}
+
+@media (max-width:600px) {
+    .Australia {
+        padding: 0 10px;
+    }
+}
+
