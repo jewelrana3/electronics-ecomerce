@@ -68,7 +68,8 @@ export const router = createBrowserRouter([
             },
             {
                 path:'/checkout',
-                element:<Checkout></Checkout>
+                element:<Checkout></Checkout>,
+                loader:({})=>fetch('http://localhost:5000/addCartPost')
             }
           
          

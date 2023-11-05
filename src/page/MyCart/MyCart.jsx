@@ -9,7 +9,7 @@ import { useLoaderData } from 'react-router-dom';
 const MyCart = () => {
     const mycart = useLoaderData();
     const [users, setUsers] = useState(mycart);
-    console.log(users)
+
     
 
     const { image, title, price, classId } = users;

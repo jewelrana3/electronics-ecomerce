@@ -24,8 +24,6 @@ const Header = () => {
         setAddProduct(data)
       })
   }, [addProduct])
-
-
   const [wish] = useWishlist();
 
 
