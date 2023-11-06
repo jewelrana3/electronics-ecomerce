@@ -38,11 +38,11 @@ const About = () => {
                         <h1 className='text-5xl font-bold'>Welcome to our <br />Harri Shop</h1>
                     </div>
                 </div>
-                <div className='mt-48 px-32 flex '>
+                <div className='mt-48 px-10 md:px-20 lg:px-32 grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div className='' style={{ width: '1100px' }}>
                         <h2 className='text-3xl font-bold'>It started with a <br /> bang now we are here.</h2>
                     </div>
-                    <div className='text-gray-500 text-lg' style={{ width: '2000px' }}>
+                    <div className='text-gray-500 text-lg w-11/12 text-justify gap-6' >
                         <p>Ut at maximus magna. Vestibulum interdum sapien in facilisis imperdiet. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin ac placerat risus. Nullam eget tortor felis. Nulla facilisi.Vestibulum mattis diam non luctus elementum. Cras sollicitudin, nisi in semper viverra, felis diam consequat mi, quis tincidunt ligula</p>
                         <p className='mt-4'>Nam nibh diam, varius quis lectus eget, laoreet cursus metus. morbi augue lectus, dapibus eget justo nec, consectetur auctor nis luctus neque.!</p>
                     </div>

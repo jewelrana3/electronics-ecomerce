@@ -86,7 +86,7 @@ body {
 
 
 /* Two cart section */
-
+/* 
 .product {
   position: relative;
 }
@@ -157,7 +157,7 @@ body {
 }
 
 /* leftDrawer section */
-.leftDrawer {
+/* .leftDrawer {
   position: absolute;
   margin-top: -300px;
   margin-left: 320px;
@@ -198,7 +198,7 @@ body {
   border-style: solid;
   border-color: transparent transparent transparent rgb(205, 39, 103);
 
-}
+}  */
 
 
 
@@ -206,16 +206,7 @@ body {
 
 
 
-/* product details */
-.product p {
-  color: rgb(70, 65, 65);
-  margin-top: 15px;
-}
 
-.product span {
-  font-weight: 700;
-  color: rgb(28, 26, 26);
-}
 
 /* shopping-cart-length */
 .shopping-cart-length {

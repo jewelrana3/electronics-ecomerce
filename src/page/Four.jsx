@@ -22,7 +22,7 @@ const Four = () => {
                 </div>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20 gap-7'>
                 <div className="flex items-center">
                     <p className='fourPtag'><FaCarSide /></p>
                     <div>

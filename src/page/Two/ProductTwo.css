@@ -1,0 +1,275 @@
+.product {
+    position: relative;
+}
+
+.image-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease, bottom 0.3s ease;
+    width: 100%;
+}
+
+
+.add_to_cart {
+    background-color: rgb(9, 9, 9);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .5s;
+    font-weight: 600;
+}
+
+.add_to_cart:hover {
+    background-color: rgb(205, 39, 103);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+}
+
+.hovered-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.product:hover .hovered-image {
+    transform: scale(1.1);
+
+}
+
+.product:hover .leftDrawer {
+    right: 0px;
+    transform: translatex(-50%);
+    color: rgb(205, 39, 103);
+}
+
+.leftDrawer p:hover {
+    background-color: rgb(205, 39, 103);
+    color: white;
+
+}
+
+.product:hover .overlay {
+    display: block;
+}
+
+.product:hover .overlay {
+    transform: translateX(-50%) translateY(-40px);
+
+}
+
+
+.leftDrawer {
+    position: absolute;
+    margin-top: -300px;
+    right: -40px;
+    transition: transform 0.3s ease-in-out, right 0.4s ease;
+
+}
+
+.leftDrawer p {
+    background-color: white;
+    padding: 5px;
+
+}
+
+.text {
+    display: none;
+    font-size: 12px;
+    position: absolute;
+    background-color: rgb(205, 39, 103);
+    color: white;
+    left: -150px;
+    margin-top: -32px;
+    text-align: center;
+    width: 130px;
+    z-index: 1;
+
+}
+
+.icon:hover+.text {
+    display: block;
+    color: white;
+}
+
+.text::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 120px;
+    border-width: 12px 20px 14px 20px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgb(205, 39, 103);
+
+}
+
+
+.product p {
+    color: rgb(70, 65, 65);
+    margin-top: 15px;
+}
+
+.product span {
+    font-weight: 700;
+    color: rgb(28, 26, 26);
+}
+
+@media (max-width:768px) {
+    .leftDrawer {
+
+        background-color: brown;
+    }
+
+    .leftDrawer {
+        position: absolute;
+        margin-top: -600px;
+        transition: transform 0.3s ease-in-out, right 0.4s ease;
+
+    }
+
+    .product:hover .leftDrawer {
+        right: 0px;
+        transform: translatex(-50%);
+        color: rgb(205, 39, 103);
+    }
+}
+/* .product {
+    position: relative;
+}
+
+.image-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease, bottom 0.3s ease;
+    width: 100%;
+}
+
+.add_to_cart {
+    background-color: rgb(9, 9, 9);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color .5s;
+    font-weight: 600;
+}
+
+.add_to_cart:hover {
+    background-color: rgb(205, 39, 103);
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.hovered-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.product:hover .hovered-image {
+    transform: scale(1.1);
+}
+
+.product:hover .leftDrawer {
+    right: 0px;
+    transform: translatex(-50%);
+    color: rgb(205, 39, 103);
+}
+
+.leftDrawer p:hover {
+    background-color: rgb(205, 39, 103);
+    color: white;
+}
+
+.product:hover .overlay {
+    display: block;
+}
+
+.product:hover .overlay {
+    transform: translateX(-50%) translateY(-40px);
+} */
+
+/* leftDrawer section */
+/* .leftDrawer {
+    position: absolute;
+    margin-top: -300px;
+    right: -60px;
+    transition: transform 0.3s ease-in-out, right 0.4s ease;
+}
+
+.leftDrawer p {
+    background-color: white;
+    padding: 5px;
+}
+
+.text {
+    display: none;
+    font-size: 12px;
+    position: absolute;
+    background-color: rgb(205, 39, 103);
+    color: white;
+    left: -150px;
+    margin-top: -32px;
+    text-align: center;
+    width: 130px;
+    z-index: 1;
+}
+
+.icon:hover+.text {
+    display: block;
+    color: white;
+}
+
+.text::before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 120px;
+    border-width: 12px 20px 14px 20px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgb(205, 39, 103);
+} */
+
+/* product details */
+/* .product p {
+    color: rgb(70, 65, 65);
+    margin-top: 15px;
+}
+
+.product span {
+    font-weight: 700;
+    color: rgb(28, 26, 26);
+} */
+
+/* All time responsive margin-left */
+/* .leftDrawer {
+    margin-right: 10px;
+
+    background-color: brown;
+   
+}
+
+@media (max-width: 768px) {
+    .leftDrawer {
+        max-width: 768px;
+    }
+} */
