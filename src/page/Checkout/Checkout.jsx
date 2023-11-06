@@ -11,6 +11,7 @@ import PayCheck from './PayCheck';
 
 
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway)
+console.log(stripePromise)
 
 const Checkout = () => {
     const product = useLoaderData();

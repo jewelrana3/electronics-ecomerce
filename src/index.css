@@ -25,11 +25,14 @@ body {
   padding: 10px;
 }
 
-/* Two section */
-
 
 
 /* four section */
+.image img {
+  width: 400px;
+  height: 300px;
+}
+
 .fourPtag {
   border: 1px solid rgb(208, 182, 182);
   border-radius: 50%;
@@ -45,9 +48,7 @@ body {
 
 }
 
-.double {
-  border-radius: 30px 0 0 0;
-}
+/* five section */
 
 /* footer section */
 .foter p {
@@ -63,14 +64,11 @@ body {
 
 /* media query section */
 /* Apply styles for screens with a maximum width of 500px */
-@media (max-width: 500px) {
+/* @media (max-width: 500px) {
   .head {
     grid-template-columns: 1fr;
-    /* Change to a single column layout */
     gap: 20px;
-    /* Adjust the gap between elements */
     text-align: center;
-    /* Center-align text content */
   }
 
   .iphone {
@@ -79,10 +77,8 @@ body {
 
   .image {
     display: none;
-    /* Hide the image on small screens */
-
   }
-}
+} */
 
 
 /* Two cart section */
@@ -222,15 +218,25 @@ body {
 }
 
 /* sign up section */
-.signUp{
+.signUp {
   background-color: rgb(205, 39, 103);
 }
-.signUp:hover{
+
+.signUp:hover {
   background-color: rgb(16, 15, 16);
 }
-.login{
+
+.login {
   background-color: white;
   box-shadow: 5px 8px 30px rgb(231, 211, 211);
 }
 
-/* shop section */
+/* five section media query */
+@media (max-width:600px) {
+  .double button {
+    text-align: center;
+    width: 180px;
+    margin-top: 20px;
+    font-weight: 600;
+  }
+}

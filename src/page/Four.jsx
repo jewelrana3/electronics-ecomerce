@@ -7,11 +7,12 @@ import { RiSecurePaymentLine } from 'react-icons/ri';
 const Four = () => {
     return (
         <>
-            <div className='head mt-20 grid grid-cols-1 md:grid-cols-2 px-20 mb-20 '>
-                <div className='image h-full'>
-                    <img className='h-full' src="https://i.ibb.co/CQRQ3kx/apple-5-new-products-come-out-together-2.jpg" alt="" />
+            <div className='mt-20 md:flex md:px-20 mb-20 mx-auto'>
+                <div className='image w-64'>
+                    <img src="https://i.ibb.co/CQRQ3kx/apple-5-new-products-come-out-together-2.jpg" alt="image" />
                 </div>
-                <div className=' bg-slate-50'>
+
+                {/* <div className='w-1/2 bg-slate-50'>
                     <p className='mt-20 ml-10 text-gray-500 font-semibold text-xl mb-5'>Apple iPhone 12 Pro</p>
                     <h1 className='iphone ml-10 text-5xl font-bold'>The wait is on: <br /> iphone 12 max pro</h1>
                     <p className='ml-10 text-gray-600 font-semibold text-xl mt-3'>Last call for up to <span className='text-3xl text-black'>32%</span> off!</p>
@@ -19,7 +20,7 @@ const Four = () => {
                         <button >Buy Now</button>
                         <p><GoArrowRight /></p>
                     </div>
-                </div>
+                </div> */}
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20 gap-7'>

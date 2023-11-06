@@ -5,19 +5,18 @@ const PayCheck = () => {
     const elements = useElements();
 
     if (!stripe || !elements) {
-        return null; // You can return an error message or null here
+        return null; 
     }
 
     const handleSubmit = async (event) => {
-        event.preventDefault(); // Fixed the typo here
-        // Add your payment logic here
+        event.preventDefault(); 
+      
     }
 
     const card = elements.getElement(CardElement);
     if (card === null) {
-        return null; // You can return an error message or null here
+        return null;
     }
-
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -46,3 +45,4 @@ const PayCheck = () => {
 };
 
 export default PayCheck;
+
