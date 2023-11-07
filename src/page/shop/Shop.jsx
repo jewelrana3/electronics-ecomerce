@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import useProducts from '../../hooks/useProducts';
 import ShopProduct from './ShopProduct';
 import { FaHome } from 'react-icons/fa';
@@ -6,6 +6,7 @@ import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io';
 import { FiMenu } from 'react-icons/fi';
 import { PiDiamondsFourBold } from 'react-icons/pi';
 import './Dropdown.css'
+import { GiLoincloth } from 'react-icons/gi';
 
 
 const Shop = () => {
@@ -13,6 +14,7 @@ const Shop = () => {
     const [selectedSubject, setSelectedSubject] = useState("");
     const subjectArray = ["Front-end", "Back-end", "Node-end"];
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -56,25 +58,25 @@ const Shop = () => {
                 </div>
             </div>
 
-            <div className='md:flex  gap-10'>
-                <div className='w-4/5'>
-                    <div className="button-container mt-28">
-                        <button onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
-                            <div className="flex items-center gap-2">
+            <div className='lg:flex gap-10'>
+                <div className='lg:w-4/5 sideber'>
+                    <div className="mt-28">
+                        <div onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
+                            <div className="flex items-center justify-between cursor-pointer">
                                 <div className='text-xl'> Ipad Phone & Tablets</div>
-                                <div>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                                <div className=''>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
                             </div>
-                        </button>
-                           <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
+                        </div>
+                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
                             <ul>
                                 <li>Home</li>
                                 <li>About</li>
                                 <li>Contact</li>
                             </ul>
                         </div>
-                 
+
                     </div>
-                 
+
                     {/* Brands */}
                     <div className='mt-16'>
                         <h1 className='text-2xl text-gray-800'>Brands</h1>
@@ -167,6 +169,7 @@ const Shop = () => {
                         ></ShopProduct>)
                     }
                 </div>
+
             </div>
         </div>
     );

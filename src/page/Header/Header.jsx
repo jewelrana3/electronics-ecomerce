@@ -81,6 +81,7 @@ const Header = () => {
           <li className='mx-4 my-6 md:my-0'><Link to=''>Home</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/about'>About</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/shop'>Shop</Link></li>
+          <li className='mx-4 my-6 md:my-0'><Link to='/payments'>Payments</Link></li>
           <li class="dropdown text-black z-10">
             <button class="w3-button text-xl">Page</button>
             <div class="dropdown-content">
@@ -91,6 +92,7 @@ const Header = () => {
             <li><Link to='/wishlist'><span className='cardWith'><p>My Wishlist</p></span></Link></li>
             <li><Link to='/checkout'><span className='cardWith'><p>CheckOut</p></span></Link></li>
             <li><Link to='/error'><span className='cardWith'><p>Error</p></span></Link></li>
+            {/* <li><Link to='/payments'><span className='cardWith'><p>Payments</p></span></Link></li> */}
              
             </div>
           </li>

@@ -14,6 +14,9 @@ import Login from "../password/Login";
 import Shop from "../page/shop/Shop";
 import Checkout from "../page/Checkout/Checkout";
 
+import Payments from "../components/Payments";
+
+
 
 export const router = createBrowserRouter([
     {
@@ -70,7 +73,12 @@ export const router = createBrowserRouter([
                 path:'/checkout',
                 element:<Checkout></Checkout>,
                 loader:({})=>fetch('http://localhost:5000/addCartPost')
-            }
+            },
+            {
+                path:'/payments',
+                element:<Payments />
+            },
+          
           
          
         ]
