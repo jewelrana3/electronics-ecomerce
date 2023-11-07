@@ -65,46 +65,59 @@ const Contact = () => {
                 </form>
 
             </div>
-            <div className='lg:px-64 mt-20'>
-                <div className='lg:px-16 px-2 '>
+            <div className='lg:px-48 mt-20'>
+                <div className='header-two'>
                     <p className='text-start lg:text-xl'>LOCATIONS</p>
                     <h1 className='text-2xl md:text-5xl font-bold'>Come and visit our <br /> offices around the world</h1>
                 </div>
+              
                 <div>
-                    <div className='Australia grid grid-cols-1 md:grid-cols-2 mt-20 '>
-                        <div className='md:flex items-center justify-around office'>
-                            <p className='text-2xl font-bold mb-3'>Australia Office</p>
-                            <img className='m' src="https://i.ibb.co/f0WxpWV/contact-location-1.webp" alt="" />
+                    <div className='Australia mt-20 lg:flex justify-between'>
+                        <div className='aus-header lg:flex items-center justify-between  office'>
+                            <div>
+                                <p className='text-2xl font-bold mb-3'>Australia Office</p>
+                            </div>
+                            <div className='lg:ml-32'>
+                                <img className='m' src="https://i.ibb.co/f0WxpWV/contact-location-1.webp" alt="" />
+                                <p className='text-xl text-gray-500'>contact.location@website.com <br />6866-838</p>
+                            </div>
                         </div>
-                        <div className='md:flex justify-between mt-4'>
-                            <p className='text-xl text-gray-500'>contact.location@website.com <br />6866-838</p>
-                            <p className='view-btn border w-1/3 border-gray-200 flex items-center justify-center px-4 mt-4 py-3 text-black'><button>View Location</button></p>
+                        <div className='mt-4 '>
+                            <p style={{width:'auto'}} className='view-btn border border-gray-200 flex items-center justify-center px-4 mt-4 py-3 text-black'><button>View Location</button></p>
                         </div>
                     </div>
                     <p className='border-b-2 mt-6'></p>
                 </div>
                 <div>
-                    <div className='Australia grid grid-cols-1 md:grid-cols-2 mt-20 '>
-                        <div className='md:flex items-center justify-around office'>
-                            <p className='text-2xl font-bold mb-3'>Australia Office</p>
-                            <img className='m' src="https://i.ibb.co/f0WxpWV/contact-location-1.webp" alt="" />
+                    <div className='Australia mt-20 lg:flex justify-between'>
+                        <div className='aus-header lg:flex items-center justify-between  office'>
+                            <div>
+                                <p className='text-2xl font-bold mb-3'>Australia Office</p>
+                            </div>
+                            <div className='lg:ml-32'>
+                                <img className='m' src="https://i.ibb.co/f0WxpWV/contact-location-1.webp" alt="" />
+                                <p className='text-xl text-gray-500'>contact.location@website.com <br />6866-838</p>
+                            </div>
                         </div>
-                        <div className='md:flex justify-between mt-4'>
-                            <p className='text-xl text-gray-500'>contact.location@website.com <br />6866-838</p>
-                            <p className='view-btn border w-1/3 border-gray-200 flex items-center justify-center px-4 mt-4 py-3 text-black'><button>View Location</button></p>
+                        <div className='mt-4 '>
+                            <p style={{width:'auto'}} className='view-btn border border-gray-200 flex items-center justify-center px-4 mt-4 py-3 text-black'><button>View Location</button></p>
                         </div>
                     </div>
                     <p className='border-b-2 mt-6'></p>
                 </div>
                 <div>
-                    <div className='Australia grid grid-cols-1 md:grid-cols-2 mt-20 '>
-                        <div className='md:flex items-center justify-around office'>
-                            <p className='text-2xl font-bold mb-3'>Australia Office</p>
-                            <img className='m' src="https://i.ibb.co/f0WxpWV/contact-location-1.webp" alt="" />
+                    <div className='Australia mt-20 lg:flex justify-between'>
+                        <div className='aus-header lg:flex items-center justify-between  office'>
+                            <div>
+                                <p className='text-2xl font-bold mb-3'>Australia Office</p>
+                            </div>
+                            <div className='lg:ml-32'>
+                                <img className='m' src="https://i.ibb.co/f0WxpWV/contact-location-1.webp" alt="" />
+                                <p className='text-xl text-gray-500'>contact.location@website.com <br />6866-838</p>
+                            </div>
                         </div>
-                        <div className='md:flex justify-between mt-4'>
-                            <p className='text-xl text-gray-500'>contact.location@website.com <br />6866-838</p>
-                            <p className='view-btn border w-1/3 border-gray-200 flex items-center justify-center px-4 mt-4 py-3 text-black'><button>View Location</button></p>
+                        <div className='mt-4 '>
+                            <p style={{width:'auto'}} className='view-btn border border-gray-200 flex items-center justify-center px-4 mt-4 py-3 text-black'><button>View Location</button></p>
                         </div>
                     </div>
                     <p className='border-b-2 mt-6'></p>

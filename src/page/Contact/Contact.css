@@ -9,49 +9,85 @@
     justify-content: center;
 }
 
-.contact-image .firstP{
+.contact-image .firstP {
     text-decoration: underline;
-    font-size: 20px ;
+    font-size: 20px;
     color: gray;
     margin-top: 25px;
 }
 
-.contact-image .secondP{
+.contact-image .secondP {
     color: black;
     font-weight: 600;
     font-size: 25px;
 }
-.send{
+
+.send {
     background-color: rgb(205, 39, 103);
 }
 
-.Australia .view-btn:hover{
+.Australia .view-btn:hover {
     background-color: rgb(205, 39, 103);
     color: white;
 }
+
 /* media sreen section */
-@media (max-width:1170px) {
-    .contact-image .secondP{
-        font-size: 16px;
-        
+@media (max-width:1380px) {
+    .Australia {
+        display: flex;
     }
 }
+
+@media (max-width:1170px) {
+    .contact-image .secondP {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width:1149px) {
+    .Australia {
+        display: block;
+    }
+}
+
+@media (max-width:1024px) {
+    .Australia {
+        display: flex;
+        padding: 0 30px;
+        justify-content: space-around;
+    }
+    .contact-header h1{
+        font-size: 40px;
+     
+    }
+    .header-two{
+        padding: 0 80px;
+    }
+
+}
+
 @media (max-width:1020px) {
-    .contact-image .secondP{
+    .contact-image .secondP {
         font-size: 26px;
-        
+
     }
 }
 
 @media (max-width:700px) {
-    .contact-header h1{
+    .contact-header h1 {
         font-size: 30px;
     }
 }
 
-@media (max-width:600px) {
-    .Australia {
+@media (max-width:660px) {
+    .header-two{
         padding: 0 10px;
     }
-}
 
+    .Australia {
+       
+        padding: 0 10px;
+        display: block;
+    }
+}
