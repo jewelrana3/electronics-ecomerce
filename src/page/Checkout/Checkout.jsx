@@ -18,6 +18,7 @@ const Checkout = () => {
     const [title, price] = users;
     const amount = users.reduce((total, product) => total + product.price, 0);
     const prices = parseFloat(amount.toFixed(2))
+    console.log(prices)
 
 
     return (
@@ -109,7 +110,7 @@ const Checkout = () => {
                                     <div className=' mt-3 mb-3' key={product._id}>
                                         <div className='flex justify-between items-center'>
                                             <p className='font-semibold'>{product.title}</p>
-                                            <p className='font-semibold'>$:{product.price}</p>
+                                            <p className='font-semibold'>$:{product.prices}</p>
                                         </div>
                                         <p className='border-b-2 mt-4'></p>
                                     </div>
@@ -174,7 +175,7 @@ const Checkout = () => {
                         </div>
                         <div className='px-10 mt-10'>
                             <Elements stripe={stripePromise}>
-                                <Payments price={prices}></Payments>
+                                <Payments prices={prices}></Payments>
                             </Elements>
                         </div>
                     </div>
