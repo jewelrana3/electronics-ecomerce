@@ -12,9 +12,11 @@ import Privacy from "../page/Privacy/Privacy";
 import SignUp from "../password/SignUp";
 import Login from "../password/Login";
 import Shop from "../page/shop/Shop";
-import Checkout from "../page/Checkout/Checkout";
-
+import Checkout from "../page/CheckOut/CheckOut";
 import Payments from "../components/Payments";
+
+
+
 
 
 

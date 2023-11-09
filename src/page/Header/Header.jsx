@@ -26,6 +26,7 @@ const Header = () => {
         setAddProduct(data)
       })
   }, [addProduct])
+  
   const [wish] = useWishlist();
 
   const handleLogOut = () => {
@@ -95,7 +96,6 @@ const Header = () => {
           <li className='mx-4 my-6 md:my-0'><Link to=''>Home</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/about'>About</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/shop'>Shop</Link></li>
-          <li className='mx-4 my-6 md:my-0'><Link to='/payments'>Payments</Link></li>
           <li class="dropdown text-black z-10">
             <button class="w3-button text-xl">Page</button>
             <div class="dropdown-content">

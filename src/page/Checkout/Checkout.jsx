@@ -9,17 +9,47 @@ import Payments from '../../components/Payments';
 
 
 
+
+
 const stripePromise = loadStripe(import.meta.env.VITE_Payment_Gateway)
 
 const Checkout = () => {
     const product = useLoaderData();
     const [users, setUsers] = useState(product)
-
     const [title, price] = users;
     const amount = users.reduce((total, product) => total + product.price, 0);
     const prices = parseFloat(amount.toFixed(2))
-    console.log(prices)
+    const [formData, setFormData] = useState({
+        name: '',
+        city: '',
+        country: '',
+        number: '',
+    });
 
+    const { name, city, country, number } = formData;
+
+    const isFormValid = (formData) => {
+        const { name, city, country, number } = formData;
+        if (!name || !city || !country || !number) {
+          return false;
+        }
+      
+        return true;
+      };
+      
+
+    const handleFormSubmit = (e) => {
+        e.preventDefault();
+        console.log('Form data:', formData);
+    };
+
+    const handleInputChange = e => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
 
     return (
         <div className='text-center mb-20'>
@@ -46,44 +76,84 @@ const Checkout = () => {
                     <div className='ml-8'>
                         <h2 className='text-start  text-4xl font-bold mt-4 mb-4'>Billing Details</h2>
                         <p className='border-b-2'></p>
-                        <form className='text-start'>
+                        <form onSubmit={handleFormSubmit} className='text-start'>
                             <div className='mt-4'>
                                 <label className='text-gray-500 text-lg'>First Name <span className='text-red-600 font-bold'>*</span></label><br />
-                                <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='First Name' />
+                                <input className='w-full h-12 border mt-2 pl-5'
+                                    name='name'
+                                    type='text'
+                                    placeholder='First Name'
+                                    value={name}
+                                    onChange={handleInputChange} required />
                             </div>
                             <div className='mt-4'>
                                 <label className='text-gray-500 text-lg'>Last Name <span className='text-red-600 font-bold'>*</span></label><br />
-                                <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='Last Name' />
+                                <input className='w-full h-12 border mt-2 pl-5'
+                                    name='name'
+                                    type='text'
+                                    placeholder='Last Name'
+                                    value={name}
+                                    onChange={handleInputChange} required />
                             </div>
                             <div className='mt-4'>
                                 <label className='text-gray-500 text-lg'>Your Address <span className='text-red-600 font-bold'> *</span></label><br />
-                                <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='Your Address' />
+                                <input className='w-full h-12 border mt-2 pl-5'
+                                    name='address'
+                                    type='text'
+                                    placeholder='Your Address'
+                                    value={''}
+                                    onChange={handleInputChange} required />
                             </div>
                             <div className='mt-4'>
                                 <label className='text-gray-500 text-lg'>Town / City<span className='text-red-600 font-bold'> *</span></label><br />
-                                <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='Your Address' />
+                                <input className='w-full h-12 border mt-2 pl-5'
+                                    name='city'
+                                    type='text'
+                                    placeholder='City'
+                                    value={city}
+                                    onChange={handleInputChange} required />
                             </div>
                             <div className='flex gap-6'>
                                 <div className='w-1/2'>
                                     <label className='text-gray-500 text-lg'>State / Country<span className='text-red-600 font-bold'> *</span></label><br />
-                                    <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='Your Address' />
+                                    <input className='w-full h-12 border mt-2 pl-5'
+                                        name='country'
+                                        type='text'
+                                        placeholder='country'
+                                        value={country}
+                                        onChange={handleInputChange} required/>
                                 </div>
                                 <div className='w-1/2'>
                                     <label className='text-gray-500 text-lg'>Postcode<span className='text-red-600 font-bold'> *</span></label><br />
-                                    <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='Your Address' />
+                                    <input className='w-full h-12 border mt-2 pl-5'
+                                        name='changeZip'
+                                        type='text'
+                                        placeholder='Post code'
+                                        value={''}
+                                        onChange={handleInputChange} required />
                                 </div>
                             </div>
                             <div className='flex gap-6'>
                                 <div className='w-1/2'>
                                     <label className='text-gray-500 text-lg'>Email Address<span className='text-red-600 font-bold'> *</span></label><br />
-                                    <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='Your Address' />
+                                    <input className='w-full h-12 border mt-2 pl-5'
+                                        name='email'
+                                        type='email'
+                                        placeholder='Email Address'
+                                        value={''}
+                                        onChange={handleInputChange} required/>
                                 </div>
                                 <div className='w-1/2'>
                                     <label className='text-gray-500 text-lg'>Phone<span className='text-red-600 font-bold'> *</span></label><br />
-                                    <input className='w-full h-12 border mt-2 pl-5' type="text" placeholder='Your Address' />
+                                    <input className='w-full h-12 border mt-2 pl-5'
+                                        name='number'
+                                        type='number'
+                                        placeholder='phone'
+                                        value={number}
+                                        onChange={handleInputChange} required/>
                                 </div>
                             </div>
-
+                            <button type='submit'>Submit</button>
                         </form>
                     </div>
                 </div>
@@ -175,7 +245,7 @@ const Checkout = () => {
                         </div>
                         <div className='px-10 mt-10'>
                             <Elements stripe={stripePromise}>
-                                <Payments prices={prices}></Payments>
+                                <Payments prices={prices} formData={formData}></Payments>
                             </Elements>
                         </div>
                     </div>

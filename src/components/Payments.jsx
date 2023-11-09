@@ -6,14 +6,14 @@ import { useEffect, useState } from "react";
 
 import useAxiosSecure from "../hooks/useAxios";
 
-const Payments = ({ prices }) => {
-    console.log(prices)
+const Payments = ({ prices,formData }) => {
+
     const stripe = useStripe();
     const elements = useElements();
     const [cardErorr, setCardErorr] = useState('');
     const [clientSecret, setClientSecret] = useState("");
     const [axiosSecure] = useAxiosSecure();
-    const [process,setProcess] = useState(false);
+    const [process, setProcess] = useState(false);
     const [transactionId, setTransactionId] = useState('')
 
     useEffect(() => {
@@ -21,9 +21,10 @@ const Payments = ({ prices }) => {
             axiosSecure.post('/create-payment-intent', { prices })
                 .then(res => {
                     setClientSecret(res.data.clientSecret)
+                    console.log(res.data.clientSecret,'clg')
                 })
         }
-    }, [ ])
+    }, [prices,axiosSecure])
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -38,7 +39,7 @@ const Payments = ({ prices }) => {
 
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
-            card
+            card,
         })
 
         if (error) {
@@ -50,31 +51,46 @@ const Payments = ({ prices }) => {
         }
 
         setProcess(true)
-        const {paymentIntent, error:confirmError} = await stripe.confirmCardPayment(
-           clientSecret,
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(
+            clientSecret,
             {
-              payment_method: {
-                card: card,
-                billing_details: {
-                  name: 'Jenny Rosen',
+                payment_method: {
+                    card: card,
+                    billing_details: {
+                        name: 'Jenny Rosen',
+                    },
                 },
-              },
             },
-          );
+        );
 
-          if(confirmError){
+        if (confirmError) {
             console.log(confirmError)
-          }
-          console.log('payment intent',paymentIntent)
+        }
+        console.log('payment intent', paymentIntent)
 
-          setProcess(false)
+        setProcess(false)
 
-          if(paymentIntent.status === 'succeeded'){
+        if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
-            const transactionId = paymentIntent.id
-          }
+            
+            // save to the server 
+            const payments = {
+                transactionId: paymentIntent.id,
+                formData: formData,
+            }
+            axiosSecure.post('/payments',payments)
+            .then(res => {
+                console.log('res',res.data)
+                if(res.data.insertedId){
+                    // display shoe
+                }
+            })
+        }
     }
-
+    const isFormValid = () => {
+        return name && city && country && number;
+      };
+      
 
     return (
         <div>
@@ -95,8 +111,8 @@ const Payments = ({ prices }) => {
                         },
                     }}
                 />
-                <button className="w-full mt-9 order py-4 border-none" type="submit" 
-                disabled={!stripe || !clientSecret || process}>
+                <button className="w-full mt-9 order py-4 border-none" type="submit"
+                    disabled={!stripe || !clientSecret || !isFormValid || process}>
                     Place Order
                 </button>
             </form>
