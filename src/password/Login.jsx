@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../page/provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Login = () => {
+    const {signIn} = useContext(AuthContext)
     const [show, setShow] = useState(false);
     const [confirms, setConfirms] = useState(false)
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const navigate = useNavigate();
+    
+    const onSubmit = data =>{
+        signIn(data.email,data.password)
+        .then(result =>{
+          const logUser = result.user;
+          reset();
+          toast('Login SuccessFull');
+          navigate(from,{replace:true})
+        })
+        .error(error =>{
+            toast.error(error.message)
+        })
+    }
 
     return (
 

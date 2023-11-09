@@ -1,18 +1,20 @@
 
 import { BiSearch } from 'react-icons/bi';
-import { TbMan } from 'react-icons/tb';
 import { GiSelfLove } from 'react-icons/gi';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './Header.css';
 import useWishlist from '../../hooks/useWishlist';
+import { AuthContext } from '../provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 
 
 const Header = () => {
+  const {user,logOut} = useContext(AuthContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [addProduct, setAddProduct] = useState([]);
@@ -26,7 +28,19 @@ const Header = () => {
   }, [addProduct])
   const [wish] = useWishlist();
 
-
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        // Logout was successful
+        // Perform any actions you need after successful logout
+      })
+      .catch((error) => {
+        // An error occurred during logout
+        console.error('Error during logout:', error);
+      });
+  };
+  
+  
   // shopping cart delete
   const handleDelete = (_id) => {
     fetch(`http://localhost:5000/addCartPost/${_id}`, {
@@ -128,7 +142,9 @@ const Header = () => {
            
             </div> */}
             <BiSearch className='mx-4 my-5 md:my-0 text-3xl' />
-            <TbMan className='mx-4 my-5 md:my-0 text-3xl' />
+            {user ? <div className="flex flex-col md:flex-row md:items-center mt-5 md:mt-0" ><span className="tooltip" data-tip={user?.displayName}></span><button onClick={handleLogOut} className="btn btn-white btn-sm mb-2 text-black">Log Out</button></div> : <Link to='/login'>
+                <button className="btn btn-outline btn-sm text-black mb-2">login</button>
+            </Link>}
             <span>
               <Link to='/wishlist'><GiSelfLove style={{ fontSize: '30px' }} className='mx-4 my-5 md:my-0 relative ' /></Link>
               <span className='shopping-cart-length absolute -mt-10 ml-8'>{wishListLength}</span>

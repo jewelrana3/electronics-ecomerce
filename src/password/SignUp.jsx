@@ -2,7 +2,7 @@
 import React, { useContext, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../page/provider/AuthProvider';
 import { toast } from 'react-toastify';
 
@@ -19,13 +19,13 @@ const SignUp = () => {
             toast.error("Password Does not match!");
             return;
           }
-          
+
         createUser(data.email, data.password)
             .then((result) => {
                 if (result.user) {
                     const user = {
-                        name: user.name,
-                        email: user.email
+                        name: data.name,
+                        email: data.email
                     }
 
                     fetch('http://localhost:5000/users', {
