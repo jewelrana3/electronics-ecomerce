@@ -15,11 +15,11 @@ const Login = () => {
             <div className="relative">
                 <img className="w-full" src="https://i.ibb.co/QkHFkQR/seo-optimization-3d-render-cartoon-illustration-107791-16996-1.jpg" alt="" />
             </div>
-            <div style={{ marginTop: '-800px', width: '600px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto pb-20 pt-10 px-20">
+            <div style={{ marginTop: '-800px', width: '600px',height:'750px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto pb-20 pt-10 px-20">
                 <div>
                     <div className='ml-8'>
                         <h1 className='text-4xl font-bold'>Login Now!</h1>
-                        <p className='text-xl'>You can signup with you social account below</p>
+                        <p className='text-xl'>You can login with you social account below</p>
                     </div>
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                         <div className="form-control">
@@ -120,15 +120,14 @@ const Login = () => {
                             />
                         </div>
                     </form>
-                    {/* <div className="text-center mb-10">
-                <p className="-mb-4">
-                    Already have an account! Please
-                    <Link to="/login" className="hover:underline text-blue-500 ml-2">
-                        Login
-                    </Link>
-                </p>
-
-            </div> */}
+                    <div className="">
+                        <p className="mt-14 ml-9">
+                            An have an account! Please Sign Up
+                            <Link to="/signup" className="hover:underline text-blue-500 ml-2">
+                                SignUp
+                            </Link>
+                        </p>
+                    </div>
                 </div>
             </div>
 

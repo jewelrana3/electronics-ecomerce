@@ -1,21 +1,63 @@
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useForm } from "react-hook-form";
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../page/provider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const SignUp = () => {
+    const { createUser } = useContext(AuthContext)
     const [show, setShow] = useState(false);
     const [confirms, setConfirms] = useState(false)
-    const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const { register, handleSubmit,  formState: { errors } } = useForm();
+    const Navigate = useNavigate();
 
+
+    const onSubmit = (data) => {
+        if (data.password !== data.confirmPass) {
+            toast.error("Password Does not match!");
+            return;
+          }
+          
+        createUser(data.email, data.password)
+            .then((result) => {
+                if (result.user) {
+                    const user = {
+                        name: user.name,
+                        email: user.email
+                    }
+
+                    fetch('http://localhost:5000/users', {
+                        method: 'POST',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(user)
+                    })
+                        .then((res) => res.json())
+                        .then(data => {
+                            if (data.insertedId) {
+                                toast('User created successfully!');
+                                Navigate('/')
+                            }
+                        })
+                        .catch((err) => {
+                            console.error(err);
+                        });
+                }
+            })
+            .catch((err) => {
+                console.error(err.message);
+                throw err;
+            });
+    }
     return (
         <div className="mt-24 mb-24">
             <div className="relative">
                 <img className="w-full" src="https://i.ibb.co/QkHFkQR/seo-optimization-3d-render-cartoon-illustration-107791-16996-1.jpg" alt="" />
             </div>
-            <div style={{ marginTop: '-800px', width: '600px',height:'1000px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto px-20">
+            <div style={{ marginTop: '-800px', width: '600px', height: '700px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto px-20 ">
                 <div>
                     <div className='ml-8'>
                         <h1 className='text-4xl font-bold'>SignUp Now!</h1>
@@ -121,7 +163,7 @@ const SignUp = () => {
                         </div>
                     </form>
                     <div className="">
-                        <p className="mt-14">
+                        <p className="mt-14 ml-9">
                             Already have an account! Please
                             <Link to="/login" className="hover:underline text-blue-500 ml-2">
                                 Login
@@ -134,6 +176,7 @@ const SignUp = () => {
         </div>
 
     );
-};
+
+}
 
 export default SignUp;
