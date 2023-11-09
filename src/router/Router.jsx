@@ -14,6 +14,7 @@ import Login from "../password/Login";
 import Shop from "../page/shop/Shop";
 import Checkout from "../page/CheckOut/CheckOut";
 import Payments from "../components/Payments";
+import PaymentHistory from "../components/PaymentHistory";
 
 
 
@@ -80,6 +81,11 @@ export const router = createBrowserRouter([
                 path:'/payments',
                 element:<Payments />
             },
+            {
+                path:'/paymenthistory',
+                element:<PaymentHistory></PaymentHistory>,
+                // loader:({params}) => fetch(`http://localhost:5000/payments/${params.id}`)
+            }
           
           
          

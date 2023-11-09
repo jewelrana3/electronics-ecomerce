@@ -5,6 +5,7 @@ import './Payments.css'
 import { useEffect, useState } from "react";
 
 import useAxiosSecure from "../hooks/useAxios";
+import { useNavigate } from "react-router-dom";
 
 const Payments = ({ prices,formData }) => {
 
@@ -15,6 +16,7 @@ const Payments = ({ prices,formData }) => {
     const [axiosSecure] = useAxiosSecure();
     const [process, setProcess] = useState(false);
     const [transactionId, setTransactionId] = useState('')
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (prices > 0) {
@@ -72,10 +74,11 @@ const Payments = ({ prices,formData }) => {
 
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id)
-            
+            navigate('/paymenthistory')
             // save to the server 
             const payments = {
                 transactionId: paymentIntent.id,
+                Date: new Date(),
                 formData: formData,
             }
             axiosSecure.post('/payments',payments)

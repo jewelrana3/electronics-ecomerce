@@ -138,9 +138,7 @@ const Header = () => {
                 ))}
               </div>
             </div>
-            {/* <div className={`body-overlay ${isOpen ? 'visible' : ''}`}>
-           
-            </div> */}
+          
             <BiSearch className='mx-4 my-5 md:my-0 text-3xl' />
             {user ? <div className="flex flex-col md:flex-row md:items-center mt-5 md:mt-0" ><span className="tooltip" data-tip={user?.displayName}></span><button onClick={handleLogOut} className="btn btn-white btn-sm mb-2 text-black">Log Out</button></div> : <Link to='/login'>
                 <button className="btn btn-outline btn-sm text-black mb-2">login</button>

@@ -19,24 +19,26 @@ const Checkout = () => {
     const [title, price] = users;
     const amount = users.reduce((total, product) => total + product.price, 0);
     const prices = parseFloat(amount.toFixed(2))
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState([{
         name: '',
-        city: '',
-        country: '',
-        number: '',
-    });
+        city:'',
+        country:'',
+        number:'',
+    }
 
-    const { name, city, country, number } = formData;
+    ]);
+
+    const {name, city, country, number} = formData;
 
     const isFormValid = (formData) => {
         const { name, city, country, number } = formData;
         if (!name || !city || !country || !number) {
-          return false;
+            return false;
         }
-      
+
         return true;
-      };
-      
+    };
+
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
@@ -121,7 +123,7 @@ const Checkout = () => {
                                         type='text'
                                         placeholder='country'
                                         value={country}
-                                        onChange={handleInputChange} required/>
+                                        onChange={handleInputChange} required />
                                 </div>
                                 <div className='w-1/2'>
                                     <label className='text-gray-500 text-lg'>Postcode<span className='text-red-600 font-bold'> *</span></label><br />
@@ -141,7 +143,7 @@ const Checkout = () => {
                                         type='email'
                                         placeholder='Email Address'
                                         value={''}
-                                        onChange={handleInputChange} required/>
+                                        onChange={handleInputChange} required />
                                 </div>
                                 <div className='w-1/2'>
                                     <label className='text-gray-500 text-lg'>Phone<span className='text-red-600 font-bold'> *</span></label><br />
@@ -150,7 +152,7 @@ const Checkout = () => {
                                         type='number'
                                         placeholder='phone'
                                         value={number}
-                                        onChange={handleInputChange} required/>
+                                        onChange={handleInputChange} required />
                                 </div>
                             </div>
                             <button type='submit'>Submit</button>
