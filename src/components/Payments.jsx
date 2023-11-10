@@ -78,9 +78,10 @@ const Payments = ({ prices,formData }) => {
             // save to the server 
             const payments = {
                 transactionId: paymentIntent.id,
-                Date: new Date(),
+                Date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
                 formData: formData,
-            }
+              };
+              
             axiosSecure.post('/payments',payments)
             .then(res => {
                 console.log('res',res.data)

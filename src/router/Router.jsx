@@ -84,7 +84,7 @@ export const router = createBrowserRouter([
             {
                 path:'/paymenthistory',
                 element:<PaymentHistory></PaymentHistory>,
-                // loader:({params}) => fetch(`http://localhost:5000/payments/${params.id}`)
+                loader:({}) => fetch('http://localhost:5000/addCartPost')
             }
           
           
