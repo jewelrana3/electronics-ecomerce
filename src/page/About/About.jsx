@@ -223,7 +223,7 @@ const About = () => {
                 </div>
             </div> */}
             <div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-28 mt-10">
                     {
                         products.map(product => <FourMan
                             key={product._id}
