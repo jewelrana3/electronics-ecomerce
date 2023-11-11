@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineCloudServer } from 'react-icons/ai';
 import { BsArrowUpRight } from 'react-icons/bs';
 import './About.css'
@@ -11,21 +11,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-
 // import required modules
 import { Navigation } from 'swiper/modules';
 
 // Import Swiper styles
 import 'swiper/css/pagination';
-
-// import required modules
-import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import FourMan from './FourMan';
+import useProducts from "../../hooks/useProducts";
+
 
 const About = () => {
-    return (
+    const [products] = useProducts();
 
+    return (
         <div className='mb-40'>
 
             <div className='mb-20'>
@@ -192,63 +192,46 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <>
-                <Swiper
-                    slidesPerView={1}
-                    spaceBetween={10}
-                    pagination={{
-                        clickable: true,
-                    }}
-                    breakpoints={{
-                        '@0.00': {
-                            slidesPerView: 1,
-                            spaceBetween: 10,
-                        },
-                        '@0.75': {
-                            slidesPerView: 2,
-                            spaceBetween: 20,
-                        },
-                        '@1.00': {
-                            slidesPerView: 3,
-                            spaceBetween: 40,
-                        },
-                        '@1.50': {
-                            slidesPerView: 4,
-                            spaceBetween: 50,
-                        },
-                    }}
-                    modules={[Pagination]}
-                    className="mySwiper"
-                >
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                    <SwiperSlide>
-                        <img src="https://i.ibb.co/WyB8byP/team-1.webp" alt="" />
-                    </SwiperSlide>
-                </Swiper>
-            </>
+            {/* <div className='grid grid-cols-1 md:grid-cols-3 mx-auto px-24'>
+                <div>
+                    <img className='image-hover' src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
+                    <div>
+                        <h1>Guy Hakins</h1>
+                        <p>DEVELOPER</p>
+                    </div>
+                </div>
+                <div>
+                    <img className='image-hover' src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
+                    <div>
+                        <h1>Guy Hakins</h1>
+                        <p>DEVELOPER</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
+                    <div>
+                        <h1>Guy Hakins</h1>
+                        <p>DEVELOPER</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
+                    <div>
+                        <h1>Guy Hakins</h1>
+                        <p>DEVELOPER</p>
+                    </div>
+                </div>
+            </div> */}
+            <div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {
+                        products.map(product => <FourMan
+                            key={product._id}
+                            product={product}
+                        ></FourMan>)
+                    }
+                </div>
+            </div>
         </div>
 
 

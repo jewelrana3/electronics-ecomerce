@@ -125,7 +125,7 @@
 }
 
 @media (max-width:1400px) {
-   
+
     .leftDrawer {
         position: absolute;
         top: 330px;
@@ -141,10 +141,10 @@
 }
 
 @media (max-width:1024px) {
-   
+
     .leftDrawer {
         position: absolute;
-        top:350px;
+        top: 350px;
         transition: transform 0.3s ease-in-out, right 0.4s ease;
 
     }

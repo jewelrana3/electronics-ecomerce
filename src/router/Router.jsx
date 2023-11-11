@@ -15,6 +15,7 @@ import Shop from "../page/shop/Shop";
 import Checkout from "../page/CheckOut/CheckOut";
 import Payments from "../components/Payments";
 import PaymentHistory from "../components/PaymentHistory";
+import History from "../components/History";
 
 
 
@@ -85,6 +86,11 @@ export const router = createBrowserRouter([
                 path:'/paymenthistory',
                 element:<PaymentHistory></PaymentHistory>,
                 loader:({}) => fetch('http://localhost:5000/addCartPost')
+            },
+            {
+                path:'history',
+                element:<History></History>,
+                
             }
           
           

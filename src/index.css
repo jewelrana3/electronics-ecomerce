@@ -28,8 +28,11 @@ body {
 
 
 /* four section */
-.image img {
-  width: 400px;
+.phone {
+  background-color: rgb(248, 246, 246);
+}
+.images img {
+  /* width: 400px; */
   height: 300px;
 }
 
@@ -225,6 +228,9 @@ body {
 
 }
 
+
+
+
 /* five section media query */
 @media (max-width:1024px) {
   .double{
@@ -261,5 +267,18 @@ body {
   }
   .double input {
    border: 1px solid;
+  }
+  .iphone{
+    font-size: 24px;
+  }
+  .header-four{
+    width: 1400px;
+    margin-bottom: 20px;
+  }
+  .images{
+    margin-left: 0px;
+  }
+  .images img{
+    width: 850px;
   }
 }

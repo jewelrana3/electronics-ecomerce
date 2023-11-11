@@ -7,3 +7,9 @@
     background-color: rgb(225, 231, 236);
     width: 1100px;
 }
+.payment-last-div{
+    background-color: white;
+}
+.last-div h1{
+    font-weight: 600;
+}

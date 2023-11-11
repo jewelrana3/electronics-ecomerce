@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import './PaymentHistory.css'
+import History from './History';
 
 const PaymentHistory = () => {
     const pay = useLoaderData();
 
 
     const [paymentData, setPaymentData] = useState(null);
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -24,8 +24,8 @@ const PaymentHistory = () => {
 
     return (
         <div className='mb-28 '>
-            <div className='mt-28 text-left px-7 bgColor mx-auto py-5'>
-                <p>Thank you Juyel Haque Your order has been received!</p>
+            <div className='mt-28 text-left md:px-7 px-5 bgColor mx-auto py-5'>
+                <p>Thank you <span className='uppercase'>{[paymentData.formData.name]}</span> Your order has been received!</p>
             </div>
             <div className='mt-28 px-4 pad mx-auto py-8'>
                 <div>
@@ -40,42 +40,68 @@ const PaymentHistory = () => {
                         <h2 className='text-3xl font-bold'>INVOICE</h2>
                     </div>
                 </div>
-
                 <p className='border-b-2 border-solid border-white mt-5 mb-4'></p>
-
                 <div>
-                    {/* Map over the pay object and display key-value pairs */}
-                    {/* {Object.values(pay).map((va, index) => (
-                        <div key={index} className='mt-3'>
-                            <p className='text-3xl font-bold'>{va.formData.name}</p>
-                            <p className='text-xl'>{va.formData.country}</p>
-                            <p>{va.formData.city}</p>
-                            <p>ID: {paymentData._id}</p>
-                            <p>{va.formData.number}</p>
-                        </div>
-                    ))} */}
-                    <div>
-                        {paymentData ? (
-                            <div>
-                         
-                                <p>{[paymentData.formData.name]}</p>
-                                <p>{[paymentData.formData.country]}</p>
-                                <p>{[paymentData.formData.city]}</p>
-                                <p>{paymentData.Date}</p>
-                                {/* Display other properties as needed */}
+                    {paymentData ? (
+                        <div className='flex justify-between'>
+                            <div className=''>
+                                <p className='text-3xl font-bold uppercase'>{[paymentData.formData.name]}</p>
+                                <p className='uppercase mt-4'>{[paymentData.formData.country]}</p>
+                                <p className='uppercase'>{[paymentData.formData.city]}</p>
+                                <p className='uppercase'>{[paymentData.formData.number]}</p>
                             </div>
-                        ) : (
-                            <p>Loading...</p>
-                        )}
+                            <div className='mt-5'>
+                                <p><span className='font-semibold'>Date</span> : {paymentData.Date}</p>
+                            </div>
+                        </div>
+                    ) : (
+                        <p>Loading...</p>
+                    )}
+                </div>
+                <div>
+                    <div className='overflow-x-auto mt-10 payment-last-div'>
+                        <table className='table'>
+                            <thead>
+                                <tr className='text-lg font-semibold'>
+                                    <th>SL</th>
+                                    <th>Product Name</th>
+                                    <th>Quantity</th>
+                                    <th>Item Price</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody className=''>
+                                {
+                                    pay.map((pd, inx) => <tr key={pd._id}>
+                                        <td>{inx + 1}</td>
+                                        <td>{pd.title}</td>
+                                        <td>1</td>
+                                        <td>{pd.price}</td>
+                                        <td>{pd.price}</td>
+                                    </tr>)
+                                }
+
+                        
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div className='last-div grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10 mb-10'>
+                    <div>
+                        <h1>Payment Method</h1>
+                        <p>CARD</p>
                     </div>
                     <div>
-                        {
-                            pay.map((product) => (
-                                <div key={product._id}>
-                                    <p>{product.title}</p>
-                                </div>
-                            ))
-                        }
+                        <h1>Shipping Cost</h1>
+                        <p>$20</p>
+                    </div>
+                    <div>
+                        <h1>Discount</h1>
+                        <p>$00.0</p>
+                    </div>
+                    <div>
+                        <h1>Total Ammount</h1>
+                        <p className='text-red-500 font-bold'>$888</p>
                     </div>
                 </div>
             </div>
