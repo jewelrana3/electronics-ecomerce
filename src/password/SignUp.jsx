@@ -53,7 +53,7 @@ const SignUp = () => {
             });
     }
     return (
-        <div className="mt-24 mb-24">
+        <div className="pt-24 mb-24">
             <div className="relative">
                 <img className="w-full" src="https://i.ibb.co/QkHFkQR/seo-optimization-3d-render-cartoon-illustration-107791-16996-1.jpg" alt="" />
             </div>

@@ -14,12 +14,31 @@ const Shop = () => {
     const [selectedSubject, setSelectedSubject] = useState("");
     const subjectArray = ["Front-end", "Back-end", "Node-end"];
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [DropdownOpen, setDropdownOpen] = useState(false);
+    const [DropdownOpen3, setDropdownOpen3] = useState(false);
+    const [brand, setBrand] = useState(false);
+    const [color, setColor] = useState(false);
+    const [price, setPrice] = useState(false);
 
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
     };
-
+    const toggleDropdown2 = () => {
+        setDropdownOpen(!DropdownOpen);
+    };
+    const toggleDropdown3 = () => {
+        setDropdownOpen3(!DropdownOpen3);
+    };
+    const toggleBrand = () => {
+        setBrand(!brand);
+    };
+    const toggleColor = () => {
+        setColor(!color)
+    }
+    const togglePrice = () => {
+        setPrice(!price)
+    }
 
     // Brands section
     const [filter, setFilter] = useState('');
@@ -35,7 +54,7 @@ const Shop = () => {
 
 
     return (
-        <div className="md:px-20 mt-10">
+        <div className="md:px-20 pt-20 mb-40">
             <div className="flex">
                 <h2 className="ml-2 font-bold mb-10 flex items-center gap-2"><p><FaHome className='bg-white' /></p>Home <p><IoIosArrowForward /></p> Product</h2>
             </div>
@@ -57,85 +76,216 @@ const Shop = () => {
                     </form>
                 </div>
             </div>
-
-            <div className='lg:flex gap-10'>
+            <div className='large lg:flex gap-10'>
                 <div className='lg:w-4/5 sideber'>
                     <div className="mt-28">
-                        <div onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
-                            <div className="flex items-center justify-between cursor-pointer">
-                                <div className='text-xl'> Ipad Phone & Tablets</div>
-                                <div className=''>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                        <div>
+                            <div onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
+                                <div className="flex items-center justify-between cursor-pointer">
+                                    <div className=''> Ipad Phone & Tablets</div>
+                                    <div className=''>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                                </div>
+                            </div>
+                            <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
+                                <ul>
+                                    <div className='first  flex items-center gap-4 mt-4'>
+                                        <p className='f bg-black'></p>
+                                        <p>Ipad</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>iphone</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>Laptop</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>Laptop</p>
+
+                                    </div>
+                                    {/* <div className='first  flex items-center gap-4 mt-4'>
+                                    <p className='f bg-black'></p>
+                                    <p>samsung</p>
+                                </div>
+                                <div className='first  flex items-center gap-4 mt-4'>
+                                    <p className='f bg-black'></p>
+                                    <p>keyboard</p>
+                                </div> */}
+
+                                </ul>
                             </div>
                         </div>
-                        <div className={`myDropdown ${isDropdownOpen ? 'open' : ''}`}>
-                            <ul>
-                                <li>Home</li>
-                                <li>About</li>
-                                <li>Contact</li>
-                            </ul>
-                        </div>
+                        <div className='mt-2'>
+                            <div onClick={toggleDropdown2} className={`content ${DropdownOpen ? 'bg-red' : ''}`}>
+                                <div className="flex items-center justify-between cursor-pointer">
+                                    <div className=''> Ipad Phone & Tablets</div>
+                                    <div className=''>{DropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                                </div>
+                            </div>
+                            <div className={`myDropdown ${DropdownOpen ? 'open' : ''}`}>
+                                <ul>
+                                    <div className='first  flex items-center gap-4 mt-4'>
+                                        <p className='f bg-black'></p>
+                                        <p>Ipad</p>
 
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>iphone</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>Laptop</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>Laptop</p>
+
+                                    </div>
+                                    {/* <div className='first  flex items-center gap-4 mt-4'>
+                                    <p className='f bg-black'></p>
+                                    <p>samsung</p>
+                                </div>
+                                <div className='first  flex items-center gap-4 mt-4'>
+                                    <p className='f bg-black'></p>
+                                    <p>keyboard</p>
+                                </div> */}
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div className='mt-2'>
+                            <div onClick={toggleDropdown3} className={`content ${DropdownOpen3 ? 'bg-red' : ''}`}>
+                                <div className="flex items-center justify-between cursor-pointer">
+                                    <div className=''> Ipad Phone & Tablets</div>
+                                    <div className=''>{DropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                                </div>
+                            </div>
+                            <div className={`myDropdown ${DropdownOpen3 ? 'open' : ''}`}>
+                                <ul>
+                                    <div className='first  flex items-center gap-4 mt-4'>
+                                        <p className='f bg-black'></p>
+                                        <p>Ipad</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>iphone</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>Laptop</p>
+
+                                    </div>
+                                    <div className='first  flex items-center gap-4 mt-2'>
+                                        <p className='f bg-black'></p>
+                                        <p>Laptop</p>
+
+                                    </div>
+                                    {/* <div className='first  flex items-center gap-4 mt-4'>
+                                    <p className='f bg-black'></p>
+                                    <p>samsung</p>
+                                </div>
+                                <div className='first  flex items-center gap-4 mt-4'>
+                                    <p className='f bg-black'></p>
+                                    <p>keyboard</p>
+                                </div> */}
+
+                                </ul>
+                            </div>
+
+                        </div>
                     </div>
 
                     {/* Brands */}
-                    <div className='mt-16'>
-                        <h1 className='text-2xl text-gray-800'>Brands</h1>
+                    <div className='mt-14'>
+                        {/* <h1 className='text-2xl text-gray-800'>Brands</h1> */}
+                        <div onClick={toggleBrand} className={`content ${brand ? 'bg-red' : ''}`}>
+                            <div className="flex items-center justify-between cursor-pointer">
+                                <div className=''>Brands</div>
+                                <div className=''>{brand ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                        </div>
                         <p className='border-b-2'></p>
-                        <div className='mt-4'>
-                            <input className='border border-black pl-5 mb-7' type="text" placeholder='Search Names..' id='Input' onChange={handleFilter} />
-
-                            <tbody className=''>
-                                {data.map((item, index) =>
-                                    (filter === '' || item.name.toUpperCase().includes(filter)) && (
-                                        <tr key={index}>
-                                            <td>{item.name}</td>
-
-                                        </tr>
-                                    )
-                                )}
-                            </tbody>
+                        <div className={`myDropdown ${brand ? 'open' : ''}`}>
+                            <div className='mt-3'>
+                                <input className='border border-black pl-5 mb-7 w-5/6' type="text" placeholder='Search Names..' id='Input' onChange={handleFilter} />
+                                <tbody className=''>
+                                    {data.map((item, index) =>
+                                        (filter === '' || item.name.toUpperCase().includes(filter)) && (
+                                            <tr key={index}>
+                                                <div className='first flex items-center '>
+                                                    <p className='f bg-black'></p>
+                                                    <td>{item.name}</td>
+                                                </div>
+                                            </tr>
+                                        )
+                                    )}
+                                </tbody>
+                            </div>
                         </div>
                     </div>
                     {/* color */}
-                    <div className='color-header'>
-                        <h1 className='text-2xl text-gray-900 mt-5'>Color</h1>
+                    <div className='color-header mt-5'>
+                        <div onClick={toggleColor} className={`content ${color ? 'bg-red' : ''}`}>
+                            <div className="flex items-center justify-between cursor-pointer">
+                                <div className=''>Color</div>
+                                <div className=''>{color ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                        </div>
                         <p className='border-b-2'></p>
-                        <div>
-                            <div className='color  flex items-center gap-4 mt-4'>
-                                <p className='g bg-green-600'></p>
-                                <p>Green</p>
+                        <div className={`myDropdown ${color ? 'open' : ''}`}>
+                            <div>
+                                <div className='color  flex items-center gap-4 mt-4'>
+                                    <p className='g bg-green-600'></p>
+                                    <p>Green</p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <div className='color flex items-center gap-4 '>
-                                <p className='g bg-red-600'></p>
-                                <p>Red</p>
+                            <div>
+                                <div className='color flex items-center gap-4 '>
+                                    <p className='g bg-red-600'></p>
+                                    <p>Red</p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <div className='color flex items-center gap-4 '>
-                                <p className='g bg-yellow-500'></p>
-                                <p>Yellow</p>
+                            <div>
+                                <div className='color flex items-center gap-4 '>
+                                    <p className='g bg-yellow-500'></p>
+                                    <p>Yellow</p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <div className='color flex items-center gap-4 '>
-                                <p className='g bg-black'></p>
-                                <p>Black</p>
+                            <div>
+                                <div className='color flex items-center gap-4 '>
+                                    <p className='g bg-black'></p>
+                                    <p>Black</p>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <div className='color flex items-center gap-4 '>
-                                <p className='g bg-blue-500'></p>
-                                <p>Blue</p>
+                            <div>
+                                <div className='color flex items-center gap-4 '>
+                                    <p className='g bg-blue-500'></p>
+                                    <p>Blue</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {/* price  */}
-                    <div>
-                        <h1 className='text-2xl text-gray-900 mt-5'>Price</h1>
+                    <div className='mt-5'>
+                        {/* <h1 className='text-2xl text-gray-900 mt-5'>Price</h1> */}
+                        <div onClick={togglePrice} className={`content ${price ? 'bg-red' : ''}`}>
+                            <div className="flex items-center justify-between cursor-pointer">
+                                <div className=''>Price</div>
+                                <div className=''>{price ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
+                            </div>
+                        </div>
                         <p className='border-b-2'></p>
-                        <div className='mt-4'>
+                        <div className={`myDropdown ${price ? 'open' : ''}`}>
                             <div className='flex gap-3'>
                                 <p> <input type="checkbox" name="" id="" /></p>
                                 <p>$10.00 - $49.00</p>

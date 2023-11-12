@@ -8,8 +8,8 @@ const Nabver = () => {
                     <p className="text-xl ml-2"> <span className=''>Best Ear</span> <br /> Headphones</p>
                 </div>
                 <h1 className="text-7xl font-bold">Find Your <br />Best Studio<span>.</span></h1>
-                <div className="mt-10 w-24 items-center border border-indigo-600 md:flex justify-around">
-                    <button>Show </button>
+                <div className="mt-10 w-28 items-center border border-indigo-600 flex justify-around">
+                    <button className=''>Show </button>
                     <p><GoArrowRight /></p>
                 </div>
             </div>

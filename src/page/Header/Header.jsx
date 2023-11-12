@@ -78,7 +78,7 @@ const Header = () => {
 
   return (
     <div>
-      <nav className='border-b-2 fixed w-full bg-white py-4 px-6 md:flex md:items-center md:justify-between cursor-pointer'>
+      <nav className='border-b-2 z-10 mt-0 fixed w-full bg-white py-4 px-6 md:flex md:items-center md:justify-between cursor-pointer'>
         <div className='flex items-center justify-between'>
           <span>
             <img src="https://hamart-shop.vercel.app/_next/static/media/logo-black.de19b08e.svg" alt="" />
@@ -92,7 +92,7 @@ const Header = () => {
           </span>
         </div>
 
-        <ul className={`header md:flex md:items-center z-[1] md:z-auto md:static absolute ${isMenuOpen ? 'block' : 'hidden'} text-black w-full md:w-auto md:py-0 py-4`}>
+        <ul className={`header md:flex md:items-center z-[1] md:static absolute ${isMenuOpen ? 'block' : 'hidden'} text-black w-full md:w-auto md:py-0 py-4`}>
           <li className='mx-4 my-6 md:my-0'><Link to=''>Home</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/about'>About</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/shop'>Shop</Link></li>
