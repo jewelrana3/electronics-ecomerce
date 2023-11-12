@@ -64,6 +64,21 @@ body {
 /* global left border */
 .global {
   border-left: 2px solid red;
+  height: 60px;
+  margin-bottom: 20px;
+}
+.second {
+  border-left: 2px solid red;
+  height: 50px;
+  margin-bottom: 70px;
+}
+.top{
+  font-weight: 600;
+}
+.top:hover{
+  color: rgb(219, 27, 132);
+  cursor: pointer;
+ 
 }
 
 /* media query section */
