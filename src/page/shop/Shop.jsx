@@ -11,15 +11,16 @@ import { GiLoincloth } from 'react-icons/gi';
 
 const Shop = () => {
     const [products] = useProducts();
-    const [selectedSubject, setSelectedSubject] = useState("");
-    const subjectArray = ["Front-end", "Back-end", "Node-end"];
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [priceRange, setPriceRange] = useState('all');
     const [DropdownOpen, setDropdownOpen] = useState(false);
     const [DropdownOpen3, setDropdownOpen3] = useState(false);
     const [brand, setBrand] = useState(false);
     const [color, setColor] = useState(false);
     const [price, setPrice] = useState(false);
 
+   
+  
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -52,6 +53,26 @@ const Shop = () => {
         setFilter(e.target.value.toUpperCase())
     }
 
+    // sort price
+    // const filterAndSortProducts = (a, b) => {
+    //     console.log("a.price:", typeof (a.price));
+    //     console.log("b.price:", b.price);
+
+    //     if (priceRange === "all") {
+    //         // Show all products
+    //         return 0;
+    //     } else if (priceRange === "low" && a.price <= 500) {
+    //         // Below $500
+    //         return a.price - b.price;
+    //     } else if (priceRange === "high" && a.price > 500) {
+    //         // Above $500
+    //         return a.price - b.price;
+    //     }
+    //     return 0;
+    // };
+
+    // const filteredAndSortedProducts = products.slice().sort(filterAndSortProducts);
+    // console.log(filteredAndSortedProducts)
 
     return (
         <div className="md:px-20 pt-20 mb-40">
@@ -65,15 +86,15 @@ const Shop = () => {
                 <div className='flex items-center'>
                     <p><FiMenu className='mr-3' /></p>
                     <p><PiDiamondsFourBold className='mr-40' /></p>
-                    <form name="form1" id="form1">
-                        <select name="subject" value={selectedSubject} onChange={(e) => setSelectedSubject(e.target.value)}>
-                            {subjectArray.map((subject) => (
-                                <option key={subject} value={subject}>
-                                    {subject}
-                                </option>
-                            ))}
+                    {/* <form>
+                        <label>Sort by:</label>
+                        <select name="sortBy" value={sortBy} onChange={handleSortChange}>
+                            <option value="">None</option>
+                            <option value="price">Price</option>
+                         
                         </select>
-                    </form>
+                    </form> */}
+
                 </div>
             </div>
             <div className='large lg:flex gap-10'>
@@ -313,12 +334,18 @@ const Shop = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
                     {
+
                         products.map(product => <ShopProduct
                             key={product._id}
                             product={product}
                         ></ShopProduct>)
                     }
                 </div>
+
+            </div>
+
+            {/* test mode */}
+            <div>
 
             </div>
         </div>
