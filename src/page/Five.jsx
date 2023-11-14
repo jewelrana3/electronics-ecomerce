@@ -2,7 +2,7 @@
 
 const Five = () => {
     return (
-        <div className="mt-4 lg:mt-24  md:mb-24 lg:mb-32 mb-2">
+        <div className="head mt-4 lg:mt-24  md:mb-24 lg:mb-32 mb-2">
             <div className="relative">
                 <img className="w-full h-auto md:h-72" src="https://i.ibb.co/Dz6cLZT/merry-christmas-red-background-1361-3542-1.jpg" alt="" />
             </div>

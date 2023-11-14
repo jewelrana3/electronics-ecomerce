@@ -14,6 +14,7 @@ const PaymentHistory = () => {
                 const response = await fetch('http://localhost:5000/payments/ka');
                 const data = await response.json();
                 setPaymentData(data);
+                console.log(data)
             } catch (error) {
                 console.error('Error fetching payment data:', error);
             }
@@ -23,11 +24,11 @@ const PaymentHistory = () => {
     }, []);
 
     return (
-        <div className='mb-28 '>
-            <div className='mt-28 text-left md:px-7 px-5 bgColor mx-auto py-5'>
-                <p>Thank you <span className='uppercase'>{[paymentData.formData.name]}</span> Your order has been received!</p>
+        <div className='mb-28 pt-28'>
+            <div className=' text-left md:px-7 px-5 bgColor mx-auto py-5'>
+                <p>Thank you <span className='uppercase'>{paymentData ? <span>{[paymentData.formData.name]} </span> : <span>Loading...</span>}</span> Your order has been received!</p>
             </div>
-            <div className='mt-28 px-4 pad mx-auto py-8'>
+            <div className='mt-16 px-4 pad mx-auto py-8'>
                 <div>
                     <img src="https://hamart-shop.vercel.app/_next/static/media/logo-black.de19b08e.svg" alt="" />
                 </div>

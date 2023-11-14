@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../hooks/useAxios";
 import { useNavigate } from "react-router-dom";
 
-const Payments = ({ prices,formData }) => {
+const Payments = ({ prices, formData }) => {
 
     const stripe = useStripe();
     const elements = useElements();
@@ -23,10 +23,11 @@ const Payments = ({ prices,formData }) => {
             axiosSecure.post('/create-payment-intent', { prices })
                 .then(res => {
                     setClientSecret(res.data.clientSecret)
-                    console.log(res.data.clientSecret,'clg')
+
                 })
         }
-    }, [prices,axiosSecure])
+    }, [prices, axiosSecure])
+
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -80,21 +81,23 @@ const Payments = ({ prices,formData }) => {
                 transactionId: paymentIntent.id,
                 Date: new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' }),
                 formData: formData,
-              };
-              
-            axiosSecure.post('/payments',payments)
-            .then(res => {
-                console.log('res',res.data)
-                if(res.data.insertedId){
-                    // display shoe
-                }
-            })
+            };
+
+            axiosSecure.post('/payments', payments)
+                .then(res => {
+                    console.log('res', res.data)
+                    if (res.data.insertedId) {
+                        // display shoe
+                    }
+                })
         }
+
     }
+    
     const isFormValid = () => {
-        return name && city && country && number;
-      };
-      
+        return formData.name && formData.city && formData.number && formData.country ;
+        // return formData.name && formData.city && formData.phone && formData.country && formData.last_name && formData.code && formData.email && formData.address;
+    };
 
     return (
         <div>
@@ -116,12 +119,14 @@ const Payments = ({ prices,formData }) => {
                     }}
                 />
                 <button className="w-full mt-9 order py-4 border-none" type="submit"
-                    disabled={!stripe || !clientSecret || !isFormValid || process}>
+                    disabled={!stripe || !clientSecret || process || !isFormValid()}>
                     Place Order
                 </button>
             </form>
             {cardErorr && <p className="text-red-500 text-left mt-6">{cardErorr}</p>}
             {transactionId && <p className="text-green-500 text-left mt-6">Transaction Id Successfull {transactionId}</p>}
+
+            
         </div>
     );
 };

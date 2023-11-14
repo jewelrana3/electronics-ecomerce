@@ -3,7 +3,7 @@ import './Privacy.css'
 
 const Privacy = () => {
     return (
-        <div className=' mb-32'>
+        <div className='pt-28 mb-24'>
             <div className='mt-32 text-center'>
                 <h1 className='text-5xl font-bold'>Privacy Policy</h1>
                 <p className='mt-5 text-xl'>Your privacy is important to us. It is Harry’s policy to respect your privacy regarding <br />

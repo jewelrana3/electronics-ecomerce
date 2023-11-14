@@ -7,10 +7,10 @@ import { AuthContext } from '../page/provider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const SignUp = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, profileUser } = useContext(AuthContext)
     const [show, setShow] = useState(false);
     const [confirms, setConfirms] = useState(false)
-    const { register, handleSubmit,  formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const Navigate = useNavigate();
 
 
@@ -18,16 +18,17 @@ const SignUp = () => {
         if (data.password !== data.confirmPass) {
             toast.error("Password Does not match!");
             return;
-          }
+        }
 
         createUser(data.email, data.password)
             .then((result) => {
                 if (result.user) {
+                    profileUser(data.name, data.photoURL)
                     const user = {
                         name: data.name,
                         email: data.email
                     }
-
+                    console.log(user)
                     fetch('http://localhost:5000/users', {
                         method: 'POST',
                         headers: {
@@ -158,7 +159,7 @@ const SignUp = () => {
                             <input style={{ width: '540px', }}
                                 className="signUp btn text-white"
                                 type="submit"
-                                value="Login"
+                                value="SignUp"
                             />
                         </div>
                     </form>

@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineEye } from 'react-icons/ai';
 import { GiSelfLove } from 'react-icons/gi';
 import { BiLink } from 'react-icons/bi';
+import { CiShoppingCart } from "react-icons/ci";
 
 const ProductTwo = ({ product }) => {
 
@@ -20,24 +21,24 @@ const ProductTwo = ({ product }) => {
             },
             body: JSON.stringify(navItem)
         })
-            
+
     }
 
-    const wishlist = (item) =>{
+    const wishlist = (item) => {
         console.log(item)
         const wishItem = { classId: _id, image, title, price, suk, category, tags, Share }
-        fetch('http://localhost:5000/wishlist',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch('http://localhost:5000/wishlist', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(wishItem)
+            body: JSON.stringify(wishItem)
         })
-        .then(res => res.json())
-        .then(data =>{
-            ''
-        })
-       
+            .then(res => res.json())
+            .then(data => {
+                ''
+            })
+
     }
 
 
@@ -61,12 +62,15 @@ const ProductTwo = ({ product }) => {
 
                 <div className={`overlay ${isHovered ? 'active' : ''}`}>
                     <button onClick={() => addToCart(toast(`${title} add to cart`))} className="add_to_cart w-full bg-black text-white">
-                        Add Cart
+                    <div className="flex items-center justify-center gap-5">
+                        <div><CiShoppingCart className="text-2xl"/></div>
+                        <div>   Add To Cart</div>
+                    </div>
                     </button>
                 </div>
                 <div className="leftDrawer text-2xl cursor-pointer">
                     <div>
-                        <p className="icon"><GiSelfLove onClick={()=> wishlist(toast(`${title}add to wishlist`))}/></p>
+                        <p className="icon"><GiSelfLove onClick={() => wishlist(toast(`${title}add to wishlist`))} /></p>
                         <span className="text">Add To Wishlist</span>
                     </div>
                     <div>

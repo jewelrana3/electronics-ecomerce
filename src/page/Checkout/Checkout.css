@@ -4,3 +4,22 @@
     height: 9px;
     border-radius: 50%;
   }
+
+
+  /* media sreen */
+  @media (max-width:1024px) {
+    .juyel{
+      display: none;
+    }
+  }
+  @media (max-width:768px) {
+    .customer{
+      width: 500px;
+    }
+    .first-div .billing{
+      width: 400px;
+      font-size: 30px;
+    }
+  }
+
+

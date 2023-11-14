@@ -3,7 +3,11 @@
 @tailwind utilities;
 
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
+  font-family: Arial, sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+
+
 }
 
 /* header section */
@@ -249,7 +253,7 @@ body {
 /* five section media query */
 @media (max-width:1024px) {
   .double{
-    background: red;
+    background: white;
     height: 250px;
   }
   .double h1{
@@ -267,10 +271,11 @@ body {
 }
 
 @media (max-width:768px) {
-  .double{
-    background: wheat;
-    margin-top: -330px;
-    height: auto;
+  .head{
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
   
   }

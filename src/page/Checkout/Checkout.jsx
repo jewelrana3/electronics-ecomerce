@@ -19,25 +19,16 @@ const Checkout = () => {
     const [title, price] = users;
     const amount = users.reduce((total, product) => total + product.price, 0);
     const prices = parseFloat(amount.toFixed(2))
-    const [formData, setFormData] = useState([{
+    const [formData, setFormData] = useState({
         name: '',
         city:'',
-        country:'',
         number:'',
-    }
-
-    ]);
-
-    const {name, city, country, number} = formData;
-
-    const isFormValid = (formData) => {
-        const { name, city, country, number } = formData;
-        if (!name || !city || !country || !number) {
-            return false;
-        }
-
-        return true;
-    };
+        country:'',
+        code:'',
+        last_name:'',
+        address:'',
+        email:'',
+    });
 
 
     const handleFormSubmit = (e) => {
@@ -47,12 +38,12 @@ const Checkout = () => {
 
     const handleInputChange = e => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+        setFormData({...formData,[name]: value});
     };
+   
 
+
+  
     return (
         <div className='text-center mb-20'>
             <div className='header-wishlist mb-20'>
@@ -64,37 +55,37 @@ const Checkout = () => {
                 </div>
             </div>
 
-            <div className='flex gap-7 px-20'>
-                <p className='border-b-4 border-red-500 w-1/2'></p>
-                <p className='border-b-4 border-red-500 w-1/2'></p>
+            <div className='flex gap-7 px-10'>
+                <p className='border-b-4 border-red-500 w-full lg:w-1/2'></p>
+                <p className=' border-b-4 border-red-500 w-1/2 juyel'></p>
             </div>
 
-            <div className='flex gap-7 px-20'>
-                <div className='w-1/2'>
-                    <div className='mt-4 ml-8 flex items-center gap-3'>
+            <div className='lg:flex gap-7 lg:px-20 text-left px-10'>
+                <div className='lg:w-1/2'>
+                    <div className='mt-4 flex gap-3'>
                         <p><AiFillCreditCard /></p>
-                        <p>Returning customer? Click here to login</p>
+                        <p className='w-full customer '>Returning customer? Click here to login</p>
                     </div>
-                    <div className='ml-8'>
-                        <h2 className='text-start  text-4xl font-bold mt-4 mb-4'>Billing Details</h2>
-                        <p className='border-b-2'></p>
+                    <div className=' first-div'>
+                        <h2 className='billing text-start text-4xl font-bold mt-4 mb-4'>Billing Details</h2>
+                        {/* <p className='border-b-2'></p> */}
                         <form onSubmit={handleFormSubmit} className='text-start'>
-                            <div className='mt-4'>
+                            <div className='mt-4 form-input '>
                                 <label className='text-gray-500 text-lg'>First Name <span className='text-red-600 font-bold'>*</span></label><br />
-                                <input className='w-full h-12 border mt-2 pl-5'
+                                <input className='input-btn w-full  h-12 border mt-2 pl-5'
                                     name='name'
                                     type='text'
                                     placeholder='First Name'
-                                    value={name}
+                                    value={formData.name}
                                     onChange={handleInputChange} required />
                             </div>
                             <div className='mt-4'>
                                 <label className='text-gray-500 text-lg'>Last Name <span className='text-red-600 font-bold'>*</span></label><br />
                                 <input className='w-full h-12 border mt-2 pl-5'
-                                    name='name'
+                                    name='last_name'
                                     type='text'
                                     placeholder='Last Name'
-                                    value={name}
+                                    value={formData.last_name}
                                     onChange={handleInputChange} required />
                             </div>
                             <div className='mt-4'>
@@ -103,7 +94,7 @@ const Checkout = () => {
                                     name='address'
                                     type='text'
                                     placeholder='Your Address'
-                                    value={''}
+                                    value={formData.address}
                                     onChange={handleInputChange} required />
                             </div>
                             <div className='mt-4'>
@@ -112,7 +103,7 @@ const Checkout = () => {
                                     name='city'
                                     type='text'
                                     placeholder='City'
-                                    value={city}
+                                    value={formData.city}
                                     onChange={handleInputChange} required />
                             </div>
                             <div className='flex gap-6'>
@@ -122,16 +113,16 @@ const Checkout = () => {
                                         name='country'
                                         type='text'
                                         placeholder='country'
-                                        value={country}
+                                        value={formData.country}
                                         onChange={handleInputChange} required />
                                 </div>
                                 <div className='w-1/2'>
                                     <label className='text-gray-500 text-lg'>Postcode<span className='text-red-600 font-bold'> *</span></label><br />
                                     <input className='w-full h-12 border mt-2 pl-5'
-                                        name='changeZip'
+                                        name='code'
                                         type='text'
                                         placeholder='Post code'
-                                        value={''}
+                                        value={formData.code}
                                         onChange={handleInputChange} required />
                                 </div>
                             </div>
@@ -141,8 +132,8 @@ const Checkout = () => {
                                     <input className='w-full h-12 border mt-2 pl-5'
                                         name='email'
                                         type='email'
-                                        placeholder='Email Address'
-                                        value={''}
+                                        placeholder='Your Email'
+                                        value={formData.email}
                                         onChange={handleInputChange} required />
                                 </div>
                                 <div className='w-1/2'>
@@ -151,15 +142,14 @@ const Checkout = () => {
                                         name='number'
                                         type='number'
                                         placeholder='phone'
-                                        value={number}
+                                        value={formData.number}
                                         onChange={handleInputChange} required />
                                 </div>
                             </div>
-                            <button type='submit'>Submit</button>
                         </form>
                     </div>
                 </div>
-                <div className='w-1/2'>
+                <div className='lg:w-1/2'>
                     <div className='flex items-center gap-3 mt-4' style={{ marginLeft: '40px' }}>
                         <p><AiFillCreditCard /></p>
                         <p>Returning customer? Click here to login</p>

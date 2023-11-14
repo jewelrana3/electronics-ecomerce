@@ -6,21 +6,22 @@ import { IoIosArrowDown, IoIosArrowForward } from 'react-icons/io';
 import { FiMenu } from 'react-icons/fi';
 import { PiDiamondsFourBold } from 'react-icons/pi';
 import './Dropdown.css'
-import { GiLoincloth } from 'react-icons/gi';
+
 
 
 const Shop = () => {
     const [products] = useProducts();
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [priceRange, setPriceRange] = useState('all');
     const [DropdownOpen, setDropdownOpen] = useState(false);
     const [DropdownOpen3, setDropdownOpen3] = useState(false);
     const [brand, setBrand] = useState(false);
     const [color, setColor] = useState(false);
     const [price, setPrice] = useState(false);
+    const [priceRange, setPriceRange] = useState('all');
 
-   
-  
+
+
+
 
     const toggleDropdown = () => {
         setIsDropdownOpen(!isDropdownOpen);
@@ -53,26 +54,22 @@ const Shop = () => {
         setFilter(e.target.value.toUpperCase())
     }
 
-    // sort price
-    // const filterAndSortProducts = (a, b) => {
-    //     console.log("a.price:", typeof (a.price));
-    //     console.log("b.price:", b.price);
+    const handleSortChange = (event) => {
+        setPriceRange(event.target.value);
+    };
 
-    //     if (priceRange === "all") {
-    //         // Show all products
-    //         return 0;
-    //     } else if (priceRange === "low" && a.price <= 500) {
-    //         // Below $500
-    //         return a.price - b.price;
-    //     } else if (priceRange === "high" && a.price > 500) {
-    //         // Above $500
-    //         return a.price - b.price;
-    //     }
-    //     return 0;
-    // };
 
-    // const filteredAndSortedProducts = products.slice().sort(filterAndSortProducts);
-    // console.log(filteredAndSortedProducts)
+    const categorizeProducts = () => {
+        if (priceRange === 'low') {
+            return products.filter((product) => product.price <= 500);
+        } else if (priceRange === 'high') {
+            return products.filter((product) => product.price > 500);
+        } else {
+            return products;
+        }
+    };
+    const categorizedProduct = categorizeProducts();
+
 
     return (
         <div className="md:px-20 pt-20 mb-40">
@@ -81,20 +78,25 @@ const Shop = () => {
             </div>
             <div className='flex justify-between border border-gray-300 px-5 py-3'>
                 <div>
-                    <p>Showing 1-9 of 27 results</p>
+                    Showing {
+                        priceRange === 'low'
+                            ? products.filter(product => product.price <= 500).length
+                            : priceRange === 'high'
+                                ? products.filter(product => product.price > 500).length
+                                : products.length
+                    } of {products.length} results
                 </div>
                 <div className='flex items-center'>
                     <p><FiMenu className='mr-3' /></p>
                     <p><PiDiamondsFourBold className='mr-40' /></p>
-                    {/* <form>
+                    <form>
                         <label>Sort by:</label>
-                        <select name="sortBy" value={sortBy} onChange={handleSortChange}>
-                            <option value="">None</option>
-                            <option value="price">Price</option>
-                         
+                        <select name="priceRange" value={priceRange} onChange={handleSortChange}>
+                            <option value="all">All</option>
+                            <option value="low">Price 500 low</option>
+                            <option value="high">Price 500 high</option>
                         </select>
-                    </form> */}
-
+                    </form>
                 </div>
             </div>
             <div className='large lg:flex gap-10'>
@@ -129,14 +131,7 @@ const Shop = () => {
                                         <p>Laptop</p>
 
                                     </div>
-                                    {/* <div className='first  flex items-center gap-4 mt-4'>
-                                    <p className='f bg-black'></p>
-                                    <p>samsung</p>
-                                </div>
-                                <div className='first  flex items-center gap-4 mt-4'>
-                                    <p className='f bg-black'></p>
-                                    <p>keyboard</p>
-                                </div> */}
+
 
                                 </ul>
                             </div>
@@ -333,20 +328,10 @@ const Shop = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
-                    {
-
-                        products.map(product => <ShopProduct
-                            key={product._id}
-                            product={product}
-                        ></ShopProduct>)
-                    }
+                    {categorizedProduct.map((product) => (
+                        <ShopProduct key={product._id} product={product} />
+                    ))}
                 </div>
-
-            </div>
-
-            {/* test mode */}
-            <div>
-
             </div>
         </div>
     );

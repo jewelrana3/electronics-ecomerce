@@ -27,11 +27,11 @@ const Login = () => {
 
     return (
 
-        <div className="mt-24 mb-24">
+        <div className="pt-60 mb-24">
             <div className="relative">
                 <img className="w-full" src="https://i.ibb.co/QkHFkQR/seo-optimization-3d-render-cartoon-illustration-107791-16996-1.jpg" alt="" />
             </div>
-            <div style={{ marginTop: '-800px', width: '600px',height:'750px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto pb-20 pt-10 px-20">
+            <div style={{ marginTop: '-800px', width: '600px',height:'700px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto pb-20 pt-10 px-20">
                 <div>
                     <div className='ml-8'>
                         <h1 className='text-4xl font-bold'>Login Now!</h1>
