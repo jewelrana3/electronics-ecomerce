@@ -61,8 +61,8 @@ const Contact = () => {
                         <p><input type="checkbox" className="checkbox" /></p>
                         <p className='ml-3'>I am bound by the terms of the Service I accept Privacy Policy.</p>
                     </div>
-                    <button className='send hover:bg-slate-800 px-3 py-2 font-semibold text-white mt-3'>Send Message</button>
                 </form>
+                    <button className='send hover:bg-slate-800 px-3 py-2 font-semibold text-white mb-3'>Send Message</button>
 
             </div>
             <div className='lg:px-48 mt-20'>

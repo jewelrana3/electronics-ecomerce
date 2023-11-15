@@ -2,18 +2,26 @@
     border: none;
     box-shadow: 5px 10px 20px rgb(248, 226, 226);
 }
+
 .card-container:hover .icons {
     animation: bounce 0.6s;
     box-shadow: 5px 10px 20px white;
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-10px);
     }
+
     60% {
         transform: translateY(-5px);
     }
@@ -34,7 +42,7 @@
     height: 3px;
     background-color: green;
     transition: right 0.3s ease;
-   
+
 }
 
 .card-details .cardP:hover::before {
@@ -43,6 +51,121 @@
 
 
 
+
+
+
+
+/* First Carousel (left to right) */
+.container-img3 {
+    height: 250px;
+    /* margin: auto; */
+    /* display: grid; */
+    /* place-items: center; */
+    /* width: 100%; */
+    /* overflow: hidden; */
+}
+
+.slide-container3 {
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    animation: scroll3 28s linear infinite;
+}
+
+
+@keyframes scroll3 {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 9));
+        /* Adjust the number of slides */
+    }
+}
+
+.slide-image3 {
+    align-items: center;
+    height: 190px;
+    width: 250px;
+    perspective: 100px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid gray;
+    border-radius: 20px;
   
-  /* new about two csss conection */
-  
+}
+
+.slide-image3 p {
+    font-size: 14px;
+    color: rgb(88, 75, 75);
+    margin-top: 3px;
+}
+
+.slide-image3 img {
+    width: 100%;
+    transition: transform 1s;
+}
+
+.slide-image3:hover img {
+    transform: translateZ(6px);
+}
+
+/* Second Carousel (right to left) */
+.container-img2 {
+    height: 350px;
+    /* margin: auto;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    overflow: hidden; */
+}
+
+.slide-container2 {
+    display: flex;
+    gap: 20px;
+    width: fit-content;
+    animation: scroll2 28s linear infinite;
+}
+
+
+
+@keyframes scroll2 {
+    0% {
+        transform: translateX(calc(-250px * 9));
+        /* Adjust the number of slides */
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.slide-image2 {
+    align-items: center;
+    height: 190px;
+    width: 250px;
+    perspective: 100px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid gray;
+    border-radius: 20px;
+}
+
+.slide-image2 p {
+    font-size: 14px;
+    color: rgb(88, 75, 75);
+    margin-top: 3px;
+}
+
+
+.slide-image2 img {
+    width: 100%;
+    transition: transform 1s;
+}
+
+.slide-image2:hover img {
+    transform: translateZ(6px);
+}

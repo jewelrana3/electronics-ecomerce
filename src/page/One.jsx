@@ -1,124 +1,90 @@
+import React from 'react';
+import useOne from '../hooks/useOne';
+import useProducts from '../hooks/useProducts';
 
-// import { useRef, useState } from 'react';
-// // Import Swiper React components
-// import { Swiper, SwiperSlide } from 'swiper/react';
-
-// // Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/scrollbar';
-// // import 'swiper/css/navigation';
-// // import 'swiper/css/pagination';
-
-// // import './styles.css';
-
-// // import required modules
-// import { Keyboard, Scrollbar, Navigation, Pagination } from 'swiper/modules';
-
-// const One = () => {
-//   return (
-//     <>
-//       <Swiper
-
-//         centeredSlides={false}
-//         slidesPerGroupSkip={1}
-//         grabCursor={true}
-//         keyboard={{
-//           enabled: true,
-//         }}
-//         breakpoints={{
-//           769: {
-//             slidesPerView: 2,
-//             slidesPerGroup: 2,
-//           },
-//         }}
-//         scrollbar={true}
-//         navigation={true}
-//         pagination={{
-//           clickable: true,
-//         }}
-//         modules={[Keyboard, Scrollbar, Navigation, Pagination]}
-//         className=""
-//       >
-//         <SwiperSlide>
-//           <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-003.jpg" />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-004.jpg" />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-003.jpg" />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-004.jpg" />
-//         </SwiperSlide>
-//         <SwiperSlide>
-//           <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-//         </SwiperSlide>
-//       </Swiper>
-//     </>
-//   );
-// }
-
-// export default One;
-
-
-import React, { useRef, useState } from 'react';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
-// import 'swiper/css';
-// import 'swiper/css/pagination';
-// import 'swiper/css/navigation';
-
-// import './styles.css';
-
-// import required modules
-import { Pagination, Navigation } from 'swiper/modules';
 const One = () => {
-  const [swiperRef, setSwiperRef] = useState(null);
-
+  const [products] = useProducts();
+  {/* image
+Wireless & Watches
+image
+Camera Bluetooth & Headset
+image
+Ipad Phone & Tablets
+image
+Planer & Virtual
+image
+Spinning Reel & Kettle
+image
+Computers Monitor & Laptop
+image
+Exercise Bike & Shaver Clean */}
   return (
-    <>
-      <Swiper
-        onSwiper={setSwiperRef}
-        slidesPerView={4}
-        centeredSlides={true}
-        spaceBetween={30}
-        pagination={{
-          type: 'fraction',
-        }}
-        navigation={true}
-        modules={[Pagination, Navigation]}
-        className="mySwiper"
-      >
-        <SwiperSlide>
-          <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img className='w-80 h-64 p-10' src="https://cdn.magloft.com/github/swiper/images/page-005.jpg" />
-        </SwiperSlide>
-      </Swiper>
-    </>
+    <div className='container-img mt-20'>
+      <div className='slide-container'>
+      <div className='slide-image'>
+          <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/dQskGfv/product-cat-6.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/kKmZgnZ/product-cat-2.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/bg134GH/product-cat-1-1.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/K0pJ5KY/product-cat-7.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        {/*  */}
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/dQskGfv/product-cat-6.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/kKmZgnZ/product-cat-2.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/K0pJ5KY/product-cat-7.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://i.ibb.co/bg134GH/product-cat-1-1.webp" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+        <div className='slide-image'>
+          <img src="https://hamart-shop.vercel.app/_next/image?url=https%3A%2F%2Fi.ibb.co%2F9hsZsq3%2Fproduct-cat-7.jpg&w=384&q=75" alt="" />
+          <p>Exercise Bike & Shaver Clean</p>
+        </div>
+       
+       
+       
+      </div>
+    </div>
   );
-}
-
-
-
+};
 
 export default One;
