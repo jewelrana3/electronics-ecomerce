@@ -20,13 +20,15 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import FourMan from './FourMan';
 import useProducts from "../../hooks/useProducts";
+import useAbout from '../../hooks/useAbout';
 
 
 const About = () => {
-    const [products] = useProducts();
+    // const [products] = useProducts();
+    const [about] = useAbout();
 
     return (
-        <div className='mb-40'>
+        <div className=''>
 
             <div className='mb-20'>
                 <div className='relative'>
@@ -47,9 +49,9 @@ const About = () => {
                         <p className='mt-4'>Nam nibh diam, varius quis lectus eget, laoreet cursus metus. morbi augue lectus, dapibus eget justo nec, consectetur auctor nis luctus neque.!</p>
                     </div>
                 </div>
-                <div className='mt-28 px-32 grid grid-cols-1 md:grid-cols-3 gap-9'>
+                <div className='mt-28 lg:px-32 px-10 grid grid-cols-1 md:grid-cols-3 gap-9 '>
                     <div className='card-container border border-gray-300'>
-                        <div className='card-details text-2xl py-6 px-4  '>
+                        <div className='card-details text-2xl py-6 px-4 w-full '>
                             <div className='flex justify-between'>
                                 <p className='icons text-3xl'><AiOutlineCloudServer /></p>
                                 <p><BsArrowUpRight /></p>
@@ -183,9 +185,11 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <div className='mt-28 px-28'>
-                <div className='md:flex justify-between'>
-                    <h1 className='text-5xl font-bold'>One Team ,<br />Many Talents</h1>
+            <div className='mt-28 md:px-28 px-2'>
+                <div className='flex justify-between'>
+                    <div>
+                        <h1 className='md:text-5xl text-3xl font-bold'>One Team ,<br />Many Talents</h1>
+                    </div>
                     <div className='flex items-center cursor-pointer hover:text-red-900 underline font-bold'>
                         <p>Join Our team</p>
                         <p><AiOutlineArrowRight /></p>
@@ -223,9 +227,9 @@ const About = () => {
                 </div>
             </div> */}
             <div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-28 mt-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 md:px-28 mt-10">
                     {
-                        products.map(product => <FourMan
+                        about.map(product => <FourMan
                             key={product._id}
                             product={product}
                         ></FourMan>)
@@ -237,124 +241,96 @@ const About = () => {
                 <div className='container-img3 mt-28'>
                     <div className='slide-container3'>
                         <div className='slide-image3'>
-                            <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                            <img src="https://i.ibb.co/8NF1pqV/brand-8-1.webp" alt="" />
                         </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/vDH4rKB/brand-5.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/zxWYnBj/brand-4.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/T0nSgwz/brand-7.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/stmmMWY/brand-2.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/yfWH9vg/brand-6.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/8NF1pqV/brand-8-1.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/vDH4rKB/brand-5.webp" alt="" />
 
-                        <div className='slide-image3'>
-                            <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
                         </div>
                         <div className='slide-image3'>
-                            <img src="https://i.ibb.co/dQskGfv/product-cat-6.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image3'>
-                            <img src="https://i.ibb.co/kKmZgnZ/product-cat-2.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image3'>
-                            <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image3'>
-                            <img src="https://i.ibb.co/bg134GH/product-cat-1-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image3'>
-                            <img src="https://i.ibb.co/K0pJ5KY/product-cat-7.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
+                            <img src="https://i.ibb.co/zxWYnBj/brand-4.webp" alt="" />
 
-                        <div className='slide-image3'>
-                            <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
                         </div>
                         <div className='slide-image3'>
-                            <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                            <img src="https://i.ibb.co/T0nSgwz/brand-7.webp" alt="" />
+
                         </div>
                         <div className='slide-image3'>
-                            <img src="https://i.ibb.co/dQskGfv/product-cat-6.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                            <img src="https://i.ibb.co/stmmMWY/brand-2.webp" alt="" />
+
                         </div>
                         <div className='slide-image3'>
-                            <img src="https://i.ibb.co/kKmZgnZ/product-cat-2.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                            <img src="https://i.ibb.co/yfWH9vg/brand-6.webp" alt="" />
+
                         </div>
                         <div className='slide-image3'>
-                            <img src="https://i.ibb.co/K0pJ5KY/product-cat-7.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image3'>
-                            <img src="https://i.ibb.co/bg134GH/product-cat-1-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image3'>
-                            <img src="https://hamart-shop.vercel.app/_next/image?url=https%3A%2F%2Fi.ibb.co%2F9hsZsq3%2Fproduct-cat-7.jpg&w=384&q=75" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                            <img src="https://i.ibb.co/yfWH9vg/brand-6.webp" alt="" />
                         </div>
                     </div>
                 </div>
-                <div className='container-img2 '>
+                <div className='container-img2 -mt-20'>
                     <div className='slide-container2'>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/vDH4rKB/brand-5.webp" alt="" />
                         </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/zxWYnBj/brand-4.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/T0nSgwz/brand-7.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/8NF1pqV/brand-8-1.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/stmmMWY/brand-2.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/yfWH9vg/brand-6.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/8NF1pqV/brand-8-1.webp" alt="" />
+                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/vDH4rKB/brand-5.webp" alt="" />
 
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
                         </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/dQskGfv/product-cat-6.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/kKmZgnZ/product-cat-2.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/bg134GH/product-cat-1-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/K0pJ5KY/product-cat-7.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/zxWYnBj/brand-4.webp" alt="" />
 
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/T2Y1Gm4/product-cat-3-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
                         </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/YjqD8n8/product-cat-5.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/T0nSgwz/brand-7.webp" alt="" />
+
                         </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/dQskGfv/product-cat-6.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/stmmMWY/brand-2.webp" alt="" />
+
                         </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/kKmZgnZ/product-cat-2.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/yfWH9vg/brand-6.webp" alt="" />
+
                         </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/K0pJ5KY/product-cat-7.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image2'>
-                            <img src="https://i.ibb.co/bg134GH/product-cat-1-1.webp" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
-                        </div>
-                        <div className='slide-image2'>
-                            <img src="https://hamart-shop.vercel.app/_next/image?url=https%3A%2F%2Fi.ibb.co%2F9hsZsq3%2Fproduct-cat-7.jpg&w=384&q=75" alt="" />
-                            <p>Exercise Bike & Shaver Clean</p>
+                        <div className='slide-image3'>
+                            <img src="https://i.ibb.co/yfWH9vg/brand-6.webp" alt="" />
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,36 @@
+[
+    
+    {
+        "_id":1,
+        "image":"https://i.ibb.co/HrRJdVd/team-3-1.webp",
+        "title":"CREATIVE CREATER",
+        "name":"Kathryn Murphy"
+      
+        
+    },
+    {
+        "_id":2,
+         "image":"https://i.ibb.co/YXNtg4N/team-4-1.webp",
+        "title":"DEVELOPER",
+        "name":"Guy Hakings"
+    
+        
+    },
+    {
+        "_id":3,
+         "image":"https://i.ibb.co/D8GbMrZ/team-5-1.webp",
+        "title":"CONSULTING OFFICER",
+        "name":"Deli Yanky"
+
+        
+    },
+    {
+        "_id":4,
+         "image":"https://i.ibb.co/p2k6sKZ/team-6-1.webp",
+        "title":"SALES MANAGER",
+        "name":"Zin Denver"
+
+        
+    }
+   
+]

@@ -87,7 +87,7 @@ const ProductTwo = ({ product }) => {
             <div className="product_title ">
                 <h3>{title}</h3>
                 <div>
-                    <span>$:{price}</span>
+                    <span>$:{price}00</span>
                 </div>
             </div>
         </div>

@@ -10,7 +10,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 
 const FourMan = ({ product }) => {
 
-    const { image, title, price, _id, suk, category, tags, Share } = product;
+    const { image, title, name} = product;
     const [isHovered, setIsHovered] = useState(false);
 
 
@@ -44,10 +44,10 @@ const FourMan = ({ product }) => {
                     </div>
                 </div>
 
-                <div className="product_title ">
-                    <h3>{title}</h3>
+                <div className="product_title mt-4">
+                    <h3 className="font-bold name">{name}</h3>
                     <div>
-                        <span>Developer</span>
+                        <span className="title">{title}</span>
                     </div>
                 </div>
             </div>

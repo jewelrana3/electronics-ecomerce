@@ -72,4 +72,9 @@
     border-right:1px solid black ;
     padding-right:8px;
 }
-
+.name{
+    font-size: 20px;
+}
+.title{
+    font-size: 11px;
+}
