@@ -25,7 +25,7 @@ const Header = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/wishlist')
+    fetch('https://server-ecomerce.vercel.app/wishlist')
       .then(res => res.json())
       .then(data => {
         setWishs(data)
@@ -35,7 +35,7 @@ const Header = () => {
     ;
 
   useEffect(() => {
-    fetch('http://localhost:5000/addCartPost')
+    fetch('https://server-ecomerce.vercel.app/addCartPost')
       .then(res => res.json())
       .then(data => {
         setAddProduct(data)
@@ -58,7 +58,7 @@ const Header = () => {
 
   // shopping cart delete
   const handleDelete = (_id) => {
-    fetch(`http://localhost:5000/addCartPost/${_id}`, {
+    fetch(`https://server-ecomerce.vercel.app/addCartPost/${_id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())

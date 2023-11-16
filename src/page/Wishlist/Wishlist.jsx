@@ -16,7 +16,7 @@ const Wishlist = () => {
 
     const handleDelete = _id => {
         console.log('delet', _id)
-        fetch(`http://localhost:5000/wishlist/${_id}`, {
+        fetch(`https://server-ecomerce.vercel.app/wishlist/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

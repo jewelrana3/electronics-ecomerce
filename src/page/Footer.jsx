@@ -57,7 +57,7 @@ const Footer = () => {
                 <p>Copyright © 2023 by Hamart All rights reserved.</p>
                 <img src="https://i.ibb.co/84qMfBh/footer-payment.webp" alt="" />
             </div>
-            <Link to='/header'>go</Link>
+          
         </div>
     );
 };

@@ -11,7 +11,7 @@ const PaymentHistory = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/payments/ka');
+                const response = await fetch('https://server-ecomerce.vercel.app/payments/ka');
                 const data = await response.json();
                 setPaymentData(data);
                 console.log(data)

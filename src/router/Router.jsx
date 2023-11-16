@@ -40,13 +40,13 @@ export const router = createBrowserRouter([
             {
                 path:'/productDetails/:id',
                 element:<ProductDetails />,
-                loader:({params}) => fetch(`http://localhost:5000/addCartPost/${params.id}`)
+                loader:({params}) => fetch(`https://server-ecomerce.vercel.app/addCartPost/${params.id}`)
           
             },
             {
                 path:'/wishlist',
                 element:<Wishlist />,
-                loader:({}) => fetch('http://localhost:5000/wishlist')
+                loader:({}) => fetch('https://server-ecomerce.vercel.app/wishlist')
             },
             {
                path:'/about',
@@ -56,7 +56,7 @@ export const router = createBrowserRouter([
             {
                 path:'/mycart',
                 element:<MyCart />,
-                loader:({})=>fetch('http://localhost:5000/addCartPost')
+                loader:({})=>fetch('https://server-ecomerce.vercel.app/addCartPost')
             },
             {
                 path:'/privacy',
@@ -77,7 +77,7 @@ export const router = createBrowserRouter([
             {
                 path:'/checkout',
                 element:<Checkout></Checkout>,
-                loader:({})=>fetch('http://localhost:5000/addCartPost')
+                loader:({})=>fetch('https://server-ecomerce.vercel.app/addCartPost')
             },
             {
                 path:'/payments',
@@ -86,7 +86,7 @@ export const router = createBrowserRouter([
             {
                 path:'/paymenthistory',
                 element:<PaymentHistory></PaymentHistory>,
-                loader:({}) => fetch('http://localhost:5000/addCartPost')
+                loader:({}) => fetch('https://server-ecomerce.vercel.app/addCartPost')
             },
             {
                 path:'history',

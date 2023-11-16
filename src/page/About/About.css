@@ -174,3 +174,22 @@
 .slide-image2:hover img {
     transform: translateZ(6px);
 }
+
+/* meadia screen */
+@media (min-width:1140px) {
+    .head-side{
+        display: flex;
+    }
+    .head-rel{
+        position: relative;
+    }
+    .provide-border{
+        margin-right: 400px;
+    }
+}
+@media (max-width:768px) {
+    .get-in{
+        margin-top: 80px;
+        
+    }
+}

@@ -4,7 +4,7 @@ const useAbout = () => {
     const [about,setAbout] = useState([])
 
     useEffect(()=>{
-        fetch('about.json')
+        fetch('https://server-ecomerce.vercel.app/aboutMan')
         .then(res => res.json())
         .then(data =>{
             setAbout(data)

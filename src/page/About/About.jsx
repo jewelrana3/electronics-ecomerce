@@ -141,7 +141,7 @@ const About = () => {
                         <h1>SECURE PAYMENT</h1>
                     </div>
                     <div>
-                        <h2 className='text-3xl font-bold'>Webby's, Site of the Year</h2>
+                        <h2 className='text-3xl font-bold'>Webby's,mean Site of the Year</h2>
                         <p>Runner Up - “ Decor of the week “</p>
                     </div>
                     <div>
@@ -149,11 +149,11 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <div className='md:flex mt-20 items-center'>
+            {/* <div className='lg:flex mt-20 items-center'>
                 <div className='absolute'>
                     <img className='' style={{ width: '700px', height: '500px' }} src="https://i.ibb.co/NW7CXKw/21617779046.jpg" alt="" />
                 </div>
-                <div className='border border-gray-500 w-2/3 px-20 py-20' style={{ marginLeft: '40em' }} >
+                <div className='get-in border border-gray-500  px-20 py-20' >
                     <p>Get in touch with us to see how</p>
                     <h1 className='text-6xl font-bold'>Provide smart and flexible digital services</h1>
                     <div className="collapse collapse-plus bg-base-200 mt-5">
@@ -184,7 +184,124 @@ const About = () => {
                         </div>
                     </div>
                 </div>
+            </div> */}
+            {/* <div className='lg:flex mt-20 items-center'>
+                <div className='lg:absolute lg:w-1/2'>
+                    <img className='w-full h-auto' src="https://i.ibb.co/NW7CXKw/21617779046.jpg" alt="" />
+                </div>
+                <div className='lg:w-1/2 px-4 py-8 lg:py-20'>
+                    <p className='text-base md:text-lg lg:text-xl'>Get in touch with us to see how</p>
+                    <h1 className='text-3xl md:text-4xl lg:text-6xl font-bold mt-2 lg:mt-4'>
+                        Provide smart and flexible digital services
+                    </h1>
+                    <div className="collapse collapse-plus bg-base-200 mt-5">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                    <div className="collapse collapse-plus bg-base-200 mt-6">
+                        <input type="radio" name="my-accordion-3" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                    <div className="collapse collapse-plus bg-base-200 mt-6">
+                        <input type="radio" name="my-accordion-3" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+            {/* <div className='lg:flex mt-20 items-center'>
+                <div className='lg:w-1/2 lg:relative'>
+                    <img className='w-full h-auto' src="https://i.ibb.co/NW7CXKw/21617779046.jpg" alt="" />
+                </div>
+                <div className='lg:w-1/2 px-4 py-8 lg:py-20 border border-black lg:absolute'>
+                    <p className='text-base md:text-lg lg:text-xl'>Get in touch with us to see how</p>
+                    <h1 className='text-3xl md:text-4xl lg:text-6xl font-bold mt-2 lg:mt-4'>
+                        Provide smart and flexible digital services
+                    </h1>
+                    <div className="collapse collapse-plus bg-base-200 mt-5">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                    <div className="collapse collapse-plus bg-base-200 mt-6">
+                        <input type="radio" name="my-accordion-3" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                    <div className="collapse collapse-plus bg-base-200 mt-6">
+                        <input type="radio" name="my-accordion-3" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                </div>
+            </div> */}
+            <div className='lg:flex mt-20 items-center'>
+                <div className='lg:w-1/2 '>
+                    <img className='w-full h-auto' src="https://i.ibb.co/NW7CXKw/21617779046.jpg" alt="" />
+                </div>
+                <div className='lg:w-1/2 px-4 py-8 lg:py-20 border border-black'>
+                    <p className='text-base md:text-lg lg:text-xl'>Get in touch with us to see how</p>
+                    <h1 className='text-3xl md:text-4xl lg:text-6xl font-bold mt-2 lg:mt-4'>
+                        Provide smart and flexible digital services
+                    </h1>
+                    <div className="collapse collapse-plus bg-base-200 mt-5">
+                        <input type="radio" name="my-accordion-3" checked="checked" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                    <div className="collapse collapse-plus bg-base-200 mt-6">
+                        <input type="radio" name="my-accordion-3" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                    <div className="collapse collapse-plus bg-base-200 mt-6">
+                        <input type="radio" name="my-accordion-3" />
+                        <div className="collapse-title text-lg md:text-xl lg:text-2xl font-medium">
+                            Click to open this one and close others
+                        </div>
+                        <div className="collapse-content">
+                            <p>hello</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
+
             <div className='mt-28 md:px-28 px-2'>
                 <div className='flex justify-between'>
                     <div>
