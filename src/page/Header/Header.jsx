@@ -7,19 +7,32 @@ import { AiOutlineShoppingCart } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
 import './Header.css';
-import useWishlist from '../../hooks/useWishlist';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
-import useUsers from '../../hooks/useUsers';
+import useWishlist from '../../hooks/useWishlist';
+
 
 
 
 const Header = () => {
   // const [users] = useUsers();
-  const { user, logOut } = useContext(AuthContext)
+
+  const { user } = useContext(AuthContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [addProduct, setAddProduct] = useState([]);
+  const [wishs, setWishs] = useState([])
+
+
+  useEffect(() => {
+    fetch('http://localhost:5000/wishlist')
+      .then(res => res.json())
+      .then(data => {
+        setWishs(data)
+
+      })
+  }, [wishs])
+    ;
 
   useEffect(() => {
     fetch('http://localhost:5000/addCartPost')
@@ -29,19 +42,18 @@ const Header = () => {
       })
   }, [addProduct])
 
-  const [wish] = useWishlist();
 
-  const handleLogOut = () => {
-    logOut()
-      .then(() => {
-        // Logout was successful
-        // Perform any actions you need after successful logout
-      })
-      .catch((error) => {
-        // An error occurred during logout
-        console.error('Error during logout:', error);
-      });
-  };
+  // const handleLogOut = () => {
+  //   logOut()
+  //     .then(() => {
+  //       // Logout was successful
+  //       // Perform any actions you need after successful logout
+  //     })
+  //     .catch((error) => {
+  //       // An error occurred during logout
+  //       console.error('Error during logout:', error);
+  //     });
+  // };
 
 
   // shopping cart delete
@@ -75,12 +87,12 @@ const Header = () => {
 
   // Calculate the length of items in the shopping cart
   const shoppingCartLength = addProduct.length;
-  const wishListLength = wish.length;
+  const wishlistListLength = wishs.length;
 
 
   return (
     <div>
-      <nav className='border-b-2 z-10 mt-0 fixed w-full bg-white py-4 px-6 md:flex md:items-center md:justify-between cursor-pointer'>
+      <nav className='border-b-2 z-20  fixed w-full bg-white py-4 px-6 md:flex md:items-center md:justify-between cursor-pointer'>
         <div className='flex items-center justify-between'>
           <span>
             <img src="https://hamart-shop.vercel.app/_next/static/media/logo-black.de19b08e.svg" alt="" />
@@ -98,8 +110,8 @@ const Header = () => {
           <li className='mx-4 my-6 md:my-0'><Link to=''>Home</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/about'>About</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/shop'>Shop</Link></li>
-          <li class="dropdown text-black z-10">
-            <button class="w3-button " style={{fontSize:'16px'}}>Page</button>
+          <li class="dropdown text-black">
+            <button class="w3-button" style={{ fontSize: '16px' }}>Page</button>
             <div class="dropdown-content">
               <li><Link to='/privacy'><span className='cardWith'><p>Pricavy & Policy</p></span></Link></li>
               <li><Link to='/signup'><span className='cardWith'><p>SignUP</p></span></Link></li>
@@ -116,48 +128,56 @@ const Header = () => {
 
 
 
-          <span className='md:flex items-center lg:ml-72'>
-            <div id="mySidenav" className={`sidenav ${isOpen ? 'open' : ''}`}>
-              <span className="closebtn" onClick={openNavToggle}>&times;</span>
-              <h3 className='shawdaw absolute uppercase py-2 px-5 font-semibold -mt-10 h-14'>Shopping Cart</h3>
-              <p className='border-t-2 mt-4'></p>
-              <div>
-                {addProduct.map((product) => (
-                  <div className='border-b-2 py-4 mt-4 flex justify-between' key={product._id}>
+          {/* <span className='md:flex items-center lg:ml-72'> */}
+          <div id="mySidenav" className={`sidenav pt-14 ${isOpen ? 'open' : ''}`}>
+            <span className="closebtn" onClick={openNavToggle}>&times;</span>
+            <h3 className='shawdaw absolute uppercase py-2 px-5 font-semibold -mt-10 h-14'>Shopping Cart</h3>
+            <p className='border-t-2 mt-6'></p>
+            <div className='z-10'>
+              {addProduct.map((product) => (
+                <div className='border-b-2 py-4 mt-4 flex justify-between items-center mr-2' key={product._id}>
+                  <div className='flex'>
                     <div className=''>
                       <Link to={`/productDetails/${product._id}`}>
                         <figure><img className='w-20' src={product.image} alt="product" /></figure>
                       </Link>
                     </div>
-                    <div className=''>
-                      <h1 className='text-xl font-semibold'>{product.title}</h1>
+                    <div className='text-left'>
+                      <h1 className='font-semibold'>{product.title}</h1>
                       <p className='mt-4 text-red-500 font-semibold'>$:{product.price}</p>
                     </div>
-                    <div>
-                      <p className='mr-2' onClick={() => handleDelete(product._id)}>X</p>
-                    </div>
                   </div>
-                ))}
-              </div>
+                  <div>
+                    <p className='mr-2 text-xl' onClick={() => handleDelete(product._id)}>X</p>
+                  </div>
+                </div>
+              ))}
             </div>
+          </div>
 
-            {user ? <div className="flex flex-col md:flex-row md:items-center mt-5 md:mt-0" ><span className="tooltip" data-tip={user?.displayName}></span><button onClick={handleLogOut} className="btn btn-white btn-sm mb-2 text-black text-2xl bg-white h-10 w-10 mr-4" style={{borderRadius:'50%'}}>{user?.displayName[0]}</button></div> : <Link to='/login'>
-                <button className="btn btn-outline btn-sm text-black mb-2">login</button>
-            </Link>}
-            <BiSearch className='mx-4 my-5 md:my-0 text-3xl mr-2' />
-           
+          {user ? <div className="flex flex-col md:flex-row md:items-center mt-5 md:mt-0" ><span className="tooltip" data-tip={user?.displayName}></span><button className="btn btn-white btn-sm mb-2 text-black text-2xl bg-white h-10 w-10 mr-1" style={{ borderRadius: '50%' }}>{user?.displayName[0].toUpperCase()}</button></div> : <Link to='/login'>
+            <button className="btn btn-outline btn-sm text-black mb-2">login</button>
+          </Link>}
+          <BiSearch className='mx-4 my-5 md:my-0 text-3xl mr' />
 
-            <span>
+
+          {/* <span>
               <Link to='/wishlist'><GiSelfLove style={{ fontSize: '24px' }} className='mx-4 my-5 md:my-0 relative ' /></Link>
-              <span className='shopping-cart-length absolute -mt-10 ml-8'>{wishListLength}</span>
-            </span>
-            <span className='relative' style={{ fontSize: '24px', cursor: 'pointer' }} onClick={openNavToggle}>
-              <AiOutlineShoppingCart />
-              {/* Display the shopping cart length */}
-              {shoppingCartLength > 0 && (
-                <span className="shopping-cart-length text-sm absolute -mt-10 ml-5 p-2">{shoppingCartLength}</span>
-              )}
-            </span>
+              <span className='shopping-cart-length absolute -mt-10 ml-8'>{wishlistListLength}</span>
+            </span> */}
+          <span className='relative mr-4' style={{ fontSize: '24px', cursor: 'pointer' }}>
+            <Link to='/wishlist'><GiSelfLove /></Link>
+            {/* Display the shopping cart length */}
+            {wishlistListLength > 0 && (
+              <span className="shopping-cart-length text-sm absolute -mt-10 ml-4 p-2">{wishlistListLength || 0}</span>
+            ) || <span className='shopping-cart-length text-sm absolute -mt-10 ml-5 p-2'>0</span>}
+          </span>
+          <span className='relative mr-2' style={{ fontSize: '24px', cursor: 'pointer' }} onClick={openNavToggle}>
+            <AiOutlineShoppingCart />
+            {/* Display the shopping cart length */}
+            {shoppingCartLength > 0 && (
+              <span className="shopping-cart-length text-sm absolute -mt-10 ml-5 p-2">{shoppingCartLength}</span>
+            ) || <span className='shopping-cart-length text-sm absolute -mt-10 ml-5 p-2'>0</span>}
           </span>
         </ul>
       </nav >

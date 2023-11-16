@@ -11,7 +11,7 @@ const Wishlist = () => {
     const [users, setUsers] = useState(wishs);
     
 
-    const { image, title, price, classId } = users;
+    // const { image, title, price, classId } = users;
     const iconSize = '14px';
 
     const handleDelete = _id => {
@@ -40,8 +40,6 @@ const Wishlist = () => {
         })
         setUsers(updateUsers)
     }
-
-    console.log()
 
     return (
         <div className='text-center mb-20'>
@@ -99,3 +97,4 @@ const Wishlist = () => {
 };
 
 export default Wishlist;
+

@@ -16,6 +16,7 @@ import Checkout from "../page/CheckOut/CheckOut";
 import Payments from "../components/Payments";
 import PaymentHistory from "../components/PaymentHistory";
 import History from "../components/History";
+import Test from "../page/Test";
 
 
 
@@ -91,6 +92,10 @@ export const router = createBrowserRouter([
                 path:'history',
                 element:<History></History>,
                 
+            },
+            {
+                path:'/test',
+                element:<Test></Test>
             }
           
           

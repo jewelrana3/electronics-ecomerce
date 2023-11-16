@@ -71,13 +71,15 @@ const Shop = () => {
     const categorizedProduct = categorizeProducts();
 
 
+
+
     return (
         <div className="md:px-20 pt-20 mb-40">
             <div className="flex">
                 <h2 className="ml-2 font-bold mb-10 flex items-center gap-2"><p><FaHome className='bg-white' /></p>Home <p><IoIosArrowForward /></p> Product</h2>
             </div>
-            <div className='flex justify-between border border-gray-300 px-5 py-3'>
-                <div>
+            <div className='flex justify-between items-center border border-gray-300 px-5 py-3'>
+                <div className='md:flex items-center'>
                     Showing {
                         priceRange === 'low'
                             ? products.filter(product => product.price <= 500).length
@@ -85,22 +87,27 @@ const Shop = () => {
                                 ? products.filter(product => product.price > 500).length
                                 : products.length
                     } of {products.length} results
+                    <div className='flex gap-3 md:ml-96'>
+                        <p><FiMenu className='mr-' /></p>
+                        <p><PiDiamondsFourBold className='' /></p>
+                    </div>
                 </div>
                 <div className='flex items-center'>
-                    <p><FiMenu className='mr-3' /></p>
-                    <p><PiDiamondsFourBold className='mr-40' /></p>
+
                     <form>
-                        <label>Sort by:</label>
-                        <select name="priceRange" value={priceRange} onChange={handleSortChange}>
-                            <option value="all">All</option>
-                            <option value="low">Price 500 low</option>
-                            <option value="high">Price 500 high</option>
-                        </select>
+                        <div className='custom-dropdown'>
+                            <label>Sort by : </label>
+                            <select className='py-2 px-2 ' name="priceRange" value={priceRange} onChange={handleSortChange}>
+                                  <option className='' value="all">All</option>
+                                 <option value="low">Price 500 low</option>
+                                 <option value="high">Price 500 high</option>
+                            </select>
+                        </div>
                     </form>
                 </div>
             </div>
-            <div className='large lg:flex gap-10'>
-                <div className='lg:w-4/5 sideber'>
+            <div className='container large lg:flex gap-10'>
+                <div className='left-side-shop sideber'>
                     <div className="mt-28">
                         <div>
                             <div onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
@@ -327,7 +334,7 @@ const Shop = () => {
                         </button>
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
+                <div className="right-side-shop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
                     {categorizedProduct.map((product) => (
                         <ShopProduct key={product._id} product={product} />
                     ))}
