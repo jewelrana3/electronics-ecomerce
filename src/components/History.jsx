@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const History = ({ pay }) => {
-    console.log(pay)
+    (pay)
     const { title, price } = pay;
 
     <div className=' overflow-x-auto mt-10 '>

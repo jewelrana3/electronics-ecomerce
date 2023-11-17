@@ -10,7 +10,10 @@ import './Header.css';
 import { AuthContext } from '../provider/AuthProvider';
 import { toast } from 'react-toastify';
 import useWishlist from '../../hooks/useWishlist';
-
+import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
+import { BiLogoFacebook } from 'react-icons/bi';
+import { AiOutlineTwitter } from 'react-icons/ai';
+import { FaLinkedinIn } from 'react-icons/fa';
 
 
 
@@ -63,7 +66,7 @@ const Header = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log(data);
+        (data);
         setAddProduct(addProduct.filter((product) => product._id !== _id));
       });
   }
@@ -92,7 +95,7 @@ const Header = () => {
 
   return (
     <div>
-      <nav className='border-b-2 z-20  fixed w-full bg-white py-4 px-6 md:flex md:items-center md:justify-between cursor-pointer'>
+      <nav className='border-b-2 z-20  fixed w-full bg-white py-4 md:px-5 md:flex md:items-center md:justify-between cursor-pointer'>
         <div className='flex items-center justify-between'>
           <span>
             <img src="https://hamart-shop.vercel.app/_next/static/media/logo-black.de19b08e.svg" alt="" />
@@ -106,12 +109,16 @@ const Header = () => {
           </span>
         </div>
 
-        <ul className={`header md:none md:flex md:items-center z-[1] md:static absolute ${isMenuOpen ? 'block' : 'hidden'} text-black w-full md:w-auto md:py-0 py-4`}>
+        <ul className={`header md:none md:flex md:items-center z-[1] md:static absolute bg-white ${isMenuOpen ? 'block' : 'hidden'} text-black w-full md:w-auto md:py-0 py-4`}>
           <li className='mx-4 my-6 md:my-0'><Link to=''>Home</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/about'>About</Link></li>
           <li className='mx-4 my-6 md:my-0'><Link to='/shop'>Shop</Link></li>
-          <li class="dropdown text-black">
-            <button class="w3-button" style={{ fontSize: '16px' }}>Page</button>
+          <li className="dropdown text-black">
+            {/* <button className="flex justify-between" style={{ fontSize: '16px' }}>Page </button> */}
+            <div className='flex justify-between page'>
+              <p style={{ fontSize: '16px' }}><button>Page</button></p>
+              <p><IoIosArrowDown /></p>
+            </div>
             <div class="dropdown-content">
               <li><Link to='/privacy'><span className='cardWith'><p>Pricavy & Policy</p></span></Link></li>
               <li><Link to='/signup'><span className='cardWith'><p>SignUP</p></span></Link></li>
@@ -155,30 +162,46 @@ const Header = () => {
             </div>
           </div>
 
-          {user ? <div className="flex flex-col md:flex-row md:items-center mt-5 md:mt-0" ><span className="tooltip" data-tip={user?.displayName}></span><button className="btn btn-white btn-sm mb-2 text-black text-2xl bg-white h-10 w-10 mr-1" style={{ borderRadius: '50%' }}>{user?.displayName[0].toUpperCase()}</button></div> : <Link to='/login'>
+          {user ? <div className="flex flex-col md:flex-row md:items-center mt-5 md:mt-0 user-details" ><span className="tooltip" data-tip={user?.displayName}></span><button className="btn btn-white btn-sm mb-2 text-black text-2xl bg-white h-10 w-10 mr-1" style={{ borderRadius: '50%' }}>{user?.displayName[0].toUpperCase()}</button></div> : <Link to='/login'>
             <button className="btn btn-outline btn-sm text-black mb-2">login</button>
           </Link>}
-          <BiSearch className='mx-4 my-5 md:my-0 text-3xl mr' />
+          <BiSearch className='mx-4 my-5 md:my-0 text-3xl mr user-details' />
 
 
           {/* <span>
               <Link to='/wishlist'><GiSelfLove style={{ fontSize: '24px' }} className='mx-4 my-5 md:my-0 relative ' /></Link>
               <span className='shopping-cart-length absolute -mt-10 ml-8'>{wishlistListLength}</span>
             </span> */}
-          <span className='relative mr-4' style={{ fontSize: '24px', cursor: 'pointer' }}>
+          <span className='relative mr-4 user-details' style={{ fontSize: '24px', cursor: 'pointer' }}>
             <Link to='/wishlist'><GiSelfLove /></Link>
             {/* Display the shopping cart length */}
             {wishlistListLength > 0 && (
               <span className="shopping-cart-length text-sm absolute -mt-10 ml-4 p-2">{wishlistListLength || 0}</span>
             ) || <span className='shopping-cart-length text-sm absolute -mt-10 ml-5 p-2'>0</span>}
           </span>
-          <span className='relative mr-2' style={{ fontSize: '24px', cursor: 'pointer' }} onClick={openNavToggle}>
+          <span className='relative mr-2 user-details' style={{ fontSize: '24px', cursor: 'pointer' }} onClick={openNavToggle}>
             <AiOutlineShoppingCart />
             {/* Display the shopping cart length */}
             {shoppingCartLength > 0 && (
               <span className="shopping-cart-length text-sm absolute -mt-10 ml-5 p-2">{shoppingCartLength}</span>
             ) || <span className='shopping-cart-length text-sm absolute -mt-10 ml-5 p-2'>0</span>}
           </span>
+          <p className='md:hidden text-black mt-10 ml-3 get-start'>Get Started <IoIosArrowForward className='text-xl' /></p>
+          <div className='icon-header mt-24 mb-10 ml-4 md:hidden'>
+            <p className='font-bold'>FOLLOW :</p>
+            <div className='flex items-center justify-between mr-3'>
+              <div className="flex gap-5">
+                <p className="small-header"><Link to='https://www.linkedin.com/in/juyel-haqu/'><FaLinkedinIn /></Link></p>
+                <p className="small-header"><Link to='https://www.instagram.com/juyel1273/'><AiOutlineTwitter /></Link></p>
+                <p className="small-header"><Link to='https://www.facebook.com/profile.php?id=100073733827614'><BiLogoFacebook /></Link></p>
+              </div>
+              <div className='md:hidden text-black'>
+                <p className='text-cyan-800'>juyelhaque29@gmail.com</p>
+                <p>WhatsApp : 01947-603852</p>
+              </div>
+            </div>
+          </div>
+
         </ul>
       </nav >
     </div >

@@ -79,7 +79,7 @@ const Shop = () => {
                 <h2 className="ml-2 font-bold mb-10 flex items-center gap-2"><p><FaHome className='bg-white' /></p>Home <p><IoIosArrowForward /></p> Product</h2>
             </div>
             <div className='flex justify-between items-center border border-gray-300 px-5 py-3'>
-                <div className='md:flex items-center'>
+                <div className='lg:flex items-center justify-center'>
                     Showing {
                         priceRange === 'low'
                             ? products.filter(product => product.price <= 500).length
@@ -87,13 +87,12 @@ const Shop = () => {
                                 ? products.filter(product => product.price > 500).length
                                 : products.length
                     } of {products.length} results
-                    <div className='flex gap-3 md:ml-96'>
+                    <div className='flex  gap-3 lg:ml-96'>
                         <p><FiMenu className='mr-' /></p>
                         <p><PiDiamondsFourBold className='' /></p>
                     </div>
                 </div>
-                <div className='flex items-center'>
-
+                <div className='flex items-center justify-center'>
                     <form>
                         <div className='custom-dropdown'>
                             <label>Sort by : </label>
@@ -112,7 +111,7 @@ const Shop = () => {
                         <div>
                             <div onClick={toggleDropdown} className={`content ${isDropdownOpen ? 'bg-red' : ''}`}>
                                 <div className="flex items-center justify-between cursor-pointer">
-                                    <div className=''> Ipad Phone & Tablets</div>
+                                    <div className=''> Planer & Virtual</div>
                                     <div className=''>{isDropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
                                 </div>
                             </div>
@@ -120,33 +119,26 @@ const Shop = () => {
                                 <ul>
                                     <div className='first  flex items-center gap-4 mt-4'>
                                         <p className='f bg-black'></p>
-                                        <p>Ipad</p>
+                                        <p>Spinning-Reel</p>
 
                                     </div>
                                     <div className='first  flex items-center gap-4 mt-2'>
                                         <p className='f bg-black'></p>
-                                        <p>iphone</p>
-
-                                    </div>
-                                    <div className='first  flex items-center gap-4 mt-2'>
-                                        <p className='f bg-black'></p>
-                                        <p>Laptop</p>
+                                        <p>Ketlle</p>
 
                                     </div>
                                     <div className='first  flex items-center gap-4 mt-2'>
                                         <p className='f bg-black'></p>
                                         <p>Laptop</p>
 
-                                    </div>
-
-
+                                    </div>                                
                                 </ul>
                             </div>
                         </div>
                         <div className='mt-2'>
                             <div onClick={toggleDropdown2} className={`content ${DropdownOpen ? 'bg-red' : ''}`}>
                                 <div className="flex items-center justify-between cursor-pointer">
-                                    <div className=''> Ipad Phone & Tablets</div>
+                                    <div className=''> Spinning Reel & Kettle</div>
                                     <div className=''>{DropdownOpen ? <IoIosArrowDown /> : <IoIosArrowForward />}</div>
                                 </div>
                             </div>
@@ -154,24 +146,15 @@ const Shop = () => {
                                 <ul>
                                     <div className='first  flex items-center gap-4 mt-4'>
                                         <p className='f bg-black'></p>
-                                        <p>Ipad</p>
+                                        <p>Planer</p>
 
                                     </div>
                                     <div className='first  flex items-center gap-4 mt-2'>
                                         <p className='f bg-black'></p>
-                                        <p>iphone</p>
+                                        <p>Virtual</p>
 
                                     </div>
-                                    <div className='first  flex items-center gap-4 mt-2'>
-                                        <p className='f bg-black'></p>
-                                        <p>Laptop</p>
-
-                                    </div>
-                                    <div className='first  flex items-center gap-4 mt-2'>
-                                        <p className='f bg-black'></p>
-                                        <p>Laptop</p>
-
-                                    </div>
+                                    
                                     {/* <div className='first  flex items-center gap-4 mt-4'>
                                     <p className='f bg-black'></p>
                                     <p>samsung</p>

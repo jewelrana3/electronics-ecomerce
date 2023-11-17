@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const ProductDetails = () => {
     const productDetails = useLoaderData();
-    console.log(productDetails)
+    (productDetails)
     const { image, title, price,suk,tags,category } = productDetails;
     return (
         <div className='pt-40 mb-10 md:flex justify-center md:px-20 px-8 gap-20 top-0'>

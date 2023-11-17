@@ -15,13 +15,13 @@ const Wishlist = () => {
     const iconSize = '14px';
 
     const handleDelete = _id => {
-        console.log('delet', _id)
+        ('delet', _id)
         fetch(`https://server-ecomerce.vercel.app/wishlist/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                (data)
                 if (data.deletedCount > 0) {
                     const remaing = users.filter(user => user._id !== _id)
                     setUsers(remaing)

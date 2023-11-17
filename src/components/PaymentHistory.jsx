@@ -14,7 +14,7 @@ const PaymentHistory = () => {
                 const response = await fetch('https://server-ecomerce.vercel.app/payments/ka');
                 const data = await response.json();
                 setPaymentData(data);
-                console.log(data)
+                (data)
             } catch (error) {
                 console.error('Error fetching payment data:', error);
             }

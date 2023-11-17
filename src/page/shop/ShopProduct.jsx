@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AiOutlineEye } from 'react-icons/ai';
 import { GiSelfLove } from 'react-icons/gi';
 import { BiLink } from 'react-icons/bi';
+import { CiShoppingCart } from 'react-icons/ci';
 
 const ShopProduct = ({ product }) => {
     const { image, title, price, _id, suk, category, tags, Share } = product;
@@ -23,7 +24,7 @@ const ShopProduct = ({ product }) => {
     }
 
     const wishlist = (item) => {
-        console.log(item)
+        (item)
         const wishItem = { classId: _id, image, title, price, suk, category, tags, Share }
         fetch('https://server-ecomerce.vercel.app/wishlist', {
             method: 'POST',
@@ -39,8 +40,8 @@ const ShopProduct = ({ product }) => {
 
     }
     return (
-      
-         <div
+
+        <div
             className="product"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -57,7 +58,10 @@ const ShopProduct = ({ product }) => {
 
                 <div className={`overlay ${isHovered ? 'active' : ''}`}>
                     <button onClick={() => addToCart(toast(`${title} add to cart`))} className="add_to_cart w-full bg-black text-white">
-                        Add Cart
+                        <div className="flex items-center justify-center gap-5">
+                            <div><CiShoppingCart className="text-2xl" /></div>
+                            <div>   Add To Cart</div>
+                        </div>
                     </button>
                 </div>
                 <div className="leftDrawer text-2xl cursor-pointer">
@@ -83,7 +87,7 @@ const ShopProduct = ({ product }) => {
                 </div>
             </div>
         </div>
-    
+
 
     )
 }

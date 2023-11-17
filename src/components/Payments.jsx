@@ -46,10 +46,10 @@ const Payments = ({ prices, formData }) => {
         })
 
         if (error) {
-            console.log('error', error)
+            ('error', error)
             setCardErorr(error.message)
         } else {
-            console.log('payment', paymentMethod)
+            ('payment', paymentMethod)
             setCardErorr('')
         }
 
@@ -67,9 +67,9 @@ const Payments = ({ prices, formData }) => {
         );
 
         if (confirmError) {
-            console.log(confirmError)
+            (confirmError)
         }
-        console.log('payment intent', paymentIntent)
+        ('payment intent', paymentIntent)
 
         setProcess(false)
 
@@ -85,7 +85,7 @@ const Payments = ({ prices, formData }) => {
 
             axiosSecure.post('/payments', payments)
                 .then(res => {
-                    console.log('res', res.data)
+                    ('res', res.data)
                     if (res.data.insertedId) {
                         // display shoe
                     }

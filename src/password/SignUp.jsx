@@ -28,7 +28,7 @@ const SignUp = () => {
                         name: data.name,
                         email: data.email
                     }
-                    console.log(user)
+                    (user)
                     fetch('https://server-ecomerce.vercel.app/users', {
                         method: 'POST',
                         headers: {

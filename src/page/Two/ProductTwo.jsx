@@ -25,7 +25,7 @@ const ProductTwo = ({ product }) => {
     }
 
     const wishlist = (item) => {
-        console.log(item)
+        (item)
         const wishItem = { classId: _id, image, title, price, suk, category, tags, Share }
         fetch('https://server-ecomerce.vercel.app/wishlist', {
             method: 'POST',

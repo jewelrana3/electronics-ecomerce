@@ -1,7 +1,8 @@
 /* Existing styles */
-.header li a{
+.header li a {
   font-size: 16px;
 }
+
 .sidenav {
   position: relative;
   height: 100%;
@@ -13,7 +14,7 @@
   background-color: white;
   overflow-x: hidden;
   transition: 0.5s;
- 
+
 }
 
 /* Additional styles */
@@ -89,6 +90,7 @@
 
 .dropdown-content li {
   margin-top: 8px;
+ 
 
 }
 
@@ -115,21 +117,115 @@
   right: 88%;
 
 }
+
 .dropdown-content .cardWith p {
   transition: margin-left 0.6s ease;
 
 }
+
 .dropdown-content .cardWith:hover p {
   margin-left: 20px;
-color: rgb(182, 15, 107);
+  color: rgb(182, 15, 107);
 
 }
 
 
 /* When hovering over the dropdown, expand the content */
 .dropdown:hover .dropdown-content {
-  height: 340px;
+  height: 280px;
   width: 200px;
   transition: height 2s ease;
   padding: 40px 30px;
+}
+
+/* media screen */
+@media (max-width:768px) {
+
+  .dropdown button {
+    margin-left: -150px;
+  }
+
+  .user-details {
+    display: none;
+  }
+  .dropdown .page button{
+    width:340px;
+  }
+
+  .header li {
+    border-bottom: 1px solid;
+ 
+  }
+
+  .dropdown {
+    margin-left: 15px;
+  }
+
+  .get-start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(176, 8, 84);
+    padding: 10px 10px;
+    color: white;
+    width: 160px;
+
+  }
+  .get-start:hover {
+   background-color: #0e0d0d;
+
+  }
+
+  .small-header {
+    border: 1px solid gainsboro;
+    padding: 9px;
+    font-size: 20px;
+  }
+
+  .icon-header {
+    margin-bottom: 300px;
+  }
+
+  .dropdown-content{
+    margin-top: -30px;
+    margin-left: 220px;
+  
+  }
+  .dropdown-content li {
+    margin-top: 8px;
+    margin-left:20px;
+  
+  }
+
+  .dropdown-content .cardWith {
+    position: relative;
+  }
+
+  .dropdown-content .cardWith::before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    right: 100%;
+    bottom: 9px;
+    height: 3px;
+    background-color: rgb(182, 15, 107);
+    transition: right 0.6s ease, left 0.8s ease;
+  }
+
+  .dropdown-content .cardWith:hover::before {
+    right: 98%;
+ 
+
+  }
+
+  .dropdown-content .cardWith p {
+    transition: margin-left 0.6s ease;
+
+  }
+
+  .dropdown-content .cardWith:hover p {
+    margin-left: 20px;
+    color: rgb(182, 15, 107);
+
+  }
 }

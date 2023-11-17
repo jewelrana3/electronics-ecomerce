@@ -3,10 +3,8 @@
 @tailwind utilities;
 
 body {
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
   font-family: Arial, sans-serif;
-  /* font-family: 'Open Sans', sans-serif; */
-
 
 }
 
@@ -15,9 +13,7 @@ body {
   left: 0;
 }
 
-.header li a {
-  font-size: 20px;
-}
+
 
 /* navber section */
 .navberColor {
@@ -165,12 +161,6 @@ body {
   box-shadow: 5px 8px 30px rgb(231, 211, 211);
 
 }
-
-/* test div */
-
-
-
-
 
 /* five section media query */
 @media (max-width:1024px) {

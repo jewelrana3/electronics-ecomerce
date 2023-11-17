@@ -33,7 +33,6 @@ const Checkout = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        console.log('Form data:', formData);
     };
 
     const handleInputChange = e => {
