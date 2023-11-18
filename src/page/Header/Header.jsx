@@ -14,11 +14,11 @@ import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { BiLogoFacebook } from 'react-icons/bi';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
+import useAddProduct from '../../hooks/useAddProduct';
 
 
 
 const Header = () => {
-  // const [users] = useUsers();
 
   const { user } = useContext(AuthContext)
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +28,7 @@ const Header = () => {
 
 
   useEffect(() => {
-    fetch('https://server-ecomerce.vercel.app/wishlist')
+    fetch('https://electronics-server-nine.vercel.app/wishlist')
       .then(res => res.json())
       .then(data => {
         setWishs(data)
@@ -38,7 +38,7 @@ const Header = () => {
     ;
 
   useEffect(() => {
-    fetch('https://server-ecomerce.vercel.app/addCartPost')
+    fetch('https://electronics-server-nine.vercel.app/addCartPost')
       .then(res => res.json())
       .then(data => {
         setAddProduct(data)
@@ -60,14 +60,17 @@ const Header = () => {
 
 
   // shopping cart delete
-  const handleDelete = (_id) => {
-    fetch(`https://server-ecomerce.vercel.app/addCartPost/${_id}`, {
+  const handleDelete = _id => {
+    fetch(`https://electronics-server-nine.vercel.app/addCartPost/${_id}`, {
       method: 'DELETE'
     })
       .then(res => res.json())
       .then(data => {
-        (data);
-        setAddProduct(addProduct.filter((product) => product._id !== _id));
+        (data)
+        if (data.deletedCount > 0) {
+          const remaing = addProduct.filter(user => user._id !== _id)
+          setAddProduct(remaing)
+      }
       });
   }
 
@@ -149,7 +152,7 @@ const Header = () => {
                         <figure><img className='w-20' src={product.image} alt="product" /></figure>
                       </Link>
                     </div>
-                    <div className='text-left'>
+                    <div className='text-left ml-4'>
                       <h1 className='font-semibold'>{product.title}</h1>
                       <p className='mt-4 text-red-500 font-semibold'>$:{product.price}</p>
                     </div>

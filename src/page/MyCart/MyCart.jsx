@@ -17,7 +17,7 @@ const MyCart = () => {
 
     const handleDelete = _id => {
         ('delet', _id)
-        fetch(`https://server-ecomerce.vercel.app/wishlist/${_id}`, {
+        fetch(`https://electronics-server-nine.vercel.app/wishlist/${_id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

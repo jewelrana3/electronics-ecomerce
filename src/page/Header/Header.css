@@ -142,14 +142,14 @@
 @media (max-width:768px) {
 
   .dropdown button {
-    margin-left: -150px;
+    margin-left: -180px;
   }
 
   .user-details {
     display: none;
   }
   .dropdown .page button{
-    width:340px;
+    width:410px;
   }
 
   .header li {
@@ -187,21 +187,24 @@
   }
 
   .dropdown-content{
+   
     margin-top: -30px;
-    margin-left: 220px;
+    width: 300px;
+    margin-left: 190px;
   
   }
   .dropdown-content li {
     margin-top: 8px;
-    margin-left:20px;
   
-  }
+  
+  } 
 
   .dropdown-content .cardWith {
     position: relative;
   }
 
   .dropdown-content .cardWith::before {
+   
     content: '';
     position: absolute;
     left: 0px;
@@ -213,7 +216,7 @@
   }
 
   .dropdown-content .cardWith:hover::before {
-    right: 98%;
+    right: 88%;
  
 
   }

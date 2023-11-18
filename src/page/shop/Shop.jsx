@@ -74,7 +74,7 @@ const Shop = () => {
 
 
     return (
-        <div className="md:px-20 pt-20 mb-40">
+        <div className="md:px-20 pt-28 mb-40">
             <div className="flex">
                 <h2 className="ml-2 font-bold mb-10 flex items-center gap-2"><p><FaHome className='bg-white' /></p>Home <p><IoIosArrowForward /></p> Product</h2>
             </div>
@@ -97,9 +97,9 @@ const Shop = () => {
                         <div className='custom-dropdown'>
                             <label>Sort by : </label>
                             <select className='py-2 px-2 ' name="priceRange" value={priceRange} onChange={handleSortChange}>
-                                  <option className='' value="all">All</option>
-                                 <option value="low">Price 500 low</option>
-                                 <option value="high">Price 500 high</option>
+                                <option className='' value="all">All</option>
+                                <option value="low">Price 500 low</option>
+                                <option value="high">Price 500 high</option>
                             </select>
                         </div>
                     </form>
@@ -131,7 +131,7 @@ const Shop = () => {
                                         <p className='f bg-black'></p>
                                         <p>Laptop</p>
 
-                                    </div>                                
+                                    </div>
                                 </ul>
                             </div>
                         </div>
@@ -154,16 +154,6 @@ const Shop = () => {
                                         <p>Virtual</p>
 
                                     </div>
-                                    
-                                    {/* <div className='first  flex items-center gap-4 mt-4'>
-                                    <p className='f bg-black'></p>
-                                    <p>samsung</p>
-                                </div>
-                                <div className='first  flex items-center gap-4 mt-4'>
-                                    <p className='f bg-black'></p>
-                                    <p>keyboard</p>
-                                </div> */}
-
                                 </ul>
                             </div>
                         </div>
@@ -195,16 +185,7 @@ const Shop = () => {
                                         <p className='f bg-black'></p>
                                         <p>Laptop</p>
 
-                                    </div>
-                                    {/* <div className='first  flex items-center gap-4 mt-4'>
-                                    <p className='f bg-black'></p>
-                                    <p>samsung</p>
-                                </div>
-                                <div className='first  flex items-center gap-4 mt-4'>
-                                    <p className='f bg-black'></p>
-                                    <p>keyboard</p>
-                                </div> */}
-
+                                   </div>                                 
                                 </ul>
                             </div>
 

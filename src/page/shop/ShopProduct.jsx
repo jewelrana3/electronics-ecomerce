@@ -13,7 +13,7 @@ const ShopProduct = ({ product }) => {
 
     const addToCart = item => {
         const navItem = { classId: _id, image, title, price, suk, category, tags, Share }
-        fetch('https://server-ecomerce.vercel.app/addCartPost', {
+        fetch('https://electronics-server-nine.vercel.app/addCartPost', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -26,7 +26,7 @@ const ShopProduct = ({ product }) => {
     const wishlist = (item) => {
         (item)
         const wishItem = { classId: _id, image, title, price, suk, category, tags, Share }
-        fetch('https://server-ecomerce.vercel.app/wishlist', {
+        fetch('https://electronics-server-nine.vercel.app/wishlist', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -4,10 +4,11 @@ const useAddProduct = () => {
     const [addProduct,setAddProduct] = useState([])
 
     useEffect(()=>{
-        fetch('https://server-ecomerce.vercel.app/addCartPost')
+        fetch('https://electronics-server-nine.vercel.app/addCartPost')
         .then(res => res.json())
         .then(data =>{
             setAddProduct(data)
+             
         })
     },[])
     return [addProduct]

@@ -29,7 +29,7 @@ const SignUp = () => {
                         email: data.email
                     }
                     (user)
-                    fetch('https://server-ecomerce.vercel.app/users', {
+                    fetch('https://electronics-server-nine.vercel.app/users', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json'
