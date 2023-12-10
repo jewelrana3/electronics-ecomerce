@@ -5,11 +5,14 @@ import { AiOutlineEye } from 'react-icons/ai';
 import { GiSelfLove } from 'react-icons/gi';
 import { BiLink } from 'react-icons/bi';
 import { CiShoppingCart } from "react-icons/ci";
+import { Link } from "react-router-dom";
+
 
 const ProductTwo = ({ product }) => {
-
+    console.log(product)
     const { image, title, price, _id, suk, category, tags, Share } = product;
     const [isHovered, setIsHovered] = useState(false);
+
 
     // add to cart
     const addToCart = item => {
@@ -62,10 +65,10 @@ const ProductTwo = ({ product }) => {
 
                 <div className={`overlay ${isHovered ? 'active' : ''}`}>
                     <button onClick={() => addToCart(toast(`${title} add to cart`))} className="add_to_cart w-full bg-black text-white">
-                    <div className="flex items-center justify-center gap-5">
-                        <div><CiShoppingCart className="text-2xl"/></div>
-                        <div>   Add To Cart</div>
-                    </div>
+                        <div className="flex items-center justify-center gap-5">
+                            <div><CiShoppingCart className="text-2xl" /></div>
+                            <div>   Add To Cart</div>
+                        </div>
                     </button>
                 </div>
                 <div className="leftDrawer text-2xl cursor-pointer">
@@ -76,9 +79,13 @@ const ProductTwo = ({ product }) => {
                     <div>
                         <p className="icon"><AiOutlineEye /></p>
                         <span className="text">View Details</span>
+                        {/* <p className='modalBtn' onClick={() => setModal(true)} className="icon"><AiOutlineEye /></p>
+                        <span className="text">View Details</span>
+                        <Modal open={modal} onClose={()=> setModal(false)}/> */}
+
                     </div>
                     <div>
-                        <p className="icon"><BiLink /></p>
+                        <p className="icon"><Link to={`/productDetails2/${_id}`}><BiLink /></Link></p>
                         <span className="text">Product Details</span>
                     </div>
                 </div>

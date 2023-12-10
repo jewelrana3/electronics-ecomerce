@@ -2,7 +2,7 @@ import React from 'react';
 import { CiShoppingCart } from 'react-icons/ci';
 import { useLoaderData } from 'react-router-dom';
 
-const ProductDetails = () => {
+const ProductDetails2 = () => {
     const productDetails = useLoaderData();
     console.log(productDetails)
     const { image, title, price,suk,tags,category } = productDetails;
@@ -34,4 +34,4 @@ const ProductDetails = () => {
     );
 };
 
-export default ProductDetails;
+export default ProductDetails2;

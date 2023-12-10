@@ -10,7 +10,7 @@ const MyCart = () => {
     const mycart = useLoaderData();
     const [users, setUsers] = useState(mycart);
 
-    
+
 
     const { image, title, price, classId } = users;
     const iconSize = '14px';
@@ -31,11 +31,11 @@ const MyCart = () => {
     }
 
     // add btn and minus btn
-    const handleQuantityChange = (productId,newQuantity) =>{
-        const updateUsers = users.map(user =>{
-            if(user._id === productId){
+    const handleQuantityChange = (productId, newQuantity) => {
+        const updateUsers = users.map(user => {
+            if (user._id === productId) {
                 const total = (user.price || 0) * newQuantity;
-                return{...user,quantity:newQuantity,total}
+                return { ...user, quantity: newQuantity, total }
             }
             return user;
         })
@@ -70,27 +70,37 @@ const MyCart = () => {
                         </tr>
                     </thead>
                     <tbody>
-                         {
-                            users.map(product => <tr className='text-center text-xl' key={product._id}>
-                                <td className='border border-gray w-48'>
-                                    <div className="image flex items-center justify-center">
-                                        <img className='' src={product.image} alt="Avatar Tailwind CSS Component" />
-                                    </div>
-                                </td>
-                                <td className='border border-gray'>{product.title}</td>
-                                <td className='border border-gray'>${product.price}</td>
-                                <td className='border border-gray text-2xl '>
-                                    <div className='border border-gray-300 flex items-center justify-evenly'>
-                                        <button onClick={()=> handleQuantityChange(product._id,(product.quantity || 1) - 1)} className='ml- '><span className='mr-4 font-bold w-7' style={{ width: '30px' }}>-</span> <span className='ml- border-r-2' ></span></button>
-                                        <button>{product.quantity || 0}</button>
-                                        <button onClick={()=> handleQuantityChange(product._id,(product.quantity || 0) + 1)} className='mr-2 border-l-2'><span className='ml-4 text-2xl font-bold'>+</span></button>
-                                    </div>
-                                </td>
-                                <td className='border border-gray'>${product.total}</td>
-                                <td className='border border-gray'> <AiOutlineClose onClick={() => handleDelete(product._id)} className='cursor-pointer text-center mx-auto' /></td>
-                            </tr>)
-                        } 
-                  
+                        {
+                            users.length > 0 ? (
+                                users.map(product => (
+                                    <tr className='text-center text-xl' key={product._id}>
+                                    <td className='border border-gray w-48'>
+                                        <div className="image flex items-center justify-center">
+                                            <img className='' src={product.image} alt="Avatar Tailwind CSS Component" />
+                                        </div>
+                                    </td>
+                                    <td className='border border-gray'>{product.title}</td>
+                                    <td className='border border-gray'>${product.price}</td>
+                                    <td className='border border-gray text-2xl '>
+                                        <div className='border border-gray-300 flex items-center justify-evenly'>
+                                            <button onClick={() => handleQuantityChange(product._id, (product.quantity || 1) - 1)} className='ml- '><span className='mr-4 font-bold w-7' style={{ width: '30px' }}>-</span> <span className='ml- border-r-2' ></span></button>
+                                            <button>{product.quantity || 0}</button>
+                                            <button onClick={() => handleQuantityChange(product._id, (product.quantity || 0) + 1)} className='mr-2 border-l-2'><span className='ml-4 text-2xl font-bold'>+</span></button>
+                                        </div>
+                                    </td>
+                                    <td className='border border-gray'>${product.total}</td>
+                                    <td className='border border-gray'> <AiOutlineClose onClick={() => handleDelete(product._id)} className='cursor-pointer text-center mx-auto' /></td>
+                                </tr>
+                                ))
+                            ) : (
+                                <tr>
+                                    <td className="text-center text-black">No data found</td>
+                                </tr>
+                            )
+                            
+                        }
+
+
                     </tbody>
                 </table>
             </div>

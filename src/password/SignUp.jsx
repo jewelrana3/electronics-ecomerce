@@ -54,11 +54,11 @@ const SignUp = () => {
             });
     }
     return (
-        <div className="pt-24 mb-24">
+        <div className="pt-52 mb-24">
             <div className="relative">
                 <img className="w-full" src="https://i.ibb.co/QkHFkQR/seo-optimization-3d-render-cartoon-illustration-107791-16996-1.jpg" alt="" />
             </div>
-            <div style={{ marginTop: '-800px', width: '600px', height: '700px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto px-20 ">
+            <div style={{ marginTop: '-800px', width: '600px', height: '600px' }} className="login absolute inset-x-0 flex items-center justify-center mx-auto px-20 ">
                 <div>
                     <div className='ml-8'>
                         <h1 className='text-4xl font-bold'>SignUp Now!</h1>
@@ -138,7 +138,7 @@ const SignUp = () => {
 
                             <div className="flex items-center justify-between">
                                 <input
-                                    type={show ? "text" : "password"}
+                                    type={confirms ? "text" : "password"}
                                     {...register("confirmPass", { required: true })}
                                     placeholder="Confirm Password"
                                     className="input input-bordered mt-5   w-full rounded-none relative"

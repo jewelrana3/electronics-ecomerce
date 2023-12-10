@@ -17,6 +17,7 @@ import Payments from "../components/Payments";
 import PaymentHistory from "../components/PaymentHistory";
 import History from "../components/History";
 import Test from "../page/Test";
+import ProductDetails2 from "../page/Header/ProductDetails2";
 
 
 
@@ -41,6 +42,12 @@ export const router = createBrowserRouter([
                 path:'/productDetails/:id',
                 element:<ProductDetails />,
                 loader:({params}) => fetch(`https://electronics-server-nine.vercel.app/addCartPost/${params.id}`)
+          
+            },
+            {
+                path:'/productDetails2/:id',
+                element:<ProductDetails2 />,
+                loader:({params}) => fetch(`https://electronics-server-nine.vercel.app/products/${params.id}`)
           
             },
             {
