@@ -18,6 +18,7 @@ import PaymentHistory from "../components/PaymentHistory";
 import History from "../components/History";
 import Test from "../page/Test";
 import ProductDetails2 from "../page/Header/ProductDetails2";
+import Modal from "../modal/Modal";
 
 
 
@@ -103,6 +104,10 @@ export const router = createBrowserRouter([
             {
                 path:'/test',
                 element:<Test></Test>
+            },
+            {
+                path:'/modal',
+                element:<Modal/>
             }
           
           

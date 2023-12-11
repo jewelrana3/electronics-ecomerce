@@ -6,6 +6,7 @@ import { GiSelfLove } from 'react-icons/gi';
 import { BiLink } from 'react-icons/bi';
 import { CiShoppingCart } from "react-icons/ci";
 import { Link } from "react-router-dom";
+import Modal from "../../modal/Modal";
 
 
 const ProductTwo = ({ product }) => {
@@ -59,7 +60,6 @@ const ProductTwo = ({ product }) => {
                     src={image ? image : 'image1'}
                     alt="product image"
                     className="hovered-image active"
-
                 />
                 <ToastContainer />
 
@@ -77,11 +77,8 @@ const ProductTwo = ({ product }) => {
                         <span className="text">Add To Wishlist</span>
                     </div>
                     <div>
-                        <p className="icon"><AiOutlineEye /></p>
+                        <p className="icon"><Modal /></p>
                         <span className="text">View Details</span>
-                        {/* <p className='modalBtn' onClick={() => setModal(true)} className="icon"><AiOutlineEye /></p>
-                        <span className="text">View Details</span>
-                        <Modal open={modal} onClose={()=> setModal(false)}/> */}
 
                     </div>
                     <div>
@@ -90,13 +87,13 @@ const ProductTwo = ({ product }) => {
                     </div>
                 </div>
             </div>
-
             <div className="product_title ">
                 <h3>{title}</h3>
                 <div>
                     <span>$:{price}00</span>
                 </div>
             </div>
+
         </div>
 
     )

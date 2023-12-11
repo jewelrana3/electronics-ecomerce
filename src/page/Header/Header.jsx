@@ -46,19 +46,7 @@ const Header = () => {
   }, [addProduct])
 
 
-  // const handleLogOut = () => {
-  //   logOut()
-  //     .then(() => {
-  //       // Logout was successful
-  //       // Perform any actions you need after successful logout
-  //     })
-  //     .catch((error) => {
-  //       // An error occurred during logout
-  //       console.error('Error during logout:', error);
-  //     });
-  // };
-
-
+  
   // shopping cart delete
   const handleDelete = _id => {
     fetch(`https://electronics-server-nine.vercel.app/addCartPost/${_id}`, {
