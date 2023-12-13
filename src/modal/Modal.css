@@ -41,3 +41,32 @@
   color: #000;
   text-decoration: none;
 }
+
+/* add to cart */
+.add_to_cart_two{
+  background-color: rgb(9, 9, 9);
+  color: white;
+  width: 200px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color .5s;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.add_to_cart_two:hover {
+  background-color: rgb(205, 39, 103);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.cast{
+  padding: 4px 7px;
+}
+.cast:hover{
+  background-color: rgb(205, 39, 103);
+  color: white;
+}

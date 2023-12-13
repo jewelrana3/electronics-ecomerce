@@ -13,8 +13,7 @@ const ProductTwo = ({ product }) => {
     console.log(product)
     const { image, title, price, _id, suk, category, tags, Share } = product;
     const [isHovered, setIsHovered] = useState(false);
-
-
+   
     // add to cart
     const addToCart = item => {
         const navItem = { classId: _id, image, title, price, suk, category, tags, Share }
@@ -67,7 +66,7 @@ const ProductTwo = ({ product }) => {
                     <button onClick={() => addToCart(toast(`${title} add to cart`))} className="add_to_cart w-full bg-black text-white">
                         <div className="flex items-center justify-center gap-5">
                             <div><CiShoppingCart className="text-2xl" /></div>
-                            <div>   Add To Cart</div>
+                            <div> Add To Cart</div>
                         </div>
                     </button>
                 </div>
