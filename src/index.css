@@ -178,6 +178,80 @@ body {
 
 }
 
+
+/* Modal styles (Modal.css) */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 300px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: '';
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  position: relative; /* Added position relative */
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px; /* Adjust padding as needed */
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+/* add to cart */
+.add_to_cart_two{
+  background-color: rgb(9, 9, 9);
+  color: white;
+  width: 200px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color .5s;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.add_to_cart_two:hover {
+  background-color: rgb(205, 39, 103);
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+
+}
+
+.cast{
+  padding: 4px;
+}
+.cast:hover{
+  background-color: rgb(205, 39, 103);
+  color: white;
+}
+
 /* five section media query */
 @media (max-width:1024px) {
   .double{

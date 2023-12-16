@@ -74,7 +74,7 @@ const Shop = () => {
 
 
     return (
-        <div className="md:px-20 pt-28 mb-40">
+        <div className="md:px-10 lg:px-20 pt-28 mb-40">
             <div className="flex">
                 <h2 className="ml-2 font-bold mb-10 flex items-center gap-2"><p><FaHome className='bg-white' /></p>Home <p><IoIosArrowForward /></p> Product</h2>
             </div>
@@ -105,7 +105,7 @@ const Shop = () => {
                     </form>
                 </div>
             </div>
-            <div className='container large lg:flex gap-10'>
+            <div className='containers md:flex gap-8'>
                 <div className='left-side-shop sideber'>
                     <div className="mt-28">
                         <div>
@@ -298,7 +298,7 @@ const Shop = () => {
                         </button>
                     </div>
                 </div>
-                <div className="right-side-shop grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-28">
                     {categorizedProduct.map((product) => (
                         <ShopProduct key={product._id} product={product} />
                     ))}

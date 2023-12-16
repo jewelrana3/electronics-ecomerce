@@ -59,28 +59,13 @@
 }
 
 /* Add media query for screens smaller than lg */
-.container {
+.containers {
   display: flex;
-  flex-wrap: wrap;
 }
-
-.right-side-shop {
-  flex: 0 0 900px;
-  margin-left: 44px;
-}
-
-.left-side-shop{
-  flex: 0 0 60px;
- 
-}
-
-/* custom dropdown */
-
-
 
 
 @media (max-width: 768px) {
-  .container {
+  .containers{
     flex-direction: column;
   }
 

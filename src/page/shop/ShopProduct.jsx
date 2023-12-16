@@ -7,6 +7,7 @@ import { GiSelfLove } from 'react-icons/gi';
 import { BiLink } from 'react-icons/bi';
 import { CiShoppingCart } from 'react-icons/ci';
 
+
 const ShopProduct = ({ product }) => {
     const { image, title, price, _id, suk, category, tags, Share } = product;
     const [isHovered, setIsHovered] = useState(false);
