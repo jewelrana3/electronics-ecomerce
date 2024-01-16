@@ -6,7 +6,7 @@ import './ProductTwo.css';
 
 const Two = () => {
   const [products] = useProducts();
-  const [activeTab, setActiveTab] = useState('top'); // Default tab
+  const [activeTab, setActiveTab] = useState('top');
 
   const [activeDropdown, setActiveDropdown] = useState(null);
 

@@ -7,6 +7,8 @@ import { GiSelfLove } from 'react-icons/gi';
 import { BiLink } from 'react-icons/bi';
 import { CiShoppingCart } from 'react-icons/ci';
 
+import Modals from '../../modal/Modals';
+
 
 const ShopProduct = ({ product }) => {
     const { image, title, price, _id, suk, category, tags, Share } = product;
@@ -71,7 +73,7 @@ const ShopProduct = ({ product }) => {
                         <span className="text">Add To Wishlist</span>
                     </div>
                     <div>
-                        <p className="icon"><AiOutlineEye /></p>
+                        <p className="icon"><Modals /></p>
                         <span className="text">View Details</span>
                     </div>
                     <div>
