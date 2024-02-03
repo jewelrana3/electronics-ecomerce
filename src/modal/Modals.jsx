@@ -1,104 +1,55 @@
-import React, { useState } from "react";
-import { AiOutlineEye } from "react-icons/ai";
 import { CiShoppingCart } from "react-icons/ci";
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa6";
-import Modal from "react-modal";
-import useProducts from "../hooks/useProducts";
-import "./Modal.css";
 
-const Modals = ({ setIsHovered }) => {
-  const [products] = useProducts();
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
-
-  const openModal = (product) => {
-    setSelectedProduct(product);
-    setModalIsOpen(true);
-    product;
+export default function ProductDetailsModal({ product, onClose, addToCart }) {
+  const handleAddToCart = () => {
+    addToCart(product);
+    toast(`${product.title} added to cart`);
   };
-
-  const closeModal = () => {
-    setSelectedProduct(null);
-    setModalIsOpen(false);
-    setIsHovered(false);
-  };
-
   return (
-    <div>
-      <button onClick={() => openModal(products[1])}>
-        <AiOutlineEye />
-      </button>
-
-      {selectedProduct && (
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Product Modal"
-          style={{
-            content: {
-              padding: "20px",
-              margin: "auto",
-              width: "80%",
-              height: "70%",
-            },
-          }}
-        >
-          <div className="flex justify-between">
-            <div className="flex">
-              <div>
-                <img className="w-96 h-96" src={selectedProduct.image} alt="" />
-              </div>
-              <div className="ml-40">
-                <h2 className="text-4xl text-bold">{selectedProduct.title}</h2>
-                <p className="mt-6">{selectedProduct.description}</p>
-
-                <div className={""}>
-                  <button className="add_to_cart_two w-full bg-black text-white">
-                    <div className="flex items-center justify-center gap-5">
-                      <div>
-                        <CiShoppingCart className="text-2xl" />
-                      </div>
-                      <div>Add To Cart</div>
-                    </div>
-                  </button>
-                </div>
-
-                <p className="mt-3">SUK:{selectedProduct.suk}</p>
-                <p className="mt-2">
-                  <span>Categories</span>:{selectedProduct.category}
-                </p>
-                <div className="flex mt-2 items-center">
-                  <p>Tags:</p>
-                  <div className="flex cursor-pointer ml-2">
-                    <p className="border border-gray-300 cast">Tabel</p>
-                    <p className="border border-gray-300 cast">TECAST</p>
-                  </div>
-                </div>
-                <div className="flex items-center mt-4">
-                  <p>Share : </p>
-                  <div className="flex gap-2">
-                    <p>
-                      <FaFacebookF />
-                    </p>
-                    <p>
-                      <FaInstagram />
-                    </p>
-                    <p>
-                      <FaTwitter></FaTwitter>
-                    </p>
-                  </div>
-                </div>
-              </div>
+    <div className="fixed top-0 left-0 w-screen h-screen z-50 bg-black/60 backdrop-blur-sm">
+      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[420px] sm:max-w-[600px] lg:max-w-[984px] p-4 max-h-[90vh] overflow-auto">
+        <div className="bg-white shadow-md dark:bg-[#12141D] rounded-2xl sm:grid sm:grid-cols-[2fr_1fr] overflow-hidden">
+          <img
+            className="sm:order-2 w-full object-cover h-full max-sm:max-h-[300px]"
+            src={product.image}
+            alt="pic"
+          />
+          <div className="p-5 lg:p-11">
+            <div className="">
+              <h2 className="text-3xl lg:text-[40px] mb-2 font-bold">
+                {product.title}
+              </h2>
+              <span className="block text-base text-[#9fa0a4] dark:text-[#575A6E] my-3"></span>
+              <div></div>
             </div>
-            <div>
-              <button onClick={closeModal}>X</button>
+            <div className="text-sm lg:text-base mb-8 lg:mb-16">
+              <p className="text-xl"> Suk : {product.suk}</p>
+              <p className="text-xl"> category : {product.category}</p>
+              <p className="mt-4">Description : {product.description}</p>
+              <span>${product.price}</span>
+            </div>
+            <div className="grid lg:grid-cols-2 gap-2">
+              <a
+                className="bg-primary rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#171923] font-semibold text-sm"
+                href="#"
+                onClick={handleAddToCart}
+              >
+                <div className="flex gap-4 items-center">
+                  <CiShoppingCart className="text-2xl" />
+                </div>
+              </a>
+
+              <a
+                className="border border-[#74766F] rounded-lg py-2 px-5 flex items-center justify-center gap-2 text-[#6F6F6F] dark:text-gray-200 font-semibold text-sm"
+                href="#"
+                onClick={onClose}
+              >
+                Cancel
+              </a>
             </div>
           </div>
-        </Modal>
-      )}
+        </div>
+      </div>
     </div>
   );
-};
-
-export default Modals;
+}
